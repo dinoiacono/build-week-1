@@ -1,0 +1,67 @@
+
+
+.container-main{
+    border: 1px solid blue;
+}
+
+.container-h1{
+   margin: 0 auto;
+   border: 1px solid red;
+   height: 100%;
+   width: 760px;
+}
+
+.container-h1 h1{
+    text-align: center;
+    margin: 55px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 60px;
+}
+.container-h1 h1 B{
+    font-weight: 600;
+}
+
+/* stile contenitore bottone*/
+.container-button{
+    margin: 0 auto;
+    height: 100%;
+    width: 760px;
+    border: 1px solid red;
+    display: block;
+}
+
+.margin-container-botton{
+    margin: 10px;
+}
+
+.button-style{
+    display: inline-block;
+    border: 4px solid red;
+    width: 340px;
+    height: 70px;
+    margin: 10px;
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, rgb(78, 78, 78), darkorchid) border-box;
+    border-radius: 50em;  
+    border: 4px solid transparent;
+}
+
+.button-style p{
+text-align: center;
+}
+
+.divider{
+    height: 80px;
+}
+
+.container-footer{
+    margin: 0 auto;
+    height: 100%;
+    width: 760px;
+    border: 1px solid red;
+}
+.container-footer h2{
+text-align: center;
+}
+
