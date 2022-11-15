@@ -102,25 +102,61 @@ const questions = [
   const lunghezzaArray = questions.length;
   var contatore = 1;
   const domandeFatte = [];
+  const risposte = [];
+  var rand = Math.floor(Math.random()* risposte.length);
+  var lunghezzaRand = [];
 
   console.log(indexRandom);
 
   window.onload = function () {
     RandomDomande();
     NascondiBottoni();
+    ContentitoreRisposte();
   };
 
 
 function RandomDomande(){
   let _question = document.getElementById('h1-quetion').textContent = questions[indexRandom].question;
 };
+
 function NascondiBottoni (){
   if(questions[indexRandom].type=='boolean'){
     let botton1 = document.getElementById('button-3').style.display='none';
     let botton2 = document.getElementById('button-4').style.display='none';
   }
+}
+
+function ContentitoreRisposte(){
+  risposte.push(questions[indexRandom].correct_answer)
+  for (let i = 0; i < questions[indexRandom].incorrect_answers.length; i++) {
+    risposte.push(questions[indexRandom].incorrect_answers[i])
+  }
+  console.log(risposte);
+
+  let testoRisposta = document.querySelector("#button-1 p")
+  testoRisposta.textContent = rand[0];
+  console.log(testoRisposta.textContent);
+  console.log(rand);
+
+  let testoRisposta1 = document.querySelector("#button-2 p")
+  testoRisposta1.textContent = rand[1];
+  console.log(testoRisposta1.textContent);
+  console.log(rand);
+
+  let testoRisposta2 = document.querySelector("#button-3 p")
+  testoRisposta2.textContent = rand[2];
+  console.log(testoRisposta2.textContent);
+  console.log(rand);
+
+  let testoRisposta3 = document.querySelector("#button-4 p")
+  testoRisposta3.textContent = rand[3];
+  console.log(testoRisposta3.textContent);
+  console.log(rand);
 
 }
+
+
+
 
 
 
