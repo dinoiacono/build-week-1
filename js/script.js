@@ -107,10 +107,25 @@ const questions = [
 
   window.onload = function () {
     RandomDomande();
+    generaRisposte();
   };
 
 
 function RandomDomande(){
   let _question = document.getElementById('h1-quetion').textContent = questions[indexRandom].question;
 }
+
+var contenitoreBottoni = document.getElementsByClassName('margin-container-botton');
+var generaBottoni = document.createElement('button').value='cqionjwnfd';
+function generaRisposte () {
+  if(questions[indexRandom].type =='multiple'){
+    for(let i =0; i<4 ; i++){
+      contenitoreBottoni.append(generaBottoni)
+    }
+    
+  }
+  console.log(generaBottoni)
+}
+
+
 
