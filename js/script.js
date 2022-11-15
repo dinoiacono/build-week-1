@@ -226,3 +226,27 @@ UpdateQuestionValue();
 function nextPage(){
   window.location.href = 'result.html';
 }
+
+
+
+
+function countdownSecondi(){
+  
+  var tempoRestante= 45; //prende, come intero, il numero inserito a mio piacimento
+  
+  var countdown = setInterval(function() { //avvio una funzione countdown
+  
+  tempoRestante--; //decrementa il tempo restante di 1
+  
+  document.getElementById("contatore").innerHTML = tempoRestante //aggiorna il valore nella sezione HTML
+  if (tempoRestante<= 0) {
+
+    document.querySelector("#timercontainer p").innerHTML = "TEMPO SCADUTO!";//se ilconteggio è minore o uguale a 0 faccio visualizzare "TEMPO SCADUTO!"
+    clearInterval(countdown);
+
+  }
+      
+  },1000); //si esegue ogni 1000 millisecondi
+}
+
+window.onload = countdownSecondi(); //in questo modo dico di avviare il countdown appena la pagina si è caricata
