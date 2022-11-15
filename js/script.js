@@ -133,28 +133,30 @@ function ContentitoreRisposte(){
   }
   console.log(risposte);
 
+  RandomContentArrayRisposte(risposte);
+
   let testoRisposta = document.querySelector("#button-1 p")
-  testoRisposta.textContent = rand[0];
-  console.log(testoRisposta.textContent);
-  console.log(rand);
+  testoRisposta.textContent = risposte[0];
 
   let testoRisposta1 = document.querySelector("#button-2 p")
-  testoRisposta1.textContent = rand[1];
-  console.log(testoRisposta1.textContent);
-  console.log(rand);
+  testoRisposta1.textContent = risposte[1];
+
 
   let testoRisposta2 = document.querySelector("#button-3 p")
-  testoRisposta2.textContent = rand[2];
-  console.log(testoRisposta2.textContent);
-  console.log(rand);
+  testoRisposta2.textContent = risposte[2];
+
 
   let testoRisposta3 = document.querySelector("#button-4 p")
-  testoRisposta3.textContent = rand[3];
-  console.log(testoRisposta3.textContent);
-  console.log(rand);
+  testoRisposta3.textContent = risposte[3];
+
 
 }
 
+function RandomContentArrayRisposte(inputArray){
+  inputArray.sort(()=> Math.random() - 0.5);
+}
+
+console.log(risposte);
 
 
 
