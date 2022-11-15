@@ -107,24 +107,19 @@ const questions = [
 
   window.onload = function () {
     RandomDomande();
-    generaRisposte();
+    NascondiBottoni();
   };
 
 
 function RandomDomande(){
   let _question = document.getElementById('h1-quetion').textContent = questions[indexRandom].question;
-}
-
-var contenitoreBottoni = document.getElementsByClassName('margin-container-botton');
-var generaBottoni = document.createElement('button').value='cqionjwnfd';
-function generaRisposte () {
-  if(questions[indexRandom].type =='multiple'){
-    for(let i =0; i<4 ; i++){
-      contenitoreBottoni.append(generaBottoni)
-    }
-    
+};
+function NascondiBottoni (){
+  if(questions[indexRandom].type=='boolean'){
+    let botton1 = document.getElementById('button-3').style.display='none';
+    let botton2 = document.getElementById('button-4').style.display='none';
   }
-  console.log(generaBottoni)
+
 }
 
 
