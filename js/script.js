@@ -106,11 +106,17 @@ const questions = [
   var rand = Math.floor(Math.random()* risposte.length);
   var corrette = 0;
   var errate = 0;
+  var Timer;
+  var TimerValue = 61;
+  var countdown;
   console.log(indexRandom);
 
-  window.onload = function () {
+  window.onload = function (){
     SeedRandom();
-  };
+    countdownSecondi();
+    TimerCheck(Timer);
+  }
+
 
 function SeedRandom(){
   let num = Math.floor(Math.random()* questions.length);
@@ -211,6 +217,8 @@ function CheckRispostaCorretta(value){
       SeedRandom();
     }
   }
+  clearInterval(countdown);
+  countdownSecondi();
   contatore += 1;
   UpdateQuestionValue();
 }
@@ -229,22 +237,31 @@ function nextPage(){
 
 
 function countdownSecondi(){
-  
-  var tempoRestante= 45; //prende, come intero, il numero inserito a mio piacimento
-  
-  var countdown = setInterval(function() { //avvio una funzione countdown
-  
-  tempoRestante--; //decrementa il tempo restante di 1
-  
-  document.getElementById("contatore").innerHTML = tempoRestante //aggiorna il valore nella sezione HTML
-  if (tempoRestante<= 0) {
 
-    document.querySelector("#timercontainer p").innerHTML = "TEMPO SCADUTO!";//se ilconteggio è minore o uguale a 0 faccio visualizzare "TEMPO SCADUTO!"
-    clearInterval(countdown);
+  Timer = TimerValue;
 
-  }
-      
+   countdown = setInterval(function() { //avvio una funzione countdown
+  
+    Timer--; //decrementa il tempo restante di 1
+    TimerCheck(Timer);
+  document.getElementById("contatore").innerHTML = Timer //aggiorna il valore nella sezione HTML
   },1000); //si esegue ogni 1000 millisecondi
 }
 
-window.onload = countdownSecondi(); //in questo modo dico di avviare il countdown appena la pagina si è caricata
+function TimerCheck(timer){
+  if(timer < 0)
+  {
+    timer = 0;
+    clearInterval(countdown);
+    if(questions.length == 0)nextPage();
+    errate ++;
+    contatore++;
+    questions.splice(indexRandom, 1);
+    SeedRandom();
+    UpdateQuestionValue();
+    countdownSecondi();
+    Timer = TimerValue;
+  }
+}
+
+//window.onload = countdownSecondi(); //in questo modo dico di avviare il countdown appena la pagina si è caricata
