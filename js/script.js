@@ -109,9 +109,7 @@ const questions = [
 
 
 function RandomDomande(){
-  let _question = document.getElementById('h1-quetion').textContent;
-  _question = questions[indexRandom].question;
-  console.log(_question);
+  let _question = document.getElementById('h1-quetion').textContent = questions[indexRandom].question;
+  return _question;
 }
-
 
