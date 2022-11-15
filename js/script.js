@@ -105,7 +105,8 @@ const questions = [
   const risposte = [];
   var rand = Math.floor(Math.random()* risposte.length);
   var lunghezzaRand = [];
-
+  var corrette = 0;
+  var errate = 0;
   console.log(indexRandom);
 
   window.onload = function () {
@@ -158,7 +159,17 @@ function RandomContentArrayRisposte(inputArray){
 
 console.log(risposte);
 
+var bottone = document.getElementsByClassName('button-style');
+for(let elementi of bottone){
+  addEventListener('click', function (){
+    
+      corrette++;
+    
+    })
+  }
 
+console.log(corrette);
 
+console.log(bottone);
 
 
