@@ -98,26 +98,30 @@ const questions = [
     },
   ];
 
-  var indexRandom = Math.floor(Math.random()* questions.length);
+  var indexRandom;
   const lunghezzaArray = questions.length;
   var contatore = 1;
   const domandeFatte = [];
-  const risposte = [];
+  var risposte = [];
   var rand = Math.floor(Math.random()* risposte.length);
-  var lunghezzaRand = [];
   var corrette = 0;
   var errate = 0;
   console.log(indexRandom);
 
   window.onload = function () {
-    RandomDomande();
-    NascondiBottoni();
-    ContentitoreRisposte();
+    SeedRandom();
   };
 
+function SeedRandom(){
+  let num = Math.floor(Math.random()* questions.length);
+  indexRandom = num;
+  RandomDomande();
+}
 
 function RandomDomande(){
   let _question = document.getElementById('h1-quetion').textContent = questions[indexRandom].question;
+  NascondiBottoni();
+  ContentitoreRisposte();
 };
 
 function NascondiBottoni (){
@@ -125,9 +129,14 @@ function NascondiBottoni (){
     let botton1 = document.getElementById('button-3').style.display='none';
     let botton2 = document.getElementById('button-4').style.display='none';
   }
+  else{
+    let botton1 = document.getElementById('button-3').style.display= 'inline-block';
+    let botton2 = document.getElementById('button-4').style.display= 'inline-block';
+  }
 }
 
 function ContentitoreRisposte(){
+  risposte = [];
   risposte.push(questions[indexRandom].correct_answer)
   for (let i = 0; i < questions[indexRandom].incorrect_answers.length; i++) {
     risposte.push(questions[indexRandom].incorrect_answers[i])
@@ -142,15 +151,11 @@ function ContentitoreRisposte(){
   let testoRisposta1 = document.querySelector("#button-2 p")
   testoRisposta1.textContent = risposte[1];
 
-
   let testoRisposta2 = document.querySelector("#button-3 p")
   testoRisposta2.textContent = risposte[2];
 
-
   let testoRisposta3 = document.querySelector("#button-4 p")
   testoRisposta3.textContent = risposte[3];
-
-
 }
 
 function RandomContentArrayRisposte(inputArray){
@@ -159,17 +164,65 @@ function RandomContentArrayRisposte(inputArray){
 
 console.log(risposte);
 
-var bottone = document.getElementsByClassName('button-style');
-for(let elementi of bottone){
-  addEventListener('click', function (){
-    
-      corrette++;
-    
-    })
+var bottone = document.querySelector('#button-1');
+bottone.addEventListener('click', function(){
+    let text = bottone.outerText;
+    CheckRispostaCorretta(text)
+})
+
+var bottone1 = document.querySelector('#button-2');
+bottone1.addEventListener('click', function(){
+    let text = bottone1.outerText;
+    CheckRispostaCorretta(text)
+})
+
+var bottone2 = document.querySelector('#button-3');
+bottone2.addEventListener('click', function(){
+    let text = bottone2.outerText;
+    CheckRispostaCorretta(text)
+})
+
+var bottone3 = document.querySelector('#button-4');
+bottone3.addEventListener('click', function(){
+    let text = bottone3.outerText;
+    CheckRispostaCorretta(text)
+})
+
+function CheckRispostaCorretta(value){
+  let parola = value;
+  if(parola === questions[indexRandom].correct_answer)
+  {
+    corrette++
+    questions.splice(indexRandom, 1);
+    if(questions.length == 0){
+      nextPage();
+    }
+    else{
+      SeedRandom();
+    }
   }
+  else{
+    errate++
+    questions.splice(indexRandom, 1);
+    if(questions.length == 0){
+      nextPage();
+    }
+    else{
+      SeedRandom();
+    }
+  }
+  contatore += 1;
+  UpdateQuestionValue();
+}
 
-console.log(corrette);
+function UpdateQuestionValue(){
+  let value = document.querySelector('.ValueQuestion');
+  if(contatore <= lunghezzaArray)
+    value.textContent = contatore + "/" + lunghezzaArray;
+}
 
-console.log(bottone);
+UpdateQuestionValue();
 
-
+function nextPage(){
+  window.location.href = 'result.html';
+}
