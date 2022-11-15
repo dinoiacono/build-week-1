@@ -228,8 +228,6 @@ function nextPage(){
 }
 
 
-
-
 function countdownSecondi(){
   
   var tempoRestante= 45; //prende, come intero, il numero inserito a mio piacimento

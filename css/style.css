@@ -5,6 +5,13 @@
     background-size: cover;
 }
 
+.container-logo{
+    margin: 0 auto;
+    border: 1px solid red;
+    width: 760px;
+}
 .logo{
-    margin-left: 35px;
+    margin-left: 10px;
+    margin-left: -30px;
+    margin-top: 30px;
 }
