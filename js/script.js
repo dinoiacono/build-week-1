@@ -98,22 +98,20 @@ const questions = [
     },
   ];
 
-  window.onload = function () {
-    // TIPS:
+  var indexRandom = Math.floor(Math.random()* questions.length);
+  const domandeFatte = [];
 
-    // SE MOSTRI TUTTE LE RISPOSTE ASSIEME IN FORMATO LISTA:
-    // Per ogni domanda, crea un container e incorporale tutte all'interno. 
-    // Crea poi dei radio button
-    // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
-    // con le risposte corrette e incorrette come opzioni
-    // (dovrai probabilmente cercare su un motore di ricerca come ottenere un valore da un radio button in JS per ottenere il punteggio finale) 
-    //
-    // SE MOSTRI UNA DOMANDA ALLA VOLTA:
-    // Mostra la prima domanda con il testo e i radio button.
-    // Quando l'utente seleziona una risposta, passa alla domanda successiva dell'array e sostituisci quella precedentemente visualizzata con quella corrente,
-    // salvando le risposte dell'utente in una variabile
+  console.log(indexRandom);
+
+  window.onload = function () {
+    RandomDomande();
   };
 
-    // Come calcolare il risultato? Hai due strade:
-    // Se stai mostrando tutte le domande nello stesso momento, controlla semplicemente se i radio button selezionati sono === correct_answer
-    // Se stai mostrando una domanda alla volta, aggiungi semplicemente un punto alla variabile del punteggio che hai precedentemente creato SE la risposta selezionata è === correct_answer
+
+function RandomDomande(){
+  let _question = document.getElementById('h1-quetion').textContent;
+  _question = questions[indexRandom].question;
+  console.log(_question);
+}
+
+
