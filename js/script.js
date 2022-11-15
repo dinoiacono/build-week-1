@@ -107,9 +107,11 @@ const questions = [
   var corrette = 0;
   var errate = 0;
   var Timer;
-  var TimerValue = 61;
+  var TimerValue = 60;
   var countdown;
-  console.log(indexRandom);
+  var timeLeft = TimerValue;
+  var timePassed = 0;
+  const FULL_DASH_ARRAY = 283;
 
   window.onload = function (){
     SeedRandom();
@@ -219,6 +221,9 @@ function CheckRispostaCorretta(value){
   }
   clearInterval(countdown);
   countdownSecondi();
+  Timer = TimerValue;
+  timeLeft = TimerValue;
+  timePassed = 0;
   contatore += 1;
   UpdateQuestionValue();
 }
@@ -235,16 +240,33 @@ function nextPage(){
   window.location.href = 'result.html';
 }
 
+function calculateTimeFraction() {
+  return timeLeft / TimerValue;
+}
+
+function setCircleDasharray() {
+  const circleDasharray = `${(
+    calculateTimeFraction() * FULL_DASH_ARRAY
+  ).toFixed(0)} 283`;
+  document
+    .getElementById("base-timer-path-remaining")
+    .setAttribute("stroke-dasharray", circleDasharray);
+}
+
+
 
 function countdownSecondi(){
 
   Timer = TimerValue;
 
    countdown = setInterval(function() { //avvio una funzione countdown
-  
+    timePassed = timePassed += 1;
+    timeLeft = TimerValue - timePassed;
     Timer--; //decrementa il tempo restante di 1
+    setCircleDasharray();
     TimerCheck(Timer);
   document.getElementById("contatore").innerHTML = Timer //aggiorna il valore nella sezione HTML
+
   },1000); //si esegue ogni 1000 millisecondi
 }
 
@@ -261,6 +283,8 @@ function TimerCheck(timer){
     UpdateQuestionValue();
     countdownSecondi();
     Timer = TimerValue;
+    timeLeft = TimerValue;
+    timePassed = 0;
   }
 }
 
