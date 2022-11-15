@@ -99,6 +99,8 @@ const questions = [
   ];
 
   var indexRandom = Math.floor(Math.random()* questions.length);
+  const lunghezzaArray = questions.length;
+  var contatore = 1;
   const domandeFatte = [];
 
   console.log(indexRandom);
@@ -110,6 +112,5 @@ const questions = [
 
 function RandomDomande(){
   let _question = document.getElementById('h1-quetion').textContent = questions[indexRandom].question;
-  return _question;
 }
 
