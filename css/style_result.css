@@ -13,7 +13,9 @@ h2{
     margin-top: 0px;
     margin-bottom: 3em;
 }
+
  /*FLEXBOX*/
+
 #flex_result_container{
     text-align: center;
     margin-left: 12%;
@@ -69,6 +71,23 @@ h2{
     margin: 0;
 }
 
+
+/*HYPERLINK RATE US*/
+
 footer{
     text-align: center;
+}
+
+.contenitore__button--link{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    border-style: solid;
+    border-width: 2.3px;
+    padding: 0.7em 2.9em;
+    box-shadow:
+    0.5px  0px 20px  rgba(0, 255, 255, 0.111),
+    0px -0.5px   rgba(0, 255, 255, 0.142),
+    0.5px 0px 20px  rgba(0, 255, 255, 0.179),
+    -0px  0.5px   rgba(0, 255, 255, 0.068); 
 }
