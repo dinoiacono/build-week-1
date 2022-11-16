@@ -7,7 +7,7 @@
 .base-timer {
     height: 125px;
     width: 125px;
-    margin-left: 1400px;
+    margin-left: 1100px;
     margin-top: -45px;
     filter: drop-shadow(0 0 0.1rem rgb(0, 0, 0));
 }
@@ -94,6 +94,7 @@ font-size: 48px;
 
 .button-style{
     
+    cursor: pointer;
     display: inline-block;
     width: 340px;
     height: 80px;
