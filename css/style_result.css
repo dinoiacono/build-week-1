@@ -1,0 +1,55 @@
+body{
+    font-size: 20px;
+    color: white;
+}
+
+h1{
+    margin-bottom:0px;
+}
+
+h2{
+    color: white;
+    font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: 3em;
+}
+ /*FLEXBOX*/
+#flex_result_container{
+    text-align: center;
+    margin-left: 12%;
+    margin-right: 12%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3em;
+}
+
+#contenitore__totale--1{
+    text-align: left;
+}
+
+#contenitore__totale--3{
+    text-align: right;
+}
+
+.blue_text{
+    color: #00FFFF;
+    margin-top: 0px;
+    margin-bottom: 2em;
+}
+
+.boldx{
+    font-weight: bold;
+}
+
+.text_result{
+    text-align: center;
+}
+
+.percentuale_risultati{
+    font-size: 3.2em;
+    margin: 0;
+}
+
+footer{
+    text-align: center;
+}

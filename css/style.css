@@ -15,6 +15,10 @@ h1 {
     font-weight: 500;
     color: white;
 }
+
+
+
+
 .container-logo{
     margin: 5px 0 0 150px;
     width: 760px;
@@ -27,14 +31,14 @@ h1 {
 }
 
 /*SCRITTE VIOLA*/
-div h2{
+.violet_text{
     color: rgb(206, 71, 152);
 }
 
 /* BOTTONE */
 .proceed{
     margin: 0;
-    background-color: aqua;
+    background-color: #00FFFF;
     width: 12em;
     height: 3.6em;
     font-weight: bold;

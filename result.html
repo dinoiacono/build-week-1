@@ -6,30 +6,38 @@
     <meta name="description" content="Quiz result">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results - Epicode</title>
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_result.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+    <title>Results - Epicode</title>
+    
 </head>
-<body>
+<body class="img-body">
 
     <header class="epicode_logo">
-
-        <img src="assets/epicode_logo.png" alt="Epicode Logo">
-
+        <div class="container-logo" >
+            <img class="logo" src="assets/epicode_logo.png" alt="logo epicode" height="40px">
+        </div>
     </header>
     
     <main id="contenitore__totale">
 
-        <div class="text">
+        <div class="text_result">
     
-            <h1>Results</h1>
-            <p>The summary of your answers:</p>
+            <h1 class="boldx">Results</h1>
+            <h2>The summary of your answers:</h2>
     
         </div>
 
+    <div id="flex_result_container">
+
         <div id="contenitore__totale--1" class="contenitore">
 
-            <h3 class="contenitore1_p1">Correct</h3>
-            <p id="corrette"></p>
+            <h1 class="contenitore1_p1">Correct</h1>
+            <p id="corrette" class="percentuale_risultati" class="boldx"></p>
             <p id="contatore-corrette"></p>
 
         </div>
@@ -40,9 +48,9 @@
 
                 <div class="contenitore__grafico--testi">
 
-                    <h3 class="heading-2">Congratulazions</h2>
+                    <p class="boldx">Congratulazions</p>
 
-                    <p>You passed the exam.</p>
+                    <p class="blue_text" class="boldx">You passed the exam.</p>
                     <p>We'll send you the certificate in few minutes.</p>
                     <p>Check your email (including promotions / spam folder</p>
 
@@ -54,13 +62,13 @@
 
         <div id="contenitore__totale--3" class="contenitore">
 
-            <h3 class="contenitore3_p1">Wrong</h3>
+            <h1 class="contenitore3_p1">Wrong</h1>
 
-            <p id="errate"></p>
+            <p id="errate" class="percentuale_risultati" class="boldx"></p>
             <p id="contatore-errate"></p>
 
         </div>
-
+    </div>
     </main>
 
     <footer>
