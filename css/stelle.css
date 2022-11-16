@@ -1,7 +1,9 @@
-.img-body{
-  text-align: center;
-}
 
+.container.main2{
+  text-align: center;
+  width: 880px;
+  height: 100%;
+}
 
   .stars{
     display: flex;
@@ -36,3 +38,4 @@
     text-align: center;
     padding: 20px;
 }
+#barrasotto
