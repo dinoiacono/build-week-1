@@ -18,7 +18,7 @@ document.querySelector('#contatore-corrette').innerHTML = numeroRisultatoCorr + 
 document.querySelector('#contatore-errate').innerHTML = numeroRisultatoErr + '/' + domande + ' questions';
 
 let myCanvas = document.querySelector("#myCanvas").getContext("2d");
-  let myLabels = ["Sbagliate", "Giuste"];
+  let myLabels = ["WRONG", "CORRECT"];
   let myData =  [numeroRisultatoErr, numeroRisultatoCorr];
 
   let chart = new Chart(myCanvas, {
@@ -30,9 +30,11 @@ let myCanvas = document.querySelector("#myCanvas").getContext("2d");
           label: "Punteggio",
           data: myData,
           backgroundColor: ["#D20094", "#00FFFF"],
+          borderColor: "inherit",
+          borderWidth: "0.1",
           hoverBorderColor: "#000000",
-          hoverBorderWidth: 1,
-          hoverOffset: 2,
+          hoverBorderWidth: 0.1,
+          hoverOffset: 0.1,
           cutout: "70%",
         },
       ],
