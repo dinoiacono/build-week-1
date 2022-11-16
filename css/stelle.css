@@ -12,6 +12,8 @@
     display: flex;
     color: black;
     margin: 30px;
+    justify-content: space-around;
+    margin-bottom: 110px;
   }
   .stars img {
   opacity: 30%;
@@ -39,15 +41,44 @@
  }
  .container-footer{
   text-align: center;
-  width: 600px;
+  width: 800px;
   border-bottom: 3px solid #b51289;
+  margin-bottom: 40px;
  }
 
  .commento{
   color: #fff;
-  text-align: center;
-  width: 500px;
+  width: 700px;
   background: inherit;
   border: none;
   outline: none;
+  padding-bottom: 10px;
  }
+
+ #titolo-feedback{
+  text-align: center;
+  font-weight: 700;
+ }
+
+ .container-welcome-h1 {
+  margin: 0 auto;
+}
+#testo-stelle{
+  text-align: center;
+  font-size: 1.9rem;
+
+}
+
+.container-instruction {
+  
+  margin-top: -17px;
+ width: 100%;
+}
+
+#testo-leaveFeed{
+  text-align: center;
+  font-size: 1.9rem;
+}
+.proceed{
+  font-size: 1.3rem;
+}
