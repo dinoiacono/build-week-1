@@ -39,9 +39,16 @@ h2{
 
 }
 
+.container-logo{
+
+    margin-bottom: 20px;
+
+}
+
 .text_risultato{
 
     font-weight: 700;
+    margin-top: 0;
 
 }
 
