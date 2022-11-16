@@ -1,7 +1,13 @@
+:root{
+
+    font-size: 18px;
+
+}
+
 .base-timer {
     height: 125px;
     width: 125px;
-    margin-left: 95%;
+    margin-left: 1400px;
     margin-top: -45px;
     filter: drop-shadow(0 0 0.1rem rgb(0, 0, 0));
 }
@@ -62,7 +68,7 @@ font-size: 48px;
     margin: 55px;
     font-family: 'Outfit', sans-serif;
     font-weight: 300;
-    font-size: 40px;
+    font-size: 2.5rem;
     color: white;
 }
 .container-h1 h1 B{
@@ -76,6 +82,11 @@ font-size: 48px;
     width: 760px;
     display: block;
 }
+.container-main{
+
+    width: 1200px;
+
+}
 
 .margin-container-botton{
     margin: 10px;
@@ -85,22 +96,23 @@ font-size: 48px;
     
     display: inline-block;
     width: 340px;
-    height: 70px;
+    height: 80px;
     margin: 10px;
     
     background: linear-gradient(to right, rgba(255, 255, 255, 0.103), rgba(255, 255, 255, 0.177))border-box;
     border-radius: 50em;     
-    border: 4px solid transparent;
+    border: 4px solid rgba(255, 255, 255, 0.5);
 }
 .button-style:hover{
     background: linear-gradient(to right, #d20094, #900080)border-box;
 }
 
 .button-style p{
+    font-size: 1.2rem;
     text-align: center;
     font-weight: bold;
-    color: white;
-    padding: 8px;
+    color: #fff;
+    padding: 5px;
 }
 
 .divider{
