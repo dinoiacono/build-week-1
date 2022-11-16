@@ -8,6 +8,9 @@ const stars = document.querySelectorAll(".stars img"); //richiamiamo, con una co
         if (otherIdx <= clickedIdx) {           //creamo un secondo index che dirà di bloccare la valutazione data, nel caso dovesse essere ricaricata la pagina 
              otherStar.classList.add("active");
         }
+        else{
+            otherStar.classList.remove("active");   //cosi anche se volessimo rifare la valutazione, l'index non è solo crescente ma anche decrescente
+        }
     });
         console.log(`star of index ${idx +1 } was clicked`);     //in uscità avremo così la stellina cliccata nell'indice
      
