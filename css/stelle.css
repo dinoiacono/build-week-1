@@ -1,4 +1,6 @@
-
+.img-body{
+  text-align: center;
+}
 
 
   .stars{
@@ -29,3 +31,8 @@
   .stars.disabled{
     pointer-events: none;
   }
+
+  .footer-button{
+    text-align: center;
+    padding: 20px;
+}
