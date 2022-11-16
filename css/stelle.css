@@ -1,0 +1,30 @@
+
+
+
+  .stars{
+    display: flex;
+    color: black;
+  }
+  .stars img {
+  opacity: 30%;
+  cursor: pointer;
+  padding: 5px;
+  color-scheme: black;
+  }
+  .stars:hover img{
+    opacity: 150%;
+  }
+  .stars img:hover {
+    opacity: 150%;
+  }
+  .stars img:hover ~ img {
+    opacity: 30%;
+    color: black;
+  }
+  .stars img.active {
+    opacity: 150%;
+    color: black;
+  }
+  .stars.disabled{
+    pointer-events: none;
+  }
