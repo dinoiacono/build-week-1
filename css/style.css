@@ -15,7 +15,7 @@ h1 {
     color: white;
 }
 .container-logo{
-    margin: 0 auto;
+    margin: 5px 0 0 150px;
     width: 760px;
     width: 760px;
 }
@@ -46,7 +46,6 @@ div h2{
 }
 
 .container-main{
-
     margin: 0 auto;
     width: 800px;
     height: 100%;
@@ -120,5 +119,4 @@ margin: 0;
 .container-button{
     margin-top: -40px;
     display: inline-block;
-    float: right;
 }
