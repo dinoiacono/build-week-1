@@ -4,6 +4,7 @@
   .stars{
     display: flex;
     color: black;
+    padding: 30px;
   }
   .stars img {
   opacity: 30%;
