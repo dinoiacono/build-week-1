@@ -31,13 +31,32 @@ h2{
     text-align: right;
 }
 
+#corrette, #errate{
+
+    font-weight: 700;
+
+}
+
+.text_risultato{
+
+    font-weight: 700;
+
+}
+
+#contatore-corrette, #contatore-errate{
+
+    font-weight: 700;
+
+}
+
 .blue_text{
     color: #00FFFF;
     margin-top: 0px;
     margin-bottom: 2em;
+    font-weight: 700;
 }
 
-.boldx{
+.comunicazione_esito{
     font-weight: bold;
 }
 
