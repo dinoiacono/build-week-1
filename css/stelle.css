@@ -4,7 +4,7 @@
   .stars{
     display: flex;
     color: black;
-    padding: 30px;
+    margin: 30px;
   }
   .stars img {
   opacity: 30%;
@@ -26,14 +26,10 @@
     opacity: 150%;
     color: black;
   }
-  .stars.disabled{
-    pointer-events: none;
-  }
-
   .footer-button{
     text-align: center;
     padding: 20px;
-}
-.container-footer{
+ }
+ .container-footer{
   border-bottom: 2px solid #b51289;
-}
+ }
