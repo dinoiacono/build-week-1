@@ -30,7 +30,6 @@ let myCanvas = document.querySelector("#myCanvas").getContext("2d");
           label: "Punteggio",
           data: myData,
           backgroundColor: ["#D20094", "#00FFFF"],
-          borderColor: "inherit",
           borderWidth: "0.1",
           hoverBorderColor: "#000000",
           hoverBorderWidth: 0.1,
