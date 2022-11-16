@@ -1,4 +1,11 @@
 
+#box1_manuel{
+
+  display: flex;
+  justify-content: center;
+
+}
+
 
 
   .stars{
@@ -31,5 +38,16 @@
     padding: 20px;
  }
  .container-footer{
-  border-bottom: 2px solid #b51289;
+  text-align: center;
+  width: 600px;
+  border-bottom: 3px solid #b51289;
+ }
+
+ .commento{
+  color: #fff;
+  text-align: center;
+  width: 500px;
+  background: inherit;
+  border: none;
+  outline: none;
  }
