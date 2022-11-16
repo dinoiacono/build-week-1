@@ -1,3 +1,7 @@
+body{
+    font-family: 'Outfit', sans-serif; 
+}
+
 .img-body{
     background-image: url("../assets/bg.jpg");
     background-position: center;
@@ -5,6 +9,11 @@
     background-size: cover;
 }
 
+h1 {
+    font-size: 75px;
+    font-weight: 500;
+    color: white;
+}
 .container-logo{
     margin: 0 auto;
     width: 760px;
@@ -36,3 +45,79 @@ div h2{
     -0px  0.5px   rgba(0, 255, 255, 0.549);   
 }
 
+.container-main{
+
+    margin: 0 auto;
+    width: 800px;
+    height: 100%;
+}
+.container-welcome-h1{
+    margin-right: 340px;
+    margin-bottom: 15px;
+}
+
+.container-instruction{
+    margin-right: 330px;
+    padding-top: -20px;
+    margin-top: -17px;    
+}
+
+.container-instruction h2{
+    font-weight: 600;
+    color: #b51289;
+}
+
+.container-instruction p{
+    color: white;
+    font-weight: 300;
+    margin-top: -15px;
+}
+
+.container-list{
+    border: 1px solid rgba(255, 0, 0, 0);
+    color: white;
+    padding-left: -20px;
+}
+
+.container-list ul{
+    margin-left: -17px;
+}
+
+.container-footer{
+
+    width: 800px;
+    margin: 0 auto;
+    height: 100%;
+    margin-top: 45px;
+}
+
+#checkmark {
+    height: 20px;
+    width: 20px;
+}
+
+.check-box{
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.proceed{
+margin: 0;
+
+}
+
+.container-input{
+    margin-left: 10px;
+}
+
+.container-input p{
+    margin: 0;
+
+}
+
+.container-button{
+    margin-top: -40px;
+    display: inline-block;
+    float: right;
+}
