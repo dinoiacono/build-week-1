@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap" rel="stylesheet">
     <title>Results - Epicode</title>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 </head>
 <body class="img-body">
 
@@ -45,6 +45,10 @@
         <div id="contenitore__totale--2" class="contenitore">
 
             <div id="contenitore__grafico">
+                <div style="width: 300px; z-index: 1;" >
+                    <canvas id="myCanvas"></canvas>
+                    <p id="testo_doughnut" style="position: relative; z-index: 200; left: 30%"></p>
+                </div>
 
                 <div class="contenitore__grafico--testi">
 
