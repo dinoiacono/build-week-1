@@ -30,7 +30,7 @@ let myCanvas = document.querySelector("#myCanvas").getContext("2d");
           label: "Punteggio",
           data: myData,
           backgroundColor: ["#D20094", "#00FFFF"],
-          hoverBorderColor: ,
+          hoverBorderColor: "#000000",
           hoverBorderWidth: 1,
           hoverOffset: 2,
           cutout: "70%",
@@ -45,3 +45,13 @@ let myCanvas = document.querySelector("#myCanvas").getContext("2d");
       },
     },
   });
+
+  var contenitoreEsito = document.querySelector('#congratulazioni');
+  var contenitoreTesto = document.querySelector('#testo-sotto');
+  if(percentualeCorrette > 60){
+    contenitoreEsito.innerHTML = 'Congratulations You passed the exam.';
+    contenitoreTesto.innerHTML = "We'll send you the certificate in few minutes.Check your email (including promotions / spam folder)";
+  }else{
+    contenitoreEsito.innerHTML = 'Non l\'hai passato? Rivediti le slide';
+    contenitoreTesto.innerHTML = "Sicuramente lo avete fatto con Michele"; 
+  }
