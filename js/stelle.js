@@ -2,7 +2,7 @@
 const stars = document.querySelectorAll(".stars img"); //richiamiamo, con una costante gli elementi stars che abbiamo creato nell'html
 
     stars.forEach((star, clickedIdx) => {       //creamo un callbakc per ogni stella data dall'indice
-    stars.addEventListener("click", () => {      //aggiungiamo un evento al click   
+    star.addEventListener("click", () => {      //aggiungiamo un evento al click   
             
     stars.forEach((otherStar, otherIdx) => {
         if (otherIdx <= clickedIdx) {           //creamo un secondo index che dirà di bloccare la valutazione data, nel caso dovesse essere ricaricata la pagina 
@@ -16,4 +16,3 @@ const stars = document.querySelectorAll(".stars img"); //richiamiamo, con una co
      
     });
 })
-

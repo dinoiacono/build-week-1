@@ -11,10 +11,9 @@
   .stars{
     display: flex;
     color: black;
-    margin: none;
+    margin: 100px;
     justify-content: space-around;
     margin-bottom: 110px;
-    border: none;
   }
   .stars img {
   opacity: 30%;
