@@ -1,8 +1,8 @@
-body{
-    font-family: 'Outfit', sans-serif; 
+body {
+    font-family: 'Outfit', sans-serif;
 }
 
-.img-body{
+.img-body {
     background-image: url("../assets/bg.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -16,11 +16,12 @@ h1 {
     color: white;
 }
 
-.container-logo{
+.container-logo {
     margin: 0px 0 75px 150px;
     width: 760px;
 }
-.logo{
+
+.logo {
     margin-left: 10px;
     margin-left: -30px;
     margin-top: 30px;
@@ -28,12 +29,12 @@ h1 {
 }
 
 /*SCRITTE VIOLA*/
-.violet_text{
+.violet_text {
     color: rgb(206, 71, 152);
 }
 
 /* BOTTONE */
-.proceed{
+.proceed {
     cursor: pointer;
     margin: 0;
     background-color: #00FFFF;
@@ -41,62 +42,63 @@ h1 {
     height: 3.6em;
     font-weight: bold;
     border-style: none;
-    box-shadow: 
-    0.5px  0px 40px  rgba(0, 255, 255, 0.51),
-    0px -0.5px   rgba(0, 255, 255, 0.448),
-    0.5px 0px 40px  rgba(0, 255, 255, 0.49),
-    -0px  0.5px   rgba(0, 255, 255, 0.549);   
+    box-shadow:
+        0.5px 0px 40px rgba(0, 255, 255, 0.51),
+        0px -0.5px rgba(0, 255, 255, 0.448),
+        0.5px 0px 40px rgba(0, 255, 255, 0.49),
+        -0px 0.5px rgba(0, 255, 255, 0.549);
 }
 
-.container-main{
+.container-main {
     margin: 0 auto;
     width: 800px;
     height: 100%;
 }
-.container-welcome-h1{
+
+.container-welcome-h1 {
     margin-right: 340px;
     margin-bottom: 15px;
 }
 
-.container-instruction{
+.container-instruction {
     margin-right: 330px;
     padding-top: -20px;
-    margin-top: -17px; 
-    width: 1000px;   
+    margin-top: -17px;
+    width: 1000px;
 }
 
-.container-instruction h2{
+.container-instruction h2 {
     font-weight: 600;
     color: #b51289;
 }
 
-.container-instruction p{
+.container-instruction p {
     color: white;
     font-weight: 300;
     margin-top: -15px;
 }
 
-.container-list{
+.container-list {
     border: 1px solid rgba(255, 0, 0, 0);
     color: #fff;
     padding-left: -20px;
     width: 1000px;
 }
 
-.container-list ul{
+.container-list ul {
     margin-left: -17px;
 }
 
-.container-footer{
+.container-footer {
 
     width: 800px;
     margin: 0 auto;
     height: 100%;
     margin-top: 45px;
-    
+
 }
 
-.form_index{
+.form_index {
 
     width: 100%;
     display: flex;
@@ -111,24 +113,24 @@ h1 {
     width: 20px;
 }
 
-.check-box{
+.check-box {
     display: flex;
     flex-direction: row;
     color: white;
     margin-bottom: 75px;
 }
 
-.container-input{
+.container-input {
     margin-left: 10px;
 }
 
-.container-input p{
+.container-input p {
     margin: 0;
     font-size: 0.8rem;
 
 }
 
-.container-button{
+.container-button {
     margin-top: -40px;
     display: inline-block;
 }

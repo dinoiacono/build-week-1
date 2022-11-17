@@ -1,83 +1,90 @@
-
-#box1_manuel{
+#box1_manuel {
 
   display: flex;
   justify-content: center;
 
 }
 
+.stars {
+  display: flex;
+  color: black;
+  margin: 100px;
+  justify-content: space-around;
+  margin-bottom: 110px;
+}
 
-
-  .stars{
-    display: flex;
-    color: black;
-    margin: 100px;
-    justify-content: space-around;
-    margin-bottom: 110px;
-  }
-  .stars img {
+.stars img {
   opacity: 30%;
   cursor: pointer;
   color-scheme: black;
-  }
-  .stars:hover img{
-    opacity: 150%;
-  }
-  .stars img:hover {
-    opacity: 150%;
-  }
-  .stars img:hover ~ img {
-    opacity: 30%;
-    color: black;
-  }
-  .stars img.active {
-    opacity: 150%;
-    color: black;
-  }
-  .footer-button{
-    text-align: center;
-    padding: 20px;
- }
- .container-footer{
+}
+
+.stars:hover img {
+  opacity: 150%;
+}
+
+.stars img:hover {
+  opacity: 150%;
+}
+
+.stars img:hover~img {
+  opacity: 30%;
+  color: black;
+}
+
+.stars img.active {
+  opacity: 150%;
+  color: black;
+}
+
+.footer-button {
+  text-align: center;
+  padding: 20px;
+}
+
+.container-footer {
   text-align: center;
   width: 800px;
   border-bottom: 3px solid #b51289;
   margin-bottom: 40px;
- }
+}
 
- .commento{
+.commento {
+  font-size: 1.3rem;
   color: #fff;
   width: 700px;
   background: inherit;
   border: none;
   outline: none;
   padding-bottom: 10px;
- }
+}
 
- #titolo-feedback{
+#titolo-feedback {
   text-align: center;
   font-weight: 700;
- }
+}
 
- .container-welcome-h1 {
+.container-welcome-h1 {
   margin: 0 auto;
 }
-#testo-stelle{
+
+#testo-stelle {
   text-align: center;
   font-size: 1.9rem;
 
 }
 
 .container-instruction {
-  
+
   margin-top: -17px;
- width: 100%;
+  width: 100%;
 }
 
-#testo-leaveFeed{
+#testo-leaveFeed {
   text-align: center;
   font-size: 1.9rem;
 }
-.proceed{
+
+.proceed {
   font-size: 1.3rem;
 }

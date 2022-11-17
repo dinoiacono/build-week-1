@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Quiz result">
+    <meta name="description" content="Quiz result - Epicode">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/icona epicode.png" />
@@ -16,56 +16,57 @@
     <title>Results - Epicode</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 </head>
+
 <body class="img-body">
 
     <header class="epicode_logo">
-        <div class="container-logo" >
+        <div class="container-logo">
             <img class="logo" src="assets/epicode_logo.png" alt="logo epicode" height="40px">
         </div>
     </header>
-    
+
     <main id="contenitore__totale">
 
         <div class="text_result">
-    
+
             <h1 class="text_risultato">Results</h1>
             <h2>The summary of your answers:</h2>
-    
+
         </div>
         <!-- CONTENITORE FLEXBOX-->
         <div id="flex_result_container">
-        <!-- PRIMO FLEXBOX CONTENT (SINISTRA)-->
-        <div id="contenitore__totale--1" class="contenitore">
+            <!-- PRIMO FLEXBOX CONTENT (SINISTRA)-->
+            <div id="contenitore__totale--1" class="contenitore">
 
-            <h1 class="contenitore1_p1">Correct</h1>
-            <p id="corrette" class="percentuale_risultati"></p>
-            <p id="contatore-corrette"></p>
+                <h1 class="contenitore1_p1">Correct</h1>
+                <p id="corrette" class="percentuale_risultati"></p>
+                <p id="contatore-corrette"></p>
 
-        </div>
-        <!-- SECONDO FLEXBOX CONTENT  (CENTRO)-->
-        <div id="contenitore__totale--2" class="contenitore">
-
-            <div id="contenitore__grafico">
-                <div style="width: 450px; z-index: 1;" >
-                    <canvas id="myCanvas"></canvas>
-                    <p id="testo_doughnut" style="position: relative; z-index: 200; left: 30%"></p>
-                    <div class="contenitore__grafico--testi">
-                    <p class="comunicazione_esito" id="congratulazioni"></p>
-                    <p id="testo-sotto"></p>
-                    </div>
-                </div>  
             </div>
+            <!-- SECONDO FLEXBOX CONTENT  (CENTRO)-->
+            <div id="contenitore__totale--2" class="contenitore">
 
-        </div>
-        <!-- TERZO FLEXBOX CONTENT (DESTRA)-->
-        <div id="contenitore__totale--3" class="contenitore">
+                <div id="contenitore__grafico">
+                    <div style="width: 450px; z-index: 1;">
+                        <canvas id="myCanvas"></canvas>
+                        <p id="testo_doughnut" style="position: relative; z-index: 200; left: 30%"></p>
+                        <div class="contenitore__grafico--testi">
+                            <p class="comunicazione_esito" id="congratulazioni"></p>
+                            <p id="testo-sotto"></p>
+                        </div>
+                    </div>
+                </div>
 
-            <h1 class="contenitore3_p1">Wrong</h1>
+            </div>
+            <!-- TERZO FLEXBOX CONTENT (DESTRA)-->
+            <div id="contenitore__totale--3" class="contenitore">
 
-            <p id="errate" class="percentuale_risultati" class="boldx"></p>
-            <p id="contatore-errate"></p>
+                <h1 class="contenitore3_p1">Wrong</h1>
 
-        </div>
+                <p id="errate" class="percentuale_risultati" class="boldx"></p>
+                <p id="contatore-errate"></p>
+
+            </div>
         </div>
     </main>
 
@@ -73,11 +74,14 @@
 
         <div id="contenitore__buttonRate">
 
-            <a class="contenitore__button--link" href="feedback.html"  title="Feedback -Epicode">RATE US</a>
+            <a class="contenitore__button--link" href="feedback.html" title="Feedback -Epicode">RATE US</a>
 
         </div>
-        
+
     </footer>
+
     <script src="js/script-results.js"></script>
+
 </body>
+
 </html>

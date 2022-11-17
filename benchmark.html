@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="assets/icona epicode.png" />
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/style_benchmark.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap" rel="stylesheet">
-        <title>Benchmark</title>
-    </head>
-    <body class="img-body"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Questions - Epicode">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/icona epicode.png" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_benchmark.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+    <title>Benchmark</title>
+</head>
+
+<body class="img-body">
+
     <header>
         <div class="container-logo">
-            <img  class="logo" src="assets/epicode_logo.png" alt="logo epicode" height="50px">
+            <img class="logo" src="assets/epicode_logo.png" alt="logo epicode" height="50px">
             <div class="base-timer">
                 <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  <g class="base-timer__circle">
-                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
-                    <path
-                    id="base-timer-path-remaining"
-                    stroke-dasharray="283"
-                    class="base-timer__path-remaining ${remainingPathColor}"
-                    d="
+                    <g class="base-timer__circle">
+                        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
+                        <path id="base-timer-path-remaining" stroke-dasharray="283"
+                            class="base-timer__path-remaining ${remainingPathColor}" d="
                       M 50, 50
                       m -45, 0
                       a 45,45 0 1,0 90,0
                       a 45,45 0 1,0 -90,0
-                    "
-                  ></path>
-                  </g>
+                    "></path>
+                    </g>
                 </svg>
                 <div id="timercontainer">
                     <p>SECONDS</p>
@@ -42,37 +42,41 @@
             </div>
         </div>
     </header>
+
     <main>
         <div class="container-main">
             <div class="container-h1">
-                <h1 id="h1-quetion" >How to create a Checkbox in HTML?</h1>
+                <h1 id="h1-quetion">How to create a Checkbox in HTML?</h1>
             </div>
             <div class="container-button">
-                <div class="margin-container-botton" >
+                <div class="margin-container-botton">
                     <div class="button-style" id="button-1">
                         <p>Risposta 1</p>
                     </div>
                     <div class="button-style" id="button-2">
                         <p>Risposta 2</p>
                     </div>
-                    <div class="button-style" id="button-3" >
+                    <div class="button-style" id="button-3">
                         <p>Risposta 3</p>
                     </div>
-                    <div class="button-style"id="button-4" >
+                    <div class="button-style" id="button-4">
                         <p>Risposta 4</p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer> 
+
+    <footer>
         <div class="divider"></div>
-        <div class="container-footer" >
+        <div class="container-footer">
             <h2>QUESTION:</h2>
             <span class="ValueQuestion"></span>
         </div>
-       
     </footer>
-    <script src="js/script.js" ></script>
-    </body>
+
+    <script src="js/script.js"></script>
+
+</body>
+
 </html>
