@@ -50,9 +50,9 @@ let myCanvas = document.querySelector("#myCanvas").getContext("2d");
   var contenitoreEsito = document.querySelector('#congratulazioni');
   var contenitoreTesto = document.querySelector('#testo-sotto');
   if(percentualeCorrette > 60){
-    contenitoreEsito.innerHTML = 'Congratulations You passed the exam.';
-    contenitoreTesto.innerHTML = "We'll send you the certificate in few minutes.Check your email (including promotions / spam folder)";
+    contenitoreEsito.innerHTML = 'Congratulations<br><span class="blue_text">You passed the exam.</span> ';
+    contenitoreTesto.innerHTML = "We'll send you the certificate<br> in few minutes.<br>Check your email (including<br> promotions / spam folder)";
   }else{
-    contenitoreEsito.innerHTML = 'Non l\'hai passato? Rivediti le slide';
-    contenitoreTesto.innerHTML = "Sicuramente lo avete fatto con Michele"; 
+    contenitoreEsito.innerHTML = 'Non l\'hai passato? <br><span class="blue_text">Rivediti le slide</span>';
+    contenitoreTesto.innerHTML = "Sicuramente lo avete fatto <br>con<b> Michele</b>"; 
   }
