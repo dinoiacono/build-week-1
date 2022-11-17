@@ -18,7 +18,6 @@
   .stars img {
   opacity: 30%;
   cursor: pointer;
-  padding: 5px;
   color-scheme: black;
   }
   .stars:hover img{
