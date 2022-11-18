@@ -94,6 +94,7 @@ const questions = [
   },
 ];
 
+//questa sono le variabili dichiarate
 var indexRandom;
 const lunghezzaArray = questions.length;
 var contatore = 1;
@@ -101,7 +102,7 @@ var risposte = [];
 var corrette = 0;
 var errate = 0;
 var Timer;
-var TimerValue = 30;
+var TimerValue = 1;
 var countdown;
 var timeLeft = TimerValue;
 var timePassed = 0;
@@ -113,19 +114,32 @@ window.onload = function () {
   TimerCheck(Timer);
 };
 
+//questa funzione è il CORE dell'intero progetto senza questo il gioco non funziona
+//ma cosa fa esattamente? allora: genera un un numero casuale da 0 alla lunghezza totale dell'array
+//ogni numero è collegato ad una domanda
 function SeedRandom() {
   let num = Math.floor(Math.random() * questions.length);
   indexRandom = num;
   RandomDomande();
 }
 
+//questa funzione è collegata al seedRanom, applica la domanda direttamente all' h1
 function RandomDomande() {
-  let _question = (document.getElementById("h1-quetion").textContent =
+  if (questions.length == 0)
+  {
+    nextPage();
+  }
+  else{
+    let _question = (document.getElementById("h1-quetion").textContent =
     questions[indexRandom].question);
-  NascondiBottoni();
-  ContentitoreRisposte();
+    NascondiBottoni();
+    ContentitoreRisposte();
+  }
+
+
 }
 
+//questa funzione nasconde gli ultimi 2 bottoni in base al tipo di domanda, le la domanda è di tipo boolean nasconderà gli ultimi due bottoni
 function NascondiBottoni() {
   if (questions[indexRandom].type == "boolean") {
     let botton1 = (document.getElementById("button-3").style.display = "none");
@@ -138,6 +152,8 @@ function NascondiBottoni() {
   }
 }
 
+//questa funzione viene richiamata ad ogni ciclo di domande, in questo modo prenderà le risposte sbagliate e quella corretta
+// di quella specifica domanda appena apparsa.
 function ContentitoreRisposte() {
   risposte = [];
   risposte.push(questions[indexRandom].correct_answer);
@@ -146,7 +162,11 @@ function ContentitoreRisposte() {
   }
   console.log(risposte);
 
+  //questa funzione mescola l'array delle risposte
+
   RandomContentArrayRisposte(risposte);
+
+  //ogni bottone è collegato ad una risposta
 
   let testoRisposta = document.querySelector("#button-1 p");
   testoRisposta.textContent = risposte[0];
@@ -161,36 +181,42 @@ function ContentitoreRisposte() {
   testoRisposta3.textContent = risposte[3];
 }
 
+  //questa funzione mescola l'array delle risposte
 function RandomContentArrayRisposte(inputArray) {
   inputArray.sort(() => Math.random() - 0.5);
 }
 
 console.log(risposte);
 
+//funzione dedicato al bottone
 var bottone = document.querySelector("#button-1");
 bottone.addEventListener("click", function () {
   let text = bottone.outerText;
   CheckRispostaCorretta(text);
 });
 
+//funzione dedicato al bottone
 var bottone1 = document.querySelector("#button-2");
 bottone1.addEventListener("click", function () {
   let text = bottone1.outerText;
   CheckRispostaCorretta(text);
 });
 
+//funzione dedicato al bottone
 var bottone2 = document.querySelector("#button-3");
 bottone2.addEventListener("click", function () {
   let text = bottone2.outerText;
   CheckRispostaCorretta(text);
 });
 
+//funzione dedicato al bottone
 var bottone3 = document.querySelector("#button-4");
 bottone3.addEventListener("click", function () {
   let text = bottone3.outerText;
   CheckRispostaCorretta(text);
 });
 
+//questa funzione controlla se la risposta è corretta o sbagliata
 function CheckRispostaCorretta(value) {
   if (value === questions[indexRandom].correct_answer) {
     corrette++;
@@ -212,14 +238,17 @@ function CheckRispostaCorretta(value) {
   UpdateQuestionValue();
 }
 
+//questa funzione aggiorna il counter delle domande
 function UpdateQuestionValue() {
   let value = document.querySelector(".ValueQuestion");
   if (contatore <= lunghezzaArray)
     value.textContent = contatore + "/" + lunghezzaArray;
+  console.log(questions);
 }
 
 UpdateQuestionValue();
 
+//questa funzione passa alla pagina dei risultati
 function nextPage() {
   window.location.href = "result.html";
   localStorage.setItem("risposteCorrette", corrette);
@@ -227,10 +256,12 @@ function nextPage() {
   localStorage.setItem('numDomande', lunghezzaArray);
 }
 
+//questa funzione ritorna il timer diviso il totale
 function calculateTimeFraction() {
   return timeLeft / TimerValue;
 }
 
+//questa funzione server per animare il cerchio del timer
 function setCircleDasharray() {
   const circleDasharray = `${(
     calculateTimeFraction() * FULL_DASH_ARRAY
@@ -240,6 +271,7 @@ function setCircleDasharray() {
     .setAttribute("stroke-dasharray", circleDasharray);
 }
 
+//funzione del timer, sottrae -1 ad ogni 1000 ms
 function countdownSecondi() {
   Timer = TimerValue;
 
@@ -254,11 +286,11 @@ function countdownSecondi() {
   }, 1000); //si esegue ogni 1000 millisecondi
 }
 
+//funzione che controlla se il timer arriva a 0
 function TimerCheck(timer) {
   if (timer < 0) {
     timer = 0;
     clearInterval(countdown);
-    if (questions.length == 0) nextPage();
     errate++;
     contatore++;
     questions.splice(indexRandom, 1);
