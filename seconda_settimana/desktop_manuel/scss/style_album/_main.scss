@@ -4,15 +4,22 @@ main {
     //background-image: url(https://www.romatoday.it/~media/horizontal-hi/4043692886988/play-music-stop-war-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    width: 60%;
-    padding: 0 $size_10;
+    width: 65%;
 
     #section_1 {
 
-        .arrow {
+        .contenitore_arrow {
 
-            padding: $size_10 0;
-            margin-top: $size_10;
+            padding-left: $size_10;
+
+            .arrow {
+    
+                background-color: #0202022d;
+                padding: $size_5;
+                margin: $size_10 $size_5;
+                border-radius: 100%;
+    
+            }
 
         }
     

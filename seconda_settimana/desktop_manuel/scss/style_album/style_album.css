@@ -7,12 +7,16 @@ main {
   background: linear-gradient(#b39b40, #000);
   background-size: cover;
   background-repeat: no-repeat;
-  width: 60%;
-  padding: 0 10px;
+  width: 65%;
 }
-main #section_1 .arrow {
-  padding: 10px 0;
-  margin-top: 10px;
+main #section_1 .contenitore_arrow {
+  padding-left: 10px;
+}
+main #section_1 .contenitore_arrow .arrow {
+  background-color: rgba(2, 2, 2, 0.1764705882);
+  padding: 5px;
+  margin: 10px 5px;
+  border-radius: 100%;
 }
 main #section_1 .album_in_evidenza {
   background-color: unset;
