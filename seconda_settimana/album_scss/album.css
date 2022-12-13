@@ -1,0 +1,186 @@
+.lh-0 {
+  line-height: 0;
+}
+
+body {
+  background-color: rgb(56, 56, 56);
+}
+
+.line-border {
+  border: 1px solid red;
+}
+
+#img-profile-size {
+  background-color: aqua;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+}
+
+.container-section-album {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 420px;
+  background-image: linear-gradient(rgb(230, 199, 81), rgb(107, 92, 39));
+  color: white;
+}
+
+.box-profile {
+  background-color: black;
+  padding: 1px;
+  border-radius: 30px;
+}
+.box-profile h6 {
+  font-size: 10px;
+  text-align: right;
+  margin: 0;
+  margin-left: 8px;
+}
+.box-profile div i {
+  font-size: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.container-max-width {
+  max-width: 1000px;
+}
+
+.container-next-album-profile {
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-next-album-profile button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.404);
+  border-radius: 100%;
+  margin-right: 10px;
+}
+.container-next-album-profile button i {
+  color: white;
+}
+
+.container-information-album .d-flex {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.image-box {
+  height: 200px;
+  width: 200px;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: white;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.404);
+}
+
+.container-information-band div p {
+  margin: 0;
+  margin-right: 5px;
+}
+.container-information-band div span {
+  margin-left: 5px;
+}
+.container-information-band .image-album {
+  height: 25px;
+  width: 25px;
+  background-color: aqua;
+  border-radius: 100%;
+}
+
+#title-album {
+  font-size: 70px;
+}
+
+.container-song {
+  max-width: 1000px;
+  background-color: rgba(0, 0, 0, 0.308);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.container-button-list-song {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.container-button-list-song div i {
+  color: rgb(224, 224, 224);
+  font-size: 32px;
+}
+
+#button-play {
+  background-color: black;
+  border-radius: 50px;
+  height: 56px;
+  width: 56px;
+}
+#button-play i {
+  color: rgb(30, 215, 96);
+  font-size: 56px;
+  line-height: 0px;
+}
+#button-play i:hover {
+  transition: 0.2s;
+  color: white;
+}
+
+.sub-container-list-song {
+  max-width: 950px;
+}
+.sub-container-list-song .box-contaier-song:hover {
+  background-color: rgba(255, 255, 255, 0.144);
+  border-radius: 5px;
+}
+
+.text-header-list {
+  color: rgb(178, 178, 178);
+  display: flex;
+  align-items: center;
+}
+
+.border-button-list {
+  border-bottom: 1px solid rgba(178, 178, 178, 0.486);
+}
+
+#index-number-list-none {
+  font-size: 16px;
+  margin: 18px;
+}
+
+#value-number-song {
+  font-size: 16px;
+  margin: 18px;
+}
+
+.cell-container-song {
+  display: flex;
+}
+
+.color-text-sub-list {
+  color: rgb(178, 178, 178);
+}
+
+.container-text-info-song {
+  font-size: 10px;
+}
+
+#duration-song {
+  font-size: 10px;
+  text-align: right;
+  color: rgb(178, 178, 178);
+}
+
+#title-song {
+  font-size: 12px;
+  color: white;
+}
+
+#duration-value {
+  font-size: 10px;
+}
+
+.text-size-10 {
+  font-size: 10px;
+}/*# sourceMappingURL=album.css.map */
