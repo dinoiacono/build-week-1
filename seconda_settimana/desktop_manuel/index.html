@@ -9,6 +9,7 @@
     <title>Homepage - Spotify</title>
     <link rel="stylesheet" href="scss/style_default/style_default.css">
     <link rel="stylesheet" href="scss/style_index/style_index.css">
+    <link rel="shortcut icon" href="https://www.freeiconspng.com/uploads/spotify-icon-18.png"/>
 </head>
 
 <body>
@@ -64,7 +65,6 @@
                     <li>Lorem ipsum</li>
                     <li>Lorem ipsum</li>
                     <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
 
                 </ul>
             </div>
@@ -82,27 +82,27 @@
 
                     <div class="img_testi">
 
-                        <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                        <img class="img_singolo_in_evidenza" src="" alt="#">
 
                         <div class="testi">
 
-                            <p>Album</p>
-                            <p>LOREM IPSUM (feat. Lorem)</p>
-                            <p>Lorem</p>
-                            <p>Lorem ipsum dolor sit amet</p>
+                            <p class="titolo_album_in_evidenza">Album</p>
+                            <p class="titolo_singolo_in_evidenza"></p>
+                            <p class="autore_singolo_in_evidenza"></p>
+                            <p>Ascolta il nuovo singolo di <span class="span_autore_singolo_in_evidenza"></span></p>
 
                             <div class="pulsanti">
 
                                 <a class="pulsante_play" href="">Play</a>
                                 <a class="pulsante_salva" href="">Salva</a>
-                                <span>...</span>
+                                <span class="menu_pulsanti">&middot;&middot;&middot;</span>
 
                             </div>
 
                         </div>
                     </div>
 
-                    <span>Nascondi annunci</span>
+                    <span class="nascondi">Nascondi annunci</span>
 
                 </div>
 
@@ -171,28 +171,28 @@
                     <!-- qui si deve fare con JS, compilazione automatica -->
                     <div class="altro_preferito">
                         <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
-                        <p>Lorem ipsum</p>
-                        <span>Lorem</span>
+                        <p>Titolo playlist</p>
+                        <span>Descrizione playlist</span>
                     </div>
                     <div class="altro_preferito">
                         <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
-                        <p>Lorem ipsum</p>
-                        <span>Lorem</span>
+                        <p>Titolo playlist</p>
+                        <span>Descrizione playlist</span>
                     </div>
                     <div class="altro_preferito">
                         <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
-                        <p>Lorem ipsum</p>
-                        <span>Lorem</span>
+                        <p>Titolo playlist</p>
+                        <span>Descrizione playlist</span>
                     </div>
                     <div class="altro_preferito">
                         <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
-                        <p>Lorem ipsum</p>
-                        <span>Lorem</span>
+                        <p>Titolo playlist</p>
+                        <span>Descrizione playlist</span>
                     </div>
                     <div class="altro_preferito">
                         <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
-                        <p>Lorem ipsum</p>
-                        <span>Lorem</span>
+                        <p>Titolo playlist</p>
+                        <span>Descrizione playlist</span>
                     </div>
                 </div>
 
@@ -302,6 +302,8 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="JS/script_index.js"></script>
 
 </body>
 

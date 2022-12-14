@@ -27,7 +27,9 @@ main #section_1 .album_in_evidenza {
   justify-content: space-between;
 }
 main #section_1 .album_in_evidenza img {
-  max-width: 200px;
+  max-height: 200px;
+  display: flex;
+  align-self: center;
   padding: 2px;
 }
 main #section_1 .album_in_evidenza .img_testi {
@@ -44,6 +46,9 @@ main #section_1 .album_in_evidenza .testi p:nth-child(2) {
   font-size: 2.2rem;
   font-weight: 700;
 }
+main #section_1 .album_in_evidenza .testi .pulsanti {
+  padding: 10px 0;
+}
 main #section_1 .album_in_evidenza .testi .pulsanti .pulsante_play,
 main #section_1 .album_in_evidenza .testi .pulsanti .pulsante_salva {
   padding: 5px 15px;
@@ -53,18 +58,21 @@ main #section_1 .album_in_evidenza .testi .pulsanti .pulsante_salva {
   text-decoration: none;
 }
 main #section_1 .album_in_evidenza .testi .pulsanti .pulsante_play {
+  margin-right: 5px;
   color: #000;
   background-color: #1ed760;
 }
 main #section_1 .album_in_evidenza .testi .pulsanti .pulsante_salva {
+  margin-right: 10px;
   border: 1px solid #4f4f4f;
   color: white;
 }
-main #section_1 .album_in_evidenza .testi .pulsanti span {
+main #section_1 .album_in_evidenza .testi .pulsanti .span_autore_singolo_in_evidenza {
+  padding: 3px;
   font-size: 1.2rem;
   letter-spacing: 1.7px;
 }
-main #section_1 .album_in_evidenza span {
+main #section_1 .album_in_evidenza .nascondi {
   padding: 20px 10px;
   text-transform: uppercase;
   color: #686868;
