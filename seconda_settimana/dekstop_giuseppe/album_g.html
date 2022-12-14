@@ -6,308 +6,266 @@
     <title>Album</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="album_scss/album.css">
+    <link rel="stylesheet" href="../dekstop_giuseppe/album_scss/album.css">
+    <link rel="stylesheet" href="../desktop_manuel/scss/style_default/style_default.css">
+    <link rel="stylesheet" href="../desktop_manuel/scss/style_index/style_index.css">
 </head>
   <body>
-    </div>
-    <div class="container-section-album">
-        <div class="container-max-width">
-            <div class="container-next-album-profile pt-2 pb-1 sticky-sm-top">
-                <div class="ms-4">
-                    <button class="style-button-page" ><i class="bi bi-chevron-left"></i></button>
-                    <button class="style-button-page" ><i class="bi bi-chevron-right"></i></button>
+    <div class="d-flex">
+      <header>
+        <div class="position-fixed ">
+          <nav>
+            <ul>
+                <li>...</li>
+                <div class="primi_tre">
+                    <li><ion-icon name="home"></ion-icon>Home</li>
+                    <li><ion-icon name="search"></ion-icon>Cerca</li>
+                    <li><ion-icon name="book"></ion-icon>La tua libreria</li>
                 </div>
-                <div class="box-profile me-4">
-                    <div class="d-flex align-items-center m-0 p-0">
-                        <div id="img-profile-size">
-                            <div id=""></div>
+                <div class="ultimi_tre">
+                    <li><ion-icon name="add"></ion-icon>Crea playlist</li>
+                    <li><ion-icon name="heart"></ion-icon>Brani che ti piacciono</li>
+                    <li><ion-icon name="bookmark"></ion-icon>I tuoi episodi</li>
+                </div>
+            </ul>
+          </nav>
+
+          <div id="playlist_laterali">
+              <!-- qui si deve fare con JS, compilazione automatica -->
+              <ul>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+                  <li>Lorem ipsum</li>
+              </ul>
+          </div>
+      </div>
+
+    </header>
+      <main class="p-0">
+        <div>
+          <div class="container-section-album">
+            <div class="container-max-width">
+                <div class="container-next-album-profile pt-2 sticky-sm-top pb-2">
+                    <div class="ms-4 d-flex align-items-center">
+                      <div>
+                        <button class="style-button-page" ><i class="bi bi-chevron-left"></i></button>
+                        <button class="style-button-page" ><i class="bi bi-chevron-right"></i></button>
+                      </div>
+                      <div class="container-button-play-nav d-flex m-0 align-items-center d-none">
+                        <div class="me-2" id="button-play-mini"><i class="bi bi-play-circle-fill"></i>
                         </div>
                         <div>
-                            <h6>Account Nam...</h6>
+                          <h1 class="small-h1 mb-0" id="title-album">Gioventu Bruciata</h1>
                         </div>
-                        <div>
-                            <i class="bi bi-caret-down-fill"></i>                            
-                        </div>
+                      </div>
                     </div>
-                </div>
-            </div>
-            <div class="container-information-album">
-                <div class="d-flex">
-                    <div class="image-box"></div>
-                    <div class="container-max-width ms-4 mt-5">
-                        <div><h6 class="mb-0" id="category">ALBUM</h6></div>
-                        <div class="mt-2 mb-2"><h1  class="mt-0 mb-3" id="title-album">Gioventù bruciata</h1></div>
-                        <div class="container-information-band d-flex align-items-center m-0">
-                            <div class="image-album"></div>
-                            <div class="d-flex m-0 ms-2" id="name-band"><p>Pinguini Tattici nucleari</p><span id="data-publishig">2017</span><span id="total-song">17 Brani</span><span id="total-Timer">53 min 20 sec</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-song mt-4">
-                    <div class="container-button-list-song d-flex align-items-center m-0 ms-4 me-4 pt-4">
-                        <div class="me-4" id="button-play"><i class="bi bi-play-circle-fill"></i></div>
-                        <div class="me-4" id="button-add-favorites"><i class="bi bi-heart"></i></div>
-                        <div class="me-4" id="button-download-song"><i class="bi bi-download"></i></div>
-                        <div  class="me-4" id="button-menu"><i class="bi bi-three-dots"></i></div>
-                    </div>
-                    <div class="container-list-song container-max-width mt-2 border-button-list">
-                        <div class="sub-container-list-song m-0 p-0 ju m-auto">
-                            <div class="row d-flex align-items-center m-0">
-                              <div class="col text-start ps-0">
-                                <div class="text-header-list"><span id="index-number-list-none">#</span><h6 class="mb-0 container-text-info-song">TITOLO</h6></div>
-                              </div>
-                              <div class="col-md-auto text-end me-5">
-                                <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song">RIPRODUZIONI</h6></div>
-                              </div>
-                              <div class="col col-lg-2 text-end">
-                                <div><i class="bi bi-clock" id="duration-song"></i></div>
-                              </div>
+                    <div class="box-profile me-4 ">
+                        <div class="d-flex align-items-center m-0 p-0">
+                            <div id="img-profile-size">
+                                <div id=""></div>
+                            </div>
+                            <!--
+                            <div>
+                                <h6>Account Nam...</h6>
+                            </div>
+                            <div>
+                                <i class="bi bi-caret-down-fill"></i>                            
+                            </div>
+                            -->
+  
+                            <div class="me-2 ms-2">
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Account Nam...
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li class="m-1 d-flex"><a class="dropdown-item pb-2 pt-2 m-0 pe-0 ps-3" href="#">Account</a><div><i class="bi bi-box-arrow-up-right"></i></div></li>
+                                  <li class="m-1"><a class="dropdown-item pb-2 pt-2 m-0 pe-0 ps-3" href="#">Profilo</a></li>
+                                  <li class="m-1 d-flex"><a class="dropdown-item pb-2 pt-2 m-0 pe-0 ps-3" href="#">Effettua L'update a Premium</a><div><i class="bi bi-box-arrow-up-right"></i></div></li>
+                                  <li class="m-1 d-flex"><a class="dropdown-item pb-2 pt-2 m-0 pe-0 ps-3" href="#">Assistenza</a><div><i class="bi bi-box-arrow-up-right"></i></div></li>
+                                  <li class="m-1 d-flex"><a class="dropdown-item pb-2 pt-2 m-0 pe-0 ps-3" href="#">Download</a><div><i class="bi bi-box-arrow-up-right"></i></div></li>
+                                  <li class="m-1"><a class="dropdown-item pb-2 pt-2 m-0 pe-0 ps-3" href="#">Impostazioni</a></li>
+                                  <li class="m-1"><hr class="dropdown-divider"></li>
+                                  <li class="m-1"><a class="dropdown-item" href="#">Esci</a></li>
+                                </ul>
+                              </li>
                             </div>
                         </div>
                     </div>
-                    <div class="container-list-song container-max-width">
-                        <div class="sub-container-list-song m-0 p-0 ju m-auto mt-2">
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                              <div class="col text-start ps-0">
-                                <div class="col text-start ps-0">
-                                    <div class="text-header-list"><span id="value-number-song">#</span>
+                </div>
+                <div class="container-information-album">
+                    <div class="d-flex">
+                        <div class="image-box">
+                          <img id="image-albun" src="" alt="">
+                        </div>
+                        <div class="container-max-width ms-4 mt-5">
+                            <div><h6 class="mb-0" id="category">ALBUM</h6></div>
+                            <div class="mt-2 mb-2"><h1  class="mt-0 mb-3 big-h1 " id="title-album">Gioventù bruciata</h1></div>
+                            <div class="container-information-band d-flex align-items-center m-0">
+                                <div class="image-artist"></div>
+                                <div class="d-flex m-0 ms-2"><p id="name-band" >Pinguini Tattici nucleari</p><span id="data-publishig">2017</span><span id="total-song">40</span><span>Brani</span><span id="total-Timer">53 min 20 sec</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-song mt-4">
+                        <div class="container-button-list-song d-flex align-items-center m-0 ms-4 me-4 pt-4">
+                            <div class="me-4" id="button-play"><i class="bi bi-play-circle-fill"></i></div>
+                            <div class="me-4" id="button-add-favorites"><i class="bi bi-heart"></i></div>
+                            <div class="me-4" id="button-download-song"><i class="bi bi-download"></i></div>
+                            <div  class="me-4" id="button-menu"><i class="bi bi-three-dots"></i></div>
+                        </div>
+                        <div class="container-list-song container-max-width mt-2 border-button-list">
+                            <div class="sub-container-list-song m-0 p-0 ju m-auto">
+                                <div class="row d-flex align-items-center m-0">
+                                  <div class="col text-start ps-0">
+                                    <div class="text-header-list"><span data-value="0" id="index-number-list-none">#</span><h6 class="mb-0 container-text-info-song">TITOLO</h6></div>
+                                  </div>
+                                  <div class="col-md-auto text-end me-5">
+                                    <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song">RIPRODUZIONI</h6></div>
+                                  </div>
+                                  <div class="col col-lg-2 text-end">
+                                    <div><i class="bi bi-clock" id="duration-song"></i></div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-list-song container-max-width">
+                            <div class="sub-container-list-song m-0 p-0 ju m-auto mt-2 list-song">
+                                <div class="row d-flex align-items-center m-0 box-contaier-song">
+                                  <div class="col text-start ps-0">
+                                    <div class="text-header-list">
+                                      <span id="value-number-song">#</span>
                                         <div class="d-flex flex-column m-0">
                                             <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                            <p class="mb-0">Nome Artista</p></div>
+                                            <p class="mb-0" id="name-artist" >Nome Artista</p></div>
                                         </div>
-
+                                    </div>
+                                  <div class="col-md-auto text-end me-5">
+                                    <div class="text-header-list" id="text-reproduction">
+                                      <h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6>
+                                    </div>
                                   </div>
-                              </div>
-                              <div class="col-md-auto text-end me-5">
-                                <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                              </div>
-                              <div class="col col-lg-2 text-end">
-                                <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
-                              </div>
-                            </div>
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                <div class="col text-start ps-0">
-                                  <div class="col text-start ps-0">
-                                      <div class="text-header-list"><span id="value-number-song">#</span>
-                                          <div class="d-flex flex-column m-0">
-                                              <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                              <p class="mb-0">Nome Artista</p></div>
-                                          </div>
-  
+                                  <div class="col col-lg-2 text-end">
+                                    <div id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6>
                                     </div>
-                                </div>
-                                <div class="col-md-auto text-end me-5">
-                                  <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                                </div>
-                                <div class="col col-lg-2 text-end">
-                                  <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
-                                </div>
-                            </div>
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                <div class="col text-start ps-0">
-                                  <div class="col text-start ps-0">
-                                      <div class="text-header-list"><span id="value-number-song">#</span>
-                                          <div class="d-flex flex-column m-0">
-                                              <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                              <p class="mb-0">Nome Artista</p></div>
-                                          </div>
-  
-                                    </div>
-                                </div>
-                                <div class="col-md-auto text-end me-5">
-                                  <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                                </div>
-                                <div class="col col-lg-2 text-end">
-                                  <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
-                                </div>
-                            </div>
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                <div class="col text-start ps-0">
-                                  <div class="col text-start ps-0">
-                                      <div class="text-header-list"><span id="value-number-song">#</span>
-                                          <div class="d-flex flex-column m-0">
-                                              <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                              <p class="mb-0">Nome Artista</p></div>
-                                          </div>
-  
-                                    </div>
-                                </div>
-                                <div class="col-md-auto text-end me-5">
-                                  <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                                </div>
-                                <div class="col col-lg-2 text-end">
-                                  <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
-                                </div>
-                            </div>
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                <div class="col text-start ps-0">
-                                  <div class="col text-start ps-0">
-                                      <div class="text-header-list"><span id="value-number-song">#</span>
-                                          <div class="d-flex flex-column m-0">
-                                              <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                              <p class="mb-0">Nome Artista</p></div>
-                                          </div>
-  
-                                    </div>
-                                </div>
-                                <div class="col-md-auto text-end me-5">
-                                  <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                                </div>
-                                <div class="col col-lg-2 text-end">
-                                  <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
-                                </div>
-                            </div>
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                <div class="col text-start ps-0">
-                                  <div class="col text-start ps-0">
-                                      <div class="text-header-list"><span id="value-number-song">#</span>
-                                          <div class="d-flex flex-column m-0">
-                                              <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                              <p class="mb-0">Nome Artista</p></div>
-                                          </div>
-  
-                                    </div>
-                                </div>
-                                <div class="col-md-auto text-end me-5">
-                                  <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                                </div>
-                                <div class="col col-lg-2 text-end">
-                                  <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
-                                </div>
-                            </div>
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                <div class="col text-start ps-0">
-                                  <div class="col text-start ps-0">
-                                      <div class="text-header-list"><span id="value-number-song">#</span>
-                                          <div class="d-flex flex-column m-0">
-                                              <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                              <p class="mb-0">Nome Artista</p></div>
-                                          </div>
-  
-                                    </div>
-                                </div>
-                                <div class="col-md-auto text-end me-5">
-                                  <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                                </div>
-                                <div class="col col-lg-2 text-end">
-                                  <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
-                                </div>
-                            </div>
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                <div class="col text-start ps-0">
-                                  <div class="col text-start ps-0">
-                                      <div class="text-header-list"><span id="value-number-song">#</span>
-                                          <div class="d-flex flex-column m-0">
-                                              <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                              <p class="mb-0">Nome Artista</p></div>
-                                          </div>
-  
-                                    </div>
-                                </div>
-                                <div class="col-md-auto text-end me-5">
-                                  <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                                </div>
-                                <div class="col col-lg-2 text-end">
-                                  <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
-                                </div>
-                            </div>
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                <div class="col text-start ps-0">
-                                  <div class="col text-start ps-0">
-                                      <div class="text-header-list"><span id="value-number-song">#</span>
-                                          <div class="d-flex flex-column m-0">
-                                              <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                              <p class="mb-0">Nome Artista</p></div>
-                                          </div>
-  
-                                    </div>
-                                </div>
-                                <div class="col-md-auto text-end me-5">
-                                  <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                                </div>
-                                <div class="col col-lg-2 text-end">
-                                  <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
-                                </div>
-                            </div>
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                <div class="col text-start ps-0">
-                                  <div class="col text-start ps-0">
-                                      <div class="text-header-list"><span id="value-number-song">#</span>
-                                          <div class="d-flex flex-column m-0">
-                                              <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                              <p class="mb-0">Nome Artista</p></div>
-                                          </div>
-  
-                                    </div>
-                                </div>
-                                <div class="col-md-auto text-end me-5">
-                                  <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                                </div>
-                                <div class="col col-lg-2 text-end">
-                                  <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
-                                </div>
-                            </div>
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                <div class="col text-start ps-0">
-                                  <div class="col text-start ps-0">
-                                      <div class="text-header-list"><span id="value-number-song">#</span>
-                                          <div class="d-flex flex-column m-0">
-                                              <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                              <p class="mb-0">Nome Artista</p></div>
-                                          </div>
-  
-                                    </div>
-                                </div>
-                                <div class="col-md-auto text-end me-5">
-                                  <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                                </div>
-                                <div class="col col-lg-2 text-end">
-                                  <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
-                                </div>
-                            </div>
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                <div class="col text-start ps-0">
-                                  <div class="col text-start ps-0">
-                                      <div class="text-header-list"><span id="value-number-song">#</span>
-                                          <div class="d-flex flex-column m-0">
-                                              <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                              <p class="mb-0">Nome Artista</p></div>
-                                          </div>
-  
-                                    </div>
-                                </div>
-                                <div class="col-md-auto text-end me-5">
-                                  <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                                </div>
-                                <div class="col col-lg-2 text-end">
-                                  <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
-                                </div>
-                            </div>
-                            <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                <div class="col text-start ps-0">
-                                  <div class="col text-start ps-0">
-                                      <div class="text-header-list"><span id="value-number-song">#</span>
-                                          <div class="d-flex flex-column m-0">
-                                              <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                              <p class="mb-0">Nome Artista</p></div>
-                                          </div>
-  
-                                    </div>
-                                </div>
-                                <div class="col-md-auto text-end me-5">
-                                  <div class="text-header-list" id="text-reproduction"><h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6></div>
-                                </div>
-                                <div class="col col-lg-2 text-end">
-                                  <div class="" id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6></i></div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+          </div>
         </div>
-    </div>
+    </main>
+    <aside class="position-fixed postion-right">
+
+      <div id="attivita">
+          <p>Attività amici</p>
+          <div>
+              <ion-icon name="person-add"></ion-icon>
+              <ion-icon name="close"></ion-icon>
+          </div>
+      </div>
+
+      <div id="notifiche">
+
+          <!-- qui si deve fare con JS, compilazione automatica -->
+          <div class="notifica">
+
+              <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+              <span>
+                  <!-- qui si deve fare con JS, compilazione automatica -->
+                  orario
+              </span>
+
+          </div>
+
+          <div class="notifica">
+
+              <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+              <span>
+                  <!-- qui si deve fare con JS, compilazione automatica -->
+                  orario
+              </span>
+
+          </div>
+
+          <div class="notifica">
+
+              <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+              <span>
+                  <!-- qui si deve fare con JS, compilazione automatica -->
+                  orario
+              </span>
+
+          </div>
+
+      </div>
+
+  </aside>
+</div>
+<footer class="position-fixed">
+  <div id="brano_esecuzione">
+      <!-- qui si deve fare con JS, compilazione automatica -->
+      <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+      <div id="brano_esecuzione--testi">
+          <p>Lorem ipsum</p>
+          <span>Lorem</span>
+      </div>
+      <ion-icon name="heart-outline"></ion-icon>
+  </div>
+  <div id="tastiera_esecuzione">
+      <div class="tasti_esecuzione">
+
+          <ion-icon class="icone_esecuzione verdi" name="shuffle"></ion-icon>
+          <!-- questa diventa verde se selezionata -->
+          <ion-icon class="icone_esecuzione" name="play-skip-back"></ion-icon>
+          <ion-icon class="icone_esecuzione play" name="play-circle"></ion-icon>
+          <ion-icon class="icone_esecuzione" name="play-skip-forward"></ion-icon>
+          <ion-icon class="icone_esecuzione verdi" name="repeat"></ion-icon>
+          <!-- questa diventa verde se selezionata -->
+
+      </div>
+
+      <div class="barra_esecuzione">
+          <!-- si deve vedere in seguito -->
+      </div>
+
+  </div>
+
+  <div id="setting_esecuzione">
+
+      <ion-icon name="mic"></ion-icon>
+      <ion-icon name="menu"></ion-icon>
+      <ion-icon name="people"></ion-icon>
+      <ion-icon name="volume-mute"></ion-icon>
+      <!-- barra volume da vedere in seguito -->
+      <ion-icon name="expand"></ion-icon>
+
+  </div>
+</footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="album_js/system.js"></script>
+    <script src="../dekstop_giuseppe/album_js/system.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>!
