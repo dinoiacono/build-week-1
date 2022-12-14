@@ -1,0 +1,55 @@
+.navBar i {
+  font-size: 25px;
+}
+
+.musica {
+  font-weight: bold;
+  list-style-type: none;
+  display: inline-flex;
+}
+.musica li {
+  margin-left: 15px;
+}
+
+.container .card {
+  background-image: linear-gradient(to bottom right, gray, rgb(77, 75, 75));
+}
+.container h5 a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+.container h5 a i {
+  font-size: 10px;
+}
+
+.container_playlist .card {
+  background-image: linear-gradient(to bottom right, rgb(141, 39, 39), rgb(41, 11, 11));
+}
+.container_playlist span {
+  color: gray;
+}
+.container_playlist #icone {
+  font-size: 25px;
+}
+.container_playlist #icone button {
+  font-size: 25px;
+}
+.container_playlist .btn:hover {
+  color: green;
+}
+
+footer .container {
+  opacity: 0.5;
+}
+footer .row {
+  margin-top: 10px;
+}
+footer .row i {
+  font-size: 25px;
+}
+footer p {
+  font-size: 10px;
+  margin-bottom: 0;
+  color: white;
+}/*# sourceMappingURL=style.css.map */
