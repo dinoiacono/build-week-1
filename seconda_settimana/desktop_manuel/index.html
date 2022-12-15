@@ -269,7 +269,7 @@
             <!-- qui si deve fare con JS, compilazione automatica -->
             <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
             <div id="brano_esecuzione--testi">
-                <p>Lorem ipsum</p>
+                <p id="name-song">Lorem ipsum</p>
                 <span>Lorem</span>
             </div>
             <ion-icon name="heart-outline"></ion-icon>
@@ -286,11 +286,21 @@
                 <ion-icon class="icone_esecuzione" name="play-skip-forward"></ion-icon>
                 <ion-icon class="icone_esecuzione verdi" name="repeat"></ion-icon>
                 <!-- questa diventa verde se selezionata -->
-
             </div>
 
+
+            
             <div class="barra_esecuzione">
-                <!-- si deve vedere in seguito -->
+                <div class="slider_container">
+                    <div class="current-time">00:00</div>
+                    <input type="range" min="1" max="100" value="0" class="seek_slider">
+                    <div class="total-duration">00:00</div>
+                  </div>
+                  <div class="slider_container">
+                    <i class="fa fa-volume-down"></i>
+                    <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                    <i class="fa fa-volume-up"></i>
+                  </div>
             </div>
 
         </div>

@@ -12,17 +12,32 @@ const TOTAL_DURATION = document.querySelector("#total-Timer");
 const DATA_PUBLISHING = document.querySelector("#data-publishig");
 const URL_PARAMS = new URLSearchParams(window.location.search);
 const VALUE_ID = parseInt(URL_PARAMS.get("ok"));
+const FOOTER_TITLE_SONG = document.querySelector("#name-song");
+const FOOTER_ARTIST_NAME = document.querySelector("#name-artist");
+const FOOTER_IMAGE_BAND = document.querySelector("#image-band-footer");
+
+console.log(FOOTER_TITLE_SONG);
 console.log(VALUE_ID);
 console.log(TOTAL_SONGS);
 console.log(TITLE_ALBUM);
+
+
 //variabili
 var EnableScrolling = false;
 var TargetButton;
 var LastTargetButton;
+var TargetPlayButton;
+var LastTargetPlayButton;
 var clickButton;
 var totalsong;
+var AudioPlay = new Audio();
+var Buttons = [];
 
-
+let seek_slider = document.querySelector(".seek_slider");
+let volume_slider = document.querySelector(".volume_slider");
+let curr_time = document.querySelector(".current-time");
+let total_duration = document.querySelector(".total-duration");
+let curr_track;
 
 //metodo fetch
 let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${VALUE_ID}`)
@@ -33,9 +48,13 @@ let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/albu
     totalsong = datavalue.nb_tracks;
 
     for (let i = 0; i < totalsong; i++) {
-        CreateBoxSong(i+1, datavalue.tracks.data[i].title, datavalue.artist.name, datavalue.tracks.data[i].rank, datavalue.tracks.data[i].duration);
+        CreateBoxSong(i+1, datavalue.tracks.data[i].title, datavalue.artist.name, datavalue.tracks.data[i].rank, datavalue.tracks.data[i].duration, datavalue.tracks.data[i].preview);
     }
     CreateHeader(datavalue);
+    FOOTER_IMAGE_BAND.src = datavalue.cover_medium;
+    FOOTER_TITLE_SONG.innerHTML = datavalue.tracks.data[0].title;
+    FOOTER_ARTIST_NAME.innerHTML = datavalue.artist.name;
+    console.log(Buttons);
 })
 
 // ---DEBUG ----- //
@@ -73,9 +92,10 @@ function CreateHeader(data){
     TOTAL_DURATION.innerHTML = data.duration + " min";
 }
 
-function CreateBoxSong(ValueIndex, TitleSong, ArtistName, TotalProduction, durationSong){
+function CreateBoxSong(ValueIndex, TitleSong, ArtistName, TotalProduction, durationSong, audiosource){
     //container
     var container = document.createElement("div");
+    Buttons.push(container);
     container.className = "row d-flex align-items-center m-0 box-contaier-song"; 
     // text position
     var TextPostion = document.createElement("div");
@@ -88,9 +108,42 @@ function CreateBoxSong(ValueIndex, TitleSong, ArtistName, TotalProduction, durat
     Index.id = "value-number-song";
     Index.innerHTML = ValueIndex;
     Index.setAttribute("data-value", ValueIndex);
+    //audio soruce
+    var audio = document.createElement("audio");
+    audio.className = `audio-play`;
+    audio.setAttribute("pd", "false");
+    var _source = document.createElement("source");
+    _source.src = audiosource;
+    _source.setAttribute("type", "audio/mp3")
+    console.log(audio);
+    console.log(_source);
+    //fine audio
+
     Index.addEventListener("click", ()=>{
-        if(Index.className != "bi bi-pause-fill")
-        
+
+        if(Index.className == "bi bi-pause-fill")
+        {
+            Index.className = `bi bi-caret-right-fill`;
+            setTimeout(() => { audio.setAttribute("pd", "false"); }, 10);
+            Title.removeAttribute("style");
+            audio.pause();
+        }
+        else{
+            setTimeout(() => { audio.setAttribute("pd", "true") }, 10);
+            Index.className = `bi bi-pause-fill`;
+            Title.setAttribute("style", "color: rgb(29, 185, 85)");
+            audio.play();
+            curr_track = audio;
+            total_duration.innerHTML = fmtMSS(durationSong);
+            seekTo();
+            seekUpdate();
+            updateTimer = setInterval(seekUpdate, 1000);
+            FOOTER_TITLE_SONG.innerHTML = TitleSong;
+            FOOTER_ARTIST_NAME.innerHTML = ArtistName;
+        }
+        TargetButton = container;
+        TargetPlayButton = Index;
+        CeckMiniPlayButton();
     })
     //Container for Song title + artis Name
     var containerInformation = document.createElement("div");
@@ -233,7 +286,6 @@ function CreateBoxSong(ValueIndex, TitleSong, ArtistName, TotalProduction, durat
     link_9.href = "#";
     link_9.innerHTML = "Apri con l'all per desktop";
 
-
     // PARENT ELEMENT
     CONTAINER_TITLE_SONG.append(container);
     container.append(TextPostion);
@@ -242,6 +294,8 @@ function CreateBoxSong(ValueIndex, TitleSong, ArtistName, TotalProduction, durat
     ////////
     TextPostion.append(ContainerText);
     ContainerText.append(Index);
+    container.append(audio);
+    audio.append(_source);
     ContainerText.append(containerInformation);
     containerInformation.append(Title);
     containerInformation.append(NameArtist);
@@ -287,10 +341,6 @@ function CreateBoxSong(ValueIndex, TitleSong, ArtistName, TotalProduction, durat
             Index.innerText = "";
             menu.className = "button-menu-song visible";
         }
-        else{
-            Index.className = `bi bi-caret-right-fill`;
-            Index.innerText = "";
-        }
     })
     container.addEventListener("mouseleave", ()=>{
         if(Index.className != "bi bi-pause-fill"){
@@ -302,45 +352,85 @@ function CreateBoxSong(ValueIndex, TitleSong, ArtistName, TotalProduction, durat
     })
 
     container.addEventListener("click", ()=>{
+
         if(container.getAttribute('style'))
         {
             container.removeAttribute('style');
         }
         else{
-            if(Index.className != "bi bi-pause-fill")
-            {
-                Index.className = `bi bi-caret-right-fill`;
-                Index.innerText = "";
-                container.setAttribute('style', 'background-color: rgb(94, 94, 94);')
-                TargetButton = container;
-            }
-            else{
-                Index.className = `bi bi-caret-right-fill`;
-                Index.innerText = "";
-            }
+            Index.innerText = "";
+            container.setAttribute('style', 'background-color: rgb(94, 94, 94);')
         }
+        TargetButton = container;
         CheckTargetButton();
+    })
+
+    container.addEventListener("dblclick", ()=>{
+        if(audio.getAttribute("pd") == "false")
+        {
+            audio.play();
+            setTimeout(() => { audio.setAttribute("pd", "true") }, 10);
+            Index.className ="bi bi-pause-fill";
+            FOOTER_TITLE_SONG.innerHTML = TitleSong;
+            FOOTER_ARTIST_NAME.innerHTML = NameArtist;
+        }
+        else if(audio.getAttribute("pd") == "true"){
+            audio.pause();   
+            setTimeout(() => { audio.setAttribute("pd", "false") }, 10);
+        }
     })
 }
 
+function isPlaying(audelem) { return !audelem.pause; }
 
+function CeckMiniPlayButton(){
+    if(LastTargetPlayButton != TargetPlayButton)
+    {
+        if(LastTargetPlayButton != undefined)
+        {
+            if(LastTargetPlayButton.className == "bi bi-pause-fill"){
+                resetValues();
+                var value = LastTargetPlayButton.getAttribute("data-value");
+                LastTargetPlayButton.innerText = value;
+                LastTargetPlayButton.className = "";
+                LastTargetButton.removeAttribute('style');
+
+            }
+        }
+        LastTargetPlayButton = TargetPlayButton;
+        console.log(LastTargetPlayButton);
+    }
+}
 
 function CheckTargetButton(){
     if(LastTargetButton != TargetButton)
     { 
         if(LastTargetButton != undefined)
         {
-            LastTargetButton.removeAttribute('style'); 
-            var value = LastTargetButton.querySelector("span").getAttribute("data-value");
-            if(LastTargetButton.querySelector("#value-number-song").className != "bi bi-pause-fill"){
-                LastTargetButton.querySelector("#value-number-song").innerText = value;
-                LastTargetButton.querySelector("#value-number-song").className = "";
+            LastTargetButton.removeAttribute('style');
+
+            var audio = LastTargetButton.querySelector(`.audio-play`);
+            audio.pause();
+            //console.log(audio);
+            //console.log(LastTargetButton);
+
+            if(LastTargetButton.querySelector(".bi bi-pause-fill") != null) 
+            {
+                if(LastTargetButton.querySelector("#title-song").getAttribute("style") != null)
+                LastTargetButton.querySelector("#title-song").removeAttribute("style");
             }
 
-            console.log(value);
+            if(LastTargetButton.querySelector("#value-number-song").className != "bi bi-pause-fill"){
+                var value = LastTargetButton.querySelector("span").getAttribute("data-value");
+                LastTargetButton.querySelector("#value-number-song").innerText = value;
+                LastTargetButton.querySelector("#value-number-song").className = "";
+                LastTargetButton.querySelector("#title-song").removeAttribute("style");
+            }
         }
-        LastTargetButton = TargetButton;
+        setTimeout(() => { LastTargetButton = TargetButton; console.log("cambio") }, 100);
+        
     }
+
 }
 
 function CreationAlbumPage(data){
@@ -376,6 +466,15 @@ function convertHMS(value) {
     return minutes+':'+ seconds;
 }
 
+function AddColorGreen(title){
+    title.classList.add("color-green-text");
+    console.log(title);
+}
+
+function RemoveColorGreen(title){
+    title.classList.remove("color-green-text");
+    console.log(title);
+}
 
 function fmtMSS(s){return(s-(s%=60))/60+(9<s?':':':0')+s}
 /* FUNZIONI DICHIRATE*/
@@ -385,3 +484,43 @@ function fmtMSS(s){return(s-(s%=60))/60+(9<s?':':':0')+s}
 window.onload = ReturnToUp();
 window.onscroll = Scrolling;
  
+/*BARRA*/
+
+    function seekTo() {
+      seekto = curr_track.duration * (seek_slider.value / 100);
+      curr_track.currentTime = seekto;
+    }
+
+    function setVolume() {
+      curr_track.volume = volume_slider.value / 100;
+    }
+
+    function seekUpdate() {
+      let seekPosition = 0;
+
+      // Check if the current track duration is a legible number
+      if (!isNaN(curr_track.duration)) {
+        seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+        seek_slider.value = seekPosition;
+
+        // Calculate the time left and the total duration
+        let currentMinutes = Math.floor(curr_track.currentTime / 60);
+        let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+        let durationMinutes = Math.floor(curr_track.duration / 60);
+        let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+
+        // Adding a zero to the single digit time values
+        if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+        if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+        if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+        if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+
+        curr_time.textContent = currentMinutes + ":" + currentSeconds;
+        total_duration.textContent = durationMinutes + ":" + durationSeconds;
+      }
+    }
+
+    function resetValues() {
+        curr_time.textContent = "00:00";
+        seek_slider.value = 0;
+    }
