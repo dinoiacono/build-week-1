@@ -2,6 +2,35 @@
   line-height: 0;
 }
 
+.color-menu-down {
+  border: none;
+  background-color: rgb(40, 40, 40);
+  box-shadow: 1px 0px 16px rgba(0, 0, 0, 0.562);
+  width: 235px;
+}
+.color-menu-down i {
+  font-size: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.color-menu-down li {
+  color: white;
+}
+.color-menu-down li a {
+  color: white;
+  font-size: 12px;
+}
+.color-menu-down li a:hover {
+  background-color: rgb(62, 62, 62);
+  color: white;
+  border-radius: 2px;
+}
+.color-menu-down li:hover {
+  background-color: rgb(62, 62, 62);
+  color: white;
+  border-radius: 2px;
+}
+
 main {
   background-color: rgb(56, 56, 56);
 }
@@ -18,11 +47,28 @@ main {
 }
 
 .container-section-album {
-  max-width: 1153px;
+  max-width: 1200px;
   margin: 0 auto;
-  height: 420px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   background-image: linear-gradient(rgb(230, 199, 81), rgb(107, 92, 39));
   color: white;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.button-menu-song {
+  margin-left: 20px;
+}
+.button-menu-song i {
+  font-size: 22px;
 }
 
 .box-profile {
@@ -69,7 +115,7 @@ main {
 }
 
 .container-max-width {
-  max-width: 1153px;
+  max-width: 1200px;
 }
 
 .postion-right {
@@ -77,7 +123,7 @@ main {
 }
 
 .container-next-album-profile {
-  max-width: 1153px;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -136,7 +182,7 @@ main {
 }
 
 .container-song {
-  max-width: 1153px;
+  max-width: 1200px;
   background-color: rgba(0, 0, 0, 0.308);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -184,7 +230,7 @@ main {
 }
 
 .sub-container-list-song {
-  max-width: 1100px;
+  max-width: 1150px;
 }
 .sub-container-list-song .box-contaier-song:hover {
   background-color: rgb(49, 49, 49);
@@ -220,6 +266,15 @@ main {
   margin: 12px;
   width: 18px;
   text-align: center;
+}
+
+#image-albun {
+  height: 100%;
+}
+
+#img-profile-artist {
+  height: 100%;
+  border-radius: 100%;
 }
 
 .cell-container-song {

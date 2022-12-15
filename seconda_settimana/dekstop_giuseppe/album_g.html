@@ -18,7 +18,7 @@
             <ul>
                 <li>...</li>
                 <div class="primi_tre">
-                    <li><ion-icon name="home"></ion-icon>Home</li>
+                    <li><ion-icon name="home"></ion-icon><a href="../desktop_manuel/index.html">Home</a></li>
                     <li><ion-icon name="search"></ion-icon>Cerca</li>
                     <li><ion-icon name="book"></ion-icon>La tua libreria</li>
                 </div>
@@ -116,7 +116,9 @@
                             <div><h6 class="mb-0" id="category">ALBUM</h6></div>
                             <div class="mt-2 mb-2"><h1  class="mt-0 mb-3 big-h1 " id="title-album">Gioventù bruciata</h1></div>
                             <div class="container-information-band d-flex align-items-center m-0">
-                                <div class="image-artist"></div>
+                                <div class="image-artist">
+                                  <img id="img-profile-artist" src="" alt="">
+                                </div>
                                 <div class="d-flex m-0 ms-2"><p id="name-band" >Pinguini Tattici nucleari</p><span id="data-publishig">2017</span><span id="total-song">40</span><span>Brani</span><span id="total-Timer">53 min 20 sec</span></div>
                             </div>
                         </div>
@@ -145,25 +147,6 @@
                         </div>
                         <div class="container-list-song container-max-width">
                             <div class="sub-container-list-song m-0 p-0 ju m-auto mt-2 list-song">
-                                <div class="row d-flex align-items-center m-0 box-contaier-song">
-                                  <div class="col text-start ps-0">
-                                    <div class="text-header-list">
-                                      <span id="value-number-song">#</span>
-                                        <div class="d-flex flex-column m-0">
-                                            <h6 class="mb-0" id="title-song">Titolo Canzone</h6>
-                                            <p class="mb-0" id="name-artist" >Nome Artista</p></div>
-                                        </div>
-                                    </div>
-                                  <div class="col-md-auto text-end me-5">
-                                    <div class="text-header-list" id="text-reproduction">
-                                      <h6 class="mb-0 container-text-info-song" id="riprodaction-value" >652,123</h6>
-                                    </div>
-                                  </div>
-                                  <div class="col col-lg-2 text-end">
-                                    <div id="duration-song"><h6 class="mb-0" id="duration-value" >1:20</h6>
-                                    </div>
-                                  </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -222,7 +205,7 @@
 
   </aside>
 </div>
-<footer class="position-fixed">
+<footer class="sticky-bottom">
   <div id="brano_esecuzione">
       <!-- qui si deve fare con JS, compilazione automatica -->
       <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">

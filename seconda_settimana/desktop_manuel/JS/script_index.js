@@ -10,6 +10,8 @@ let containerPiacere = document.querySelector(".altri_preferiti");
 //let Preferiti = document.querySelectorAll(".preferito");
 //console.log(Preferiti);
 
+
+
 let arrayImmagini = [];
 let arrayTitoloTracce = [];
 let arrayNomiAutori = [];
@@ -77,10 +79,11 @@ let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/albu
 
 
     function CreationBoxPlayListMedium(image,title, subtitle) {
+
         //creazione container
         var container = document.createElement("a")
         container.className = "altro_preferito";
-        container.href = `../dekstop_giuseppe/album_g.html/${AlbumId[RandomSeed]}`;
+        container.href = `../dekstop_giuseppe/album_g.html?ok=${AlbumId[RandomSeed]}`;
         //creazione cover
         var cover = document.createElement("img");
         cover.src = image;
@@ -97,6 +100,10 @@ let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/albu
         container.append(cover);
         container.append(text);
         container.append(_subtitle);
+
+        container.addEventListener("click", ()=>{
+            localStorage.setItem("id", AlbumId[RandomSeed])
+        })
     }
 
 

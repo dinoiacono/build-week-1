@@ -2,7 +2,36 @@
 @import "mixin";
 
 .lh-0{
-    line-height: 0;
+    line-height: -0;
+}
+
+.color-menu-down{
+    border: none;
+    background-color: rgb(40, 40, 40);
+    box-shadow: 1px 0px 16px rgba(0, 0, 0, 0.562);
+    width: 235px;
+    i{
+        font-size: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    li{
+        color: white;
+        a{
+            color: white;
+            font-size: 12px;
+            &:hover{
+                background-color: rgb(62, 62, 62);
+                color: white;
+                border-radius: 2px;
+            }
+        }
+        &:hover{
+            background-color: rgb(62, 62, 62);
+            color: white;
+            border-radius: 2px;
+        }
+    }
 }
 
 main{
@@ -23,11 +52,25 @@ main{
 .container-section-album{
     max-width: $container_max_width;
     margin: 0 auto;
-    height: 420px;
+    height: max-content;
     background-image: linear-gradient(rgb(230, 199, 81), rgb(107, 92, 39));
     color:white;
 }
 
+.visible{
+    visibility: visible;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.button-menu-song{
+    margin-left: 20px;
+    i{
+        font-size: 22px;
+    }
+}
 
 .box-profile{
     background-color: black;
@@ -205,6 +248,7 @@ main{
 
 .sub-container-list-song{
     max-width: $sub_container_list_song_max_width;
+
     .box-contaier-song{
         &:hover{
             background-color: rgb(49, 49, 49);
@@ -244,6 +288,14 @@ main{
 
 }
 
+#image-albun{
+    height: 100%;
+}
+
+#img-profile-artist{
+    height: 100%;
+    border-radius: 100%;
+}
 
 .cell-container-song{
     display: flex;
