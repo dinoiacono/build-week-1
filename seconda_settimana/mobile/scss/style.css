@@ -34,6 +34,7 @@
 }
 .container_playlist #icone button {
   font-size: 25px;
+  color: black;
 }
 .container_playlist .btn:hover {
   color: green;
