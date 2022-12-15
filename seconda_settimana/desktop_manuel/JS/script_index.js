@@ -78,7 +78,7 @@ let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/albu
     }
 
 
-    function CreationBoxPlayListMedium(image,title, subtitle) {
+    function CreationBoxPlayListMedium(image, title, subtitle) {
 
         //creazione container
         var container = document.createElement("a")
@@ -95,11 +95,47 @@ let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/albu
         var _subtitle = document.createElement("span");
         _subtitle.className = "sub-titolo-playlist";
         _subtitle.innerHTML =subtitle;
+        // icon
+        var iconHeart = document.createElement("ion-icon");
+        iconHeart.name = 'heart-outline';
+        var puntini = document.createElement("p");
+        puntini.innerHTML = '&middot;&middot;&middot;';
+        var numeroBrani = document.createElement("p");
+        numeroBrani.innerHTML = '16 brani';
+        var iconPlay = document.createElement("ion-icon");
+        iconPlay.name = 'play-circle';
+
+        var containerIcone = document.createElement('div');
+        containerIcone.className = "riga-sotto";
+
+        var containerSopra = document.createElement('div');
+        containerSopra.className = "riga-sopra";
+        var containerTestiSopra = document.createElement('div');
+        containerTestiSopra.className = "testi-sopra";
+        var containerSx = document.createElement('div');
+        containerSx.className = "riga-sinistra";
+        var containerDx = document.createElement('div');
+        containerDx.className = "riga-destra";
+
+        containerSx.append(iconHeart);
+        containerSx.append(puntini);
+        containerDx.append(numeroBrani);
+        containerDx.append(iconPlay);
+
+        containerIcone.append(containerSx);
+        containerIcone.append(containerDx);
+
+        containerTestiSopra.append(text);
+        containerTestiSopra.append(_subtitle);
+
         //append
         containerPiacere.append(container);
-        container.append(cover);
-        container.append(text);
-        container.append(_subtitle);
+
+        containerSopra.append(cover);
+        containerSopra.append(containerTestiSopra);
+
+        container.append(containerSopra);
+        container.append(containerIcone);
 
         container.addEventListener("click", ()=>{
             localStorage.setItem("id", AlbumId[RandomSeed])
@@ -134,12 +170,12 @@ let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/albu
     }
 
 
-    CreationBoxPlayListSmall(data.cover_small,data.tracks.data[0].title_short);
-    CreationBoxPlayListSmall(data.cover_small,data.tracks.data[1].title_short);
-    CreationBoxPlayListSmall(data.cover_small,data.tracks.data[2].title_short);
-    CreationBoxPlayListSmall(data.cover_small,data.tracks.data[3].title_short);
-    CreationBoxPlayListSmall(data.cover_small,data.tracks.data[4].title_short);
-    CreationBoxPlayListSmall(data.cover_small,data.tracks.data[5].title_short);
+    CreationBoxPlayListSmall(data.cover_medium, data.tracks.data[0].title_short);
+    CreationBoxPlayListSmall(data.cover_medium, data.tracks.data[1].title_short);
+    CreationBoxPlayListSmall(data.cover_medium, data.tracks.data[2].title_short);
+    CreationBoxPlayListSmall(data.cover_medium, data.tracks.data[3].title_short);
+    CreationBoxPlayListSmall(data.cover_medium, data.tracks.data[4].title_short);
+    CreationBoxPlayListSmall(data.cover_medium, data.tracks.data[5].title_short);
 
 
     CreationBoxPlayListMedium(data.cover_medium, data.tracks.data[0].title_short, data.artist.name);
@@ -147,7 +183,7 @@ let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/albu
     CreationBoxPlayListMedium(data.cover_medium, data.tracks.data[2].title_short, data.artist.name);
     CreationBoxPlayListMedium(data.cover_medium, data.tracks.data[3].title_short, data.artist.name);
     CreationBoxPlayListMedium(data.cover_medium, data.tracks.data[4].title_short, data.artist.name);
-    CreationBoxPlayListMedium(data.cover_medium, data.tracks.data[5].title_short, data.artist.name);
+    //CreationBoxPlayListMedium(data.cover_medium, data.tracks.data[5].title_short, data.artist.name);
 
     let titoloAlbum = data.title;
 

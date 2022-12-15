@@ -9,7 +9,6 @@ header {
     width: 20%;
     background-color: $color_black;
     padding: $size_5;
-    color: #686868;
 
     nav,
     p {
@@ -17,13 +16,12 @@ header {
         font-size: $font_size_0_8;
         font-weight: $font_weight_500;
         padding: $size_10;
-        color: #686868;
 
     }
 
     nav {
 
-        border-bottom: 1px solid #686868;
+        border-bottom: 1px solid #fff;
         line-height: 2.2rem;
 
         ul {
@@ -42,14 +40,16 @@ header {
 
             li {
     
-                color: #686868;
+                color: #fff;
+                opacity: 0.6;
                 display: flex;
                 align-items: center;
                 transition: 0.5s ease-in-out;
     
                 &:hover {
     
-                    color: $color_white;
+                    opacity: 1;
+                    transform: scale(1.1) translateX(3px);
     
                 }
     
@@ -57,12 +57,13 @@ header {
         
                     font-size: $font_size_1_5;
                     padding-right: $size_10;
-                    color: #686868;
+                    color: #fff;
+                    opacity: 0.6;
                     transition: 0.5s ease-in-out;
         
                     &:hover {
         
-                        color: $color_white;
+                        opacity: 1;
         
                     }
         
@@ -78,6 +79,13 @@ header {
             font-size: $font_size_1_5;
             padding-bottom: $size_10;
 
+            &:hover {
+    
+                opacity: 1;
+                transform: scale(1.1) translateX(7px);
+
+            }
+
         }
 
     }
@@ -91,12 +99,86 @@ header {
             li {
 
                 font-size: $font_size_0_8;
-                color: #686868;
+                color: #fff;
+                opacity: 0.6;
+                transition: 0.5s ease-in-out;
+
+                &:hover {
+
+                    opacity: 1;
+                    transform: scale(1.1) translateX(3px);
+
+                }
     
             }
             
   
         } 
+
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    #contenitore_contenuti {
+
+        display: flex;
+        flex-direction: column-reverse;
+    
+    }
+
+    .ultimi_tre,
+    #playlist_laterali {
+
+        display: none;
+
+    }
+
+    header {
+
+        color: #fff;
+        background: linear-gradient(rgba(0, 0, 0, 0.493), #000);
+        width: 100%;
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
+
+        nav {
+    
+            border: none;
+            
+            ul {
+                
+                li {
+                    
+                    flex-direction: column;
+                    
+                    ion-icon {
+                        
+                        padding-right: unset;
+                        
+                    }
+                    
+                }
+                
+                .primi_tre {
+    
+                    display: flex;
+                    justify-content: space-around;
+                    margin: $no_size;
+    
+                }
+
+            }
+
+            ul > li {
+        
+                display: none;
+        
+            }
+    
+        }
 
     }
 

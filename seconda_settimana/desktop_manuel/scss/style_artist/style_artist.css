@@ -69,6 +69,15 @@ main #section_1 .tasti_azione_album {
   display: flex;
   align-items: center;
 }
+main #section_1 .tasti_azione_album .primo_div_mobile {
+  display: flex;
+  align-items: center;
+}
+main #section_1 .tasti_azione_album .secondo_div_mobile,
+main #section_1 .tasti_azione_album .play_a_scomparsa_right,
+main #section_1 .tasti_azione_album .icone_esecuzione {
+  display: none;
+}
 main #section_1 .tasti_azione_album #tasto_like,
 main #section_1 .tasti_azione_album #tasto_download,
 main #section_1 .tasti_azione_album .altro {
@@ -136,6 +145,9 @@ main #section_1 .tabella_brano_piaciuto .brani_piaciuti > p {
   font-weight: 700;
   font-size: 1rem;
 }
+main #section_1 .tabella_brano_piaciuto .brani_piaciuti .brani_piacciono_scomparsa_desktop {
+  display: none;
+}
 main #section_1 .tabella_brano_piaciuto .brani_piaciuti .brano_img_testi {
   display: flex;
   align-items: center;
@@ -155,4 +167,65 @@ main #section_1 .tabella_brano_piaciuto .brani_piaciuti .brano_img_testi .testi 
 }
 main #section_1 .tabella_brano_piaciuto .brani_piaciuti .brano_img_testi .testi > span {
   opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+  main #section_1 .contenitore_arrow .arrow_right {
+    display: none;
+  }
+  main #section_1 .tasti_azione_album {
+    display: flex;
+    justify-content: space-between;
+  }
+  main #section_1 .tasti_azione_album .play_a_scomparsa_left {
+    display: none;
+  }
+  main #section_1 .tasti_azione_album .secondo_div_mobile,
+main #section_1 .tasti_azione_album .play_a_scomparsa_right,
+main #section_1 .tasti_azione_album .icone_esecuzione {
+    display: unset;
+  }
+  main #section_1 .tasti_azione_album .secondo_div_mobile {
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  main #section_1 .tasti_azione_album .secondo_div_mobile .play_a_scomparsa_right {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-left: 5px;
+    border-radius: 100px;
+    background-color: #006300;
+    color: white;
+  }
+  main #section_1 .tasti_azione_album .secondo_div_mobile .icone_esecuzione {
+    font-size: 1.7rem;
+    color: white;
+  }
+  main #section_1 .tabella_brano_piaciuto {
+    flex-direction: column-reverse;
+  }
+  main #section_1 .tabella_brano_piaciuto .tasti_e_tabella,
+main #section_1 .tabella_brano_piaciuto .brani_piaciuti {
+    width: 100%;
+  }
+  main #section_1 .tabella_brano_piaciuto .brani_piaciuti {
+    margin-bottom: 20px;
+    padding-left: 30px;
+  }
+  main #section_1 .tabella_brano_piaciuto .brani_piaciuti .brani_piacciono_scomparsa_mobile {
+    display: none;
+  }
+  main #section_1 .tabella_brano_piaciuto .brani_piaciuti .brano_img_testi .testi {
+    display: flex;
+    flex-direction: column;
+  }
+  main #section_1 .tabella_brano_piaciuto .brani_piaciuti .brano_img_testi .testi .brani_piacciono_scomparsa_desktop {
+    font-size: 1rem;
+    display: unset;
+  }
 }/*# sourceMappingURL=style_artist.css.map */

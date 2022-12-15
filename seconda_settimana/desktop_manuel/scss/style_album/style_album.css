@@ -39,12 +39,12 @@ main #section_1 .album_in_evidenza .testi p:nth-child(2) {
   font-size: 3rem;
   font-weight: 700;
 }
+main #section_1 .album_in_evidenza .testi .img_p img {
+  max-width: 40px;
+}
 main #section_1 .album_in_evidenza .testi p:nth-child(3) {
   display: flex;
   align-items: center;
-}
-main #section_1 .album_in_evidenza .testi p:nth-child(3) img {
-  max-width: 40px;
 }
 main #section_1 .album_in_evidenza .testi p:nth-child(3) span {
   padding-left: 5px;
@@ -91,4 +91,30 @@ main #section_1 .tasti_e_tabella table thead {
 }
 main #section_1 .tasti_e_tabella table td {
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+  main #section_1 .contenitore_arrow .arrow_right {
+    display: none;
+  }
+  main #section_1 .album_in_evidenza .img_testi {
+    flex-direction: column;
+  }
+  main #section_1 .album_in_evidenza .img_testi .testi p:first-child {
+    text-transform: unset;
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+  main #section_1 .album_in_evidenza .img_testi .testi .img_p img {
+    max-width: 40px;
+  }
+  main #section_1 .album_in_evidenza .img_testi .testi span {
+    margin-left: 10px;
+  }
+  main #section_1 .album_in_evidenza .img_testi .testi p:nth-child(2) {
+    display: none;
+  }
 }/*# sourceMappingURL=style_album.css.map */

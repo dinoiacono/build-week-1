@@ -11,17 +11,15 @@ header {
   width: 20%;
   background-color: #000;
   padding: 5px;
-  color: #686868;
 }
 header nav,
 header p {
   font-size: 0.8rem;
   font-weight: 500;
   padding: 10px;
-  color: #686868;
 }
 header nav {
-  border-bottom: 1px solid #686868;
+  border-bottom: 1px solid #fff;
   line-height: 2.2rem;
 }
 header nav ul .primi_tre {
@@ -33,36 +31,85 @@ header nav ul .primi_tre {
   }*/
 }
 header nav ul li {
-  color: #686868;
+  color: #fff;
+  opacity: 0.6;
   display: flex;
   align-items: center;
   transition: 0.5s ease-in-out;
 }
 header nav ul li:hover {
-  color: white;
+  opacity: 1;
+  transform: scale(1.1) translateX(3px);
 }
 header nav ul li ion-icon {
   font-size: 1.5rem;
   padding-right: 10px;
-  color: #686868;
+  color: #fff;
+  opacity: 0.6;
   transition: 0.5s ease-in-out;
 }
 header nav ul li ion-icon:hover {
-  color: white;
+  opacity: 1;
 }
 header nav ul > li {
   letter-spacing: 1.7px;
   font-size: 1.5rem;
   padding-bottom: 10px;
 }
+header nav ul > li:hover {
+  opacity: 1;
+  transform: scale(1.1) translateX(7px);
+}
 header #playlist_laterali {
   padding: 10px;
 }
 header #playlist_laterali ul li {
   font-size: 0.8rem;
-  color: #686868;
+  color: #fff;
+  opacity: 0.6;
+  transition: 0.5s ease-in-out;
+}
+header #playlist_laterali ul li:hover {
+  opacity: 1;
+  transform: scale(1.1) translateX(3px);
 }
 
+@media screen and (max-width: 768px) {
+  #contenitore_contenuti {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .ultimi_tre,
+#playlist_laterali {
+    display: none;
+  }
+  header {
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.493), #000);
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+  }
+  header nav {
+    border: none;
+  }
+  header nav ul li {
+    flex-direction: column;
+  }
+  header nav ul li ion-icon {
+    padding-right: unset;
+  }
+  header nav ul .primi_tre {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+  }
+  header nav ul > li {
+    display: none;
+  }
+}
 aside {
   font-size: 0.8rem;
   background-color: #000;
@@ -104,6 +151,11 @@ aside #notifiche .notifica span {
   font-size: 0.6rem;
 }
 
+@media screen and (max-width: 768px) {
+  aside {
+    display: none;
+  }
+}
 footer {
   width: 100%;
   background-color: #181818;
@@ -174,6 +226,11 @@ footer #setting_esecuzione ion-icon {
   padding-left: 10px;
 }
 
+@media screen and (max-width: 768px) {
+  footer {
+    display: none;
+  }
+}
 * {
   margin: 0;
   padding: 0;

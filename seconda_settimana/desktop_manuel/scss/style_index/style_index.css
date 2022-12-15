@@ -12,8 +12,11 @@ main #section_1 .arrow {
   padding: 10px 0;
   margin-top: 10px;
 }
+main #section_1 .contenitore_saluto_icone--icone {
+  display: none;
+}
 main #section_1 p {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
 }
 main #section_1 > p {
   font-size: 1.2rem;
@@ -80,14 +83,14 @@ main #section_1 .album_in_evidenza .nascondi {
 }
 main #section_1 .preferiti {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 main #section_1 .preferiti .tre_in_alto,
 main #section_1 .preferiti .tre_in_basso {
   display: flex;
 }
 main #section_1 .preferiti .preferito {
-  width: 100%;
+  width: 32%;
   background-color: #2c2c2c;
   border-radius: 5px;
   display: flex;
@@ -102,9 +105,6 @@ main #section_1 .preferiti .preferito img {
 }
 main #section_1 .preferiti .preferito .testi {
   padding: 5px 10px;
-}
-main #section_2 {
-  padding-bottom: 100px;
 }
 main #section_2 .testi {
   font-size: 0.8rem;
@@ -130,6 +130,9 @@ main #section_2 .altri_preferiti .altro_preferito {
   margin: 5px;
   border-radius: 10px;
 }
+main #section_2 .altri_preferiti .altro_preferito .riga-sotto {
+  display: none;
+}
 main #section_2 .altri_preferiti .altro_preferito img {
   width: 100%;
 }
@@ -139,4 +142,73 @@ main #section_2 .altri_preferiti .altro_preferito span {
 }
 main #section_2 .altri_preferiti .altro_preferito span {
   color: #686868;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+  main #section_1 .arrow {
+    display: none;
+  }
+  main #section_1 .contenitore_saluto_icone {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+  }
+  main #section_1 .contenitore_saluto_icone .contenitore_saluto_icone--icone {
+    display: unset;
+  }
+  main #section_1 .contenitore_saluto_icone .contenitore_saluto_icone--icone ion-icon {
+    margin-left: 10px;
+  }
+  main #section_1 .album_in_evidenza {
+    display: none;
+  }
+  main #section_1 .preferiti {
+    justify-content: center;
+  }
+  main #section_1 .preferiti .preferito {
+    width: 48%;
+  }
+  main #section_2 .altri_preferiti {
+    flex-direction: column;
+  }
+  main #section_2 .altri_preferiti .altro_preferito {
+    text-decoration: none;
+    width: 100%;
+    padding: 5px;
+  }
+  main #section_2 .altri_preferiti .altro_preferito .riga-sopra {
+    display: flex;
+    align-items: center;
+  }
+  main #section_2 .altri_preferiti .altro_preferito .riga-sopra .testi-sopra {
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column-reverse;
+    padding-left: 10px;
+  }
+  main #section_2 .altri_preferiti .altro_preferito .riga-sotto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px 5px 5px;
+  }
+  main #section_2 .altri_preferiti .altro_preferito .riga-sotto .riga-sinistra,
+main #section_2 .altri_preferiti .altro_preferito .riga-sotto .riga-destra {
+    display: flex;
+    align-items: center;
+  }
+  main #section_2 .altri_preferiti .altro_preferito .riga-sotto .riga-sinistra ion-icon {
+    margin-right: 5px;
+  }
+  main #section_2 .altri_preferiti .altro_preferito .riga-sotto .riga-destra ion-icon {
+    margin-left: 5px;
+  }
+  main #section_2 .altri_preferiti .altro_preferito img {
+    width: 20%;
+  }
 }/*# sourceMappingURL=style_index.css.map */
