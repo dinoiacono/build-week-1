@@ -156,6 +156,9 @@ main {
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.404);
 }
 
+.container-information-band {
+  align-items: center;
+}
 .container-information-band div p {
   margin: 0;
   margin-right: 5px;
@@ -201,18 +204,18 @@ main {
   font-size: 32px;
 }
 
-#button-play {
+#button-play-d-lg, #button-play-d-md {
   background-color: black;
   border-radius: 50px;
   height: 56px;
   width: 56px;
 }
-#button-play i {
+#button-play-d-lg i, #button-play-d-md i {
   color: rgb(30, 215, 96);
   font-size: 56px;
   line-height: 0px;
 }
-#button-play i:hover {
+#button-play-d-lg i:hover, #button-play-d-md i:hover {
   transition: 0.2s;
   color: white;
 }
@@ -374,4 +377,47 @@ i.fa-pause-circle,
 i.fa-step-forward,
 i.fa-step-backward {
   cursor: pointer;
+}
+
+#contenitore-header {
+  position: fixed;
+}
+
+@media screen and (max-width: 768px) {
+  #contenitore-totale {
+    flex-direction: column-reverse;
+  }
+  #contenitore-totale #contenitore-header {
+    position: unset;
+  }
+  #contenitore-totale #tendina-profilo {
+    display: none;
+  }
+  #contenitore-totale #titolo-album {
+    flex-direction: column;
+  }
+  #contenitore-totale #titolo-album .image-box {
+    margin: 0 auto;
+    width: unset;
+    height: unset;
+  }
+  #contenitore-totale #titolo-album #testi-titolo #category {
+    display: none;
+  }
+  #contenitore-totale .container-information-band {
+    flex-direction: column;
+    align-items: unset;
+  }
+  #contenitore-totale .container-information-band #total-song {
+    display: none;
+  }
+  #contenitore-totale .container-information-band #total-Timer {
+    display: none;
+  }
+  #contenitore-totale #button-play-d-lg {
+    display: none;
+  }
+  #contenitore-totale #intestazione-tabella {
+    display: none;
+  }
 }/*# sourceMappingURL=album.css.map */

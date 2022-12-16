@@ -161,6 +161,7 @@ main{
 
 
 .container-information-band{
+    align-items: center;
     div{
         p{
             margin: 0;
@@ -211,7 +212,7 @@ main{
     }
 }
 
-#button-play{
+#button-play-d-lg, #button-play-d-md{
 
     background-color: black;
     border-radius: 50px;
@@ -391,4 +392,52 @@ main{
   i.fa-step-forward,
   i.fa-step-backward {
     cursor: pointer;
+  }
+
+  #contenitore-header{
+    position: fixed; 
+}
+
+  @media screen and(max-width: 768px) {
+
+    #contenitore-totale{
+        flex-direction: column-reverse;
+        #contenitore-header{
+            position: unset;
+        }
+        #tendina-profilo{
+            display: none;
+        }
+        #titolo-album{
+            flex-direction: column;
+            .image-box{
+                margin: 0 auto;
+                width: unset;
+                height: unset;
+            }
+            #testi-titolo{
+                #category{
+                    display: none;
+                }
+
+            }
+        }
+        .container-information-band{
+            flex-direction: column;
+            align-items: unset;
+            #total-song{
+                display: none;
+            }
+            #total-Timer{
+                display: none;
+            }
+        }
+        #button-play-d-lg{
+            display: none;
+        }
+        #intestazione-tabella{
+            display: none;
+        }
+    }
+
   }

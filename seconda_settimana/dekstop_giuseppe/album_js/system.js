@@ -44,7 +44,7 @@ let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/albu
 .then((response) => response.json())
 .then((datavalue) => {
     console.log(datavalue);
-    TOTAL_SONGS.innerHTML = datavalue.nb_tracks;
+    TOTAL_SONGS.innerHTML = datavalue.nb_tracks + ' Brani';
     totalsong = datavalue.nb_tracks;
 
     for (let i = 0; i < totalsong; i++) {
@@ -161,7 +161,7 @@ function CreateBoxSong(ValueIndex, TitleSong, ArtistName, TotalProduction, durat
     NameArtist.href = `../desktop_manuel/artist.html?ok=${VALUE_ID}`;
     //---- section Duration song + reproductions
     var containerCell = document.createElement("div");
-    containerCell.className = "col-md-auto text-end me-5";
+    containerCell.className = "col-md-auto text-end me-5 d-none d-lg-block";
     //container Productions
     var containerProduction = document.createElement("div");
     containerProduction.className = "text-header-list";

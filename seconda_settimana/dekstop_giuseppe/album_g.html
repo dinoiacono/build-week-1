@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="../desktop_manuel/scss/style_index/style_index.css">
 </head>
   <body>
-    <div class="d-flex">
+    <div id="contenitore-totale" class="d-flex ">
       <header>
-        <div class="position-fixed ">
-          <nav>
+        <div id="contenitore-header" >
+          <nav class="border-0">
             <ul>
                 <li>...</li>
                 <div class="primi_tre">
@@ -63,7 +63,7 @@
                     <div class="ms-4 d-flex align-items-center">
                       <div>
                         <button class="style-button-page" ><i class="bi bi-chevron-left"></i></button>
-                        <button class="style-button-page" ><i class="bi bi-chevron-right"></i></button>
+                        <button class="style-button-page" ><i class="bi bi-chevron-right d-none d-lg-block"></i></button>
                       </div>
                       <div class="container-button-play-nav d-flex m-0 align-items-center d-none">
                         <div class="me-2" id="button-play-mini"><i class="bi bi-play-circle-fill"></i>
@@ -73,7 +73,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="box-profile me-4 ">
+                    <div id="tendina-profilo" class="box-profile me-4 ">
                         <div class="d-flex align-items-center m-0 p-0">
                             <div id="img-profile-size">
                                 <div id=""></div>
@@ -108,29 +108,35 @@
                     </div>
                 </div>
                 <div class="container-information-album">
-                    <div class="d-flex">
+                    <div id="titolo-album" class="d-flex">
                         <div class="image-box">
                           <img id="image-albun" src="" alt="">
                         </div>
-                        <div class="container-max-width ms-4 mt-5">
+                        <div id="testi-titolo" class="container-max-width ms-lg-4 mt-lg-5">
                             <div><h6 class="mb-0" id="category">ALBUM</h6></div>
                             <div class="mt-2 mb-2"><h1  class="mt-0 mb-3 big-h1 " id="title-album">Gioventù bruciata</h1></div>
-                            <div class="container-information-band d-flex align-items-center m-0">
+                            <div class="container-information-band d-flex m-0">
+                              <div id="img+nome-band" class="d-flex align-items-center m-0"> 
                                 <div class="image-artist">
                                   <img id="img-profile-artist" src="" alt="">
                                 </div>
-                                <div class="d-flex m-0 ms-2"><p id="name-band" >Pinguini Tattici nucleari</p><span id="data-publishig">2017</span><span id="total-song">40</span><span>Brani</span><span id="total-Timer">53 min 20 sec</span></div>
+                                <div>
+                                  <p id="name-band" class="ms-2" >Pinguini Tattici nucleari</p>
+                                </div>
+                              </div>
+                                <div class="d-flex m-0"><span id="categoria" class="d-lg-none me-1">Album •</span><span id="data-publishig" class="ms-0">2017</span><span id="total-song">40</span><span id="total-Timer">53 min 20 sec</span></div>
                             </div>
                         </div>
                     </div>
                     <div class="container-song mt-4">
-                        <div class="container-button-list-song d-flex align-items-center m-0 ms-4 me-4 pt-4">
-                            <div class="me-4" id="button-play"><i class="bi bi-play-circle-fill"></i></div>
+                        <div class="container-button-list-song d-flex align-items-center m-0 ps-4 pe-4 pt-4 w-100 justify-content-between box-s"><span class="d-flex flex-direction-row m-0"><div class="me-4" id="button-play-d-lg"><i class="bi bi-play-circle-fill"></i></div>
                             <div class="me-4" id="button-add-favorites"><i class="bi bi-heart"></i></div>
                             <div class="me-4" id="button-download-song"><i class="bi bi-download"></i></div>
-                            <div  class="me-4" id="button-menu"><i class="bi bi-three-dots"></i></div>
+                            <div  class="me-4" id="button-menu"><i class="bi bi-three-dots"></i></div></span>
+                            
+                            <div class="d-flex m-0 justify-content-end d-lg-none" id="button-play-d-md"><i class="bi bi-play-circle-fill"></i></div>
                         </div>
-                        <div class="container-list-song container-max-width mt-2 border-button-list">
+                        <div id="intestazione-tabella" class="container-list-song container-max-width mt-2 border-button-list">
                             <div class="sub-container-list-song m-0 p-0 ju m-auto">
                                 <div class="row d-flex align-items-center m-0">
                                   <div class="col text-start ps-0">
