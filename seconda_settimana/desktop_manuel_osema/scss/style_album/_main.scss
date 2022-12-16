@@ -1,0 +1,156 @@
+main {
+
+    background: linear-gradient(#b39b40, #000);
+    //background-image: url(https://www.romatoday.it/~media/horizontal-hi/4043692886988/play-music-stop-war-2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 65%;
+
+    #section_1 {
+
+        .contenitore_arrow {
+
+            padding-left: $size_10;
+
+            .arrow {
+    
+                background-color: #0202022d;
+                padding: $size_5;
+                margin: $size_10 $size_5;
+                border-radius: 100%;
+    
+            }
+
+        }
+    
+        .album_in_evidenza {
+        
+            background-color: unset;
+
+            .img_testi {
+
+                display: flex;
+
+                img {
+    
+                    max-width: 200px;
+                    padding: 2px;
+    
+                }
+
+            }
+
+            .testi {
+
+                padding: $size_20 $size_10;
+
+                & p:first-child {
+
+                    text-transform: uppercase;
+                    font-size: $font_size_0_7;
+
+                }
+
+                & p:nth-child(2) {
+
+                    font-size: $font_size_3;
+                    font-weight: $font_weight_700;
+
+                }
+
+                & p:nth-child(3) {
+
+                    display: flex;
+                    align-items: center;
+
+                    img {
+
+                        max-width: 40px;
+
+                    }
+
+                    span {
+
+                        padding-left: $size_5;
+                        opacity: 0.6;
+
+                    }
+
+                }
+            }
+
+        }
+
+        .tasti_azione_album {
+
+            padding: $size_10;
+            display: flex;
+            align-items: center;
+
+            #tasto_like,
+            #tasto_download,
+            .altro {
+
+                margin-right: $size_10;
+
+            }
+
+            #tasto_play {
+    
+                font-size: $font_size_1_2;
+                margin-right: $size_15;
+                padding: $size_10;
+                border-radius: $size_100;
+                background-color: #1bb451;
+                color: $color_black;
+    
+            }
+    
+            #tasto_like {
+    
+                font-size: $font_size_1_7;
+    
+            }
+    
+            #tasto_download {
+    
+                font-size: $font_size_1_7;
+    
+            }
+    
+            .altro {
+    
+                letter-spacing: 1.7px;
+                font-size: $font_size_1_7;
+    
+            }
+
+        }
+
+        .tasti_e_tabella {
+
+            backdrop-filter: blur(200px);
+
+            table {
+    
+                width: 100%;
+                padding-bottom: $size_10;
+    
+                thead {
+    
+                    border-bottom: 1px solid white;
+    
+                }
+    
+                td {
+    
+                    text-align: center;
+    
+                }
+    
+            }
+        }
+
+    }
+
+}

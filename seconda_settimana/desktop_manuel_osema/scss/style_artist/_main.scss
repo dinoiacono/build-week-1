@@ -1,0 +1,270 @@
+main {
+
+    //background: linear-gradient(#b39b40, #000);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 65%;
+
+    #section_1 {
+
+        background-image: url(https://www.cattolicanews.it/Concerto_CattNews.jpg);
+
+        .contenitore_arrow_album {
+
+            height: 45vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .contenitore_arrow {
+
+                padding-left: $size_10;
+
+                .arrow {
+
+                    background-color: #0202022d;
+                    padding: $size_5;
+                    margin: $size_10 $size_5;
+                    border-radius: 100%;
+
+                }
+
+            }
+
+            .album_in_evidenza {
+
+                background-color: unset;
+
+                .img_testi {
+
+                    display: flex;
+
+                    img {
+
+                        max-width: 200px;
+                        padding: 2px;
+
+                    }
+
+                }
+
+                .testi {
+
+                    padding: $size_20 $size_10;
+
+                    & p:first-child {
+
+                        font-size: $font_size_0_6;
+                        display: flex;
+                        align-items: center;
+
+                        img {
+
+                            padding: 0;
+                            width: 30px;
+
+                        }
+
+                    }
+
+                    & p:nth-child(2) {
+
+                        font-size: $font_size_3;
+                        font-weight: $font_weight_700;
+
+                    }
+
+                    & p:nth-child(3) {
+
+                        display: flex;
+                        align-items: flex-end;
+
+                        img {
+
+                            max-width: 40px;
+
+                        }
+
+                        span {
+
+                            font-size: $font_size_1_2;
+                            padding: 0 $size_5;
+
+                        }
+
+                    }
+                }
+
+            }
+
+        }
+
+        .tasti_azione_album {
+
+            background-color: #1b1b1b;
+            padding: $size_20 30px;
+            display: flex;
+            align-items: center;
+
+            #tasto_like,
+            #tasto_download,
+            .altro {
+
+                margin-right: $size_10;
+
+            }
+
+            #tasto_play {
+
+                font-size: $font_size_1_2;
+                margin-right: $size_15;
+                padding: $size_10;
+                border-radius: $size_100;
+                background-color: #1bb451;
+                color: $color_black;
+
+            }
+
+            .button {
+
+                text-transform: uppercase;
+                font-weight: $font_weight_700;
+                font-size: $font_size_0_6;
+                letter-spacing: 1px;
+                border: 1px solid #fff;
+                border-radius: $size_3;
+                padding: $size_5 $size_10;
+                background-color: #1b1b1b;
+
+            }
+
+            .altro {
+
+                letter-spacing: 1.7px;
+                font-size: $font_size_1_7;
+                margin-left: $size_15;
+
+            }
+
+        }
+
+        .tabella_brano_piaciuto {
+
+            display: flex;
+            background-color: #1b1b1b;
+
+            .tasti_e_tabella {
+
+                width: 50%;
+
+                table {
+
+                    width: 100%;
+
+                    padding-bottom: $size_10;
+
+                    thead {
+
+                        border-bottom: 1px solid white;
+
+                        tr {
+
+                            th {
+
+                                font-size: $font_size_1;
+
+                            }
+
+                        }
+
+                    }
+
+                    tbody {
+
+                        tr {
+
+                            td {
+
+                                text-align: center;
+
+                                &:nth-child(2) {
+
+                                    text-align: unset;
+                                    display: flex;
+                                    align-items: center;
+
+                                    img {
+
+                                        width: 20%;
+                                        height: 20%;
+                                        max-width: 70px;
+                                        margin-right: $size_10;
+
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .brani_piaciuti {
+
+                padding-left: $size_50;
+                width: 50%;
+
+                &>p {
+
+                    font-weight: $font_weight_700;
+                    font-size: $font_size_1;
+
+                }
+
+                .brano_img_testi {
+
+                    display: flex;
+                    align-items: center;
+                    padding-top: $size_15;
+
+                    img {
+
+                        width: 20%;
+                        height: 20%;
+                        max-width: 70px;
+
+                    }
+
+                    .testi {
+
+                        padding-left: $size_10;
+
+                        p,
+                        span {
+
+                            font-size: $font_size_0_8;
+
+                        }
+
+                        & > span {
+
+                            opacity: 0.5;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
