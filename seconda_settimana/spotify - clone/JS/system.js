@@ -158,7 +158,7 @@ function CreateBoxSong(ValueIndex, TitleSong, ArtistName, TotalProduction, durat
     NameArtist.className = "mb-0";
     NameArtist.innerHTML = ArtistName;
     NameArtist.id = "name-artist";
-    NameArtist.href = `../desktop_manuel/artist.html?ok=${VALUE_ID}`;
+    NameArtist.href = `artist.html?ok=${VALUE_ID}`;
     //---- section Duration song + reproductions
     var containerCell = document.createElement("div");
     containerCell.className = "col-md-auto text-end me-5 d-none d-lg-block";

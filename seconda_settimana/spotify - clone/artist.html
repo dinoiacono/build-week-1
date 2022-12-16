@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artist - Spotify</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="scss/style_default/style_default.css">
     <link rel="stylesheet" href="scss/style_artist/style_artist.css">
-    
 </head>
 
 <body>
@@ -17,6 +17,16 @@
     <div id="contenitore_contenuti">
 
         <header>
+            <div id="riproduttore-mobile">
+                <img src="" alt=""/>
+                <div id="testi-player-mobile">
+                  <p>carcola</p>
+                  <p>stocazzo</p>
+                </div>
+                <i class="bi bi-speaker"></i>
+                <i class="bi bi-heart"></i>
+                <i class="bi bi-play-fill"></i>
+            </div>
 
             <nav>
 
@@ -26,7 +36,7 @@
 
                     <div class="primi_tre">
 
-                        <li><ion-icon name="home"></ion-icon>Home</li>
+                       <a href="index.html"><li><ion-icon name="home"></ion-icon>Home</li></a> 
                         <li><ion-icon name="search"></ion-icon>Cerca</li>
                         <li><ion-icon name="book"></ion-icon>La tua libreria</li>
 
@@ -101,9 +111,15 @@
 
                 <div class="tasti_azione_album">
 
-                    <ion-icon id="tasto_play" name="play"></ion-icon>
-                    <button class="button">Following</button>
-                    <span class="altro">&middot;&middot;&middot;</span>
+                    <div class="primo_div_mobile">
+                        <ion-icon id="tasto_play" class="play_a_scomparsa_left" name="play"></ion-icon>
+                        <button class="button">Following</button>
+                        <span class="altro">&middot;&middot;&middot;</span>
+                    </div>
+                    <div class="secondo_div_mobile">
+                        <ion-icon class="icone_esecuzione" name="shuffle"></ion-icon>
+                        <ion-icon class="play_a_scomparsa_right" name="play"></ion-icon>
+                    </div>
 
                 </div>
 
@@ -118,99 +134,115 @@
                                 </tr>
                             </thead>
                             <tbody>
-                               <!-- <tr>
-                                    <td id="num-song">1</td>
-                                    <td id="image-song"><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
-                                    <td id="tot-product">694.876</td>
-                                    <td id="duration-song">1:28</td>
-                                </tr>                
+                                <!--
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
                                     <td>694.876</td>
                                     <td>1:28</td>
-                                </tr>                
+                                </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
                                     <td>694.876</td>
                                     <td>1:28</td>
-                                </tr>                
+                                </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
                                     <td>694.876</td>
                                     <td>1:28</td>
-                                </tr>                
+                                </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
                                     <td>694.876</td>
                                     <td>1:28</td>
-                                </tr>                
+                                </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
                                     <td>694.876</td>
                                     <td>1:28</td>
-                                </tr>                
+                                </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
                                     <td>694.876</td>
                                     <td>1:28</td>
-                                </tr>                
+                                </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
                                     <td>694.876</td>
                                     <td>1:28</td>
-                                </tr>                
+                                </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
                                     <td>694.876</td>
                                     <td>1:28</td>
-                                </tr>                
+                                </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
                                     <td>694.876</td>
                                     <td>1:28</td>
-                                </tr>                
+                                </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
                                     <td>694.876</td>
                                     <td>1:28</td>
-                                </tr>                
+                                </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
                                     <td>694.876</td>
                                     <td>1:28</td>
-                                </tr>                
+                                </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#"> Lorem ipsum</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
                                     <td>694.876</td>
                                     <td>1:28</td>
-                                </tr>  -->              
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td><img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+                                        Lorem ipsum</td>
+                                    <td>694.876</td>
+                                    <td>1:28</td>
+                                </tr>
+                                -->
                             </tbody>
                         </table>
                     </div>
 
                     <div class="brani_piaciuti">
 
-                        <p>Brani che ti piacciono</p>
+                        <p class="brani_piacciono_scomparsa_mobile">Brani che ti piacciono</p>
 
                         <div class="brano_img_testi">
 
                             <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
-
+                            
                             <div class="testi">
-
-                                <p>Hai messo Mi piace a <span>11</span> brani</p>
+                                
+                                <p class="brani_piacciono_scomparsa_desktop">Brani che ti piacciono</p>
+                                <p class="brani_piacciono_scomparsa_mobile">Hai messo Mi piace a <span>11</span> brani</p>
                                 <span>Di Yellowcard</span>
 
                             </div>
@@ -283,7 +315,7 @@
             <!-- qui si deve fare con JS, compilazione automatica -->
             <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
             <div id="brano_esecuzione--testi">
-                <p>Lorem ipsum</p>
+                <p id="name-song">Lorem ipsum</p>
                 <span>Lorem</span>
             </div>
             <ion-icon name="heart-outline"></ion-icon>
@@ -300,11 +332,14 @@
                 <ion-icon class="icone_esecuzione" name="play-skip-forward"></ion-icon>
                 <ion-icon class="icone_esecuzione verdi" name="repeat"></ion-icon>
                 <!-- questa diventa verde se selezionata -->
-
             </div>
-
+   
             <div class="barra_esecuzione">
-                <!-- si deve vedere in seguito -->
+                <div class="slider_container">
+                    <div class="current-time">00:00</div>
+                    <input type="range" min="0" max="100" value="0" class="seek_slider">
+                    <div class="total-duration">00:00</div>
+                  </div>                 
             </div>
 
         </div>
@@ -314,17 +349,21 @@
             <ion-icon name="mic"></ion-icon>
             <ion-icon name="menu"></ion-icon>
             <ion-icon name="people"></ion-icon>
-            <ion-icon name="volume-mute"></ion-icon>
+            <ion-icon name="volume-mute"><div class="slider_container">
+                    <i class="fa fa-volume-down"></i>
+                    <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                    <i class="fa fa-volume-up"></i>
+                  </div></ion-icon>
             <!-- barra volume da vedere in seguito -->
             <ion-icon name="expand"></ion-icon>
 
         </div>
 
     </footer>
-    <script src="JS/script_artist.js"></script>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+    <script src="JS/script_artist.js"></script>
 </body>
 
 </html>

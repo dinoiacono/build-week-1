@@ -9,9 +9,6 @@ header {
     width: 20%;
     background-color: $color_black;
     padding: $size_5;
-    .primi_tre a{
-        text-decoration: none;
-    }
 
     nav,
     p {
@@ -24,7 +21,7 @@ header {
 
     nav {
 
-        
+        border-bottom: 1px solid #fff;
         line-height: 2.2rem;
 
         ul {
@@ -121,11 +118,14 @@ header {
     }
 
 }
+
 #riproduttore-mobile{
     display: none;
 }
 
 @media screen and (max-width: 768px){
+
+
     #riproduttore-mobile{
         display: flex;
         align-items: center;

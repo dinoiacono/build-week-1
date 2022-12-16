@@ -83,7 +83,7 @@ let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/albu
         //creazione container
         var container = document.createElement("a")
         container.className = "altro_preferito";
-        container.href = `../dekstop_giuseppe/album_g.html?ok=${AlbumId[RandomSeed]}`;
+        container.href = `album.html?ok=${AlbumId[RandomSeed]}`;
         //creazione cover
         var cover = document.createElement("img");
         cover.src = image;
@@ -148,7 +148,7 @@ let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/albu
         //creazione container
         var container = document.createElement("a");
         container.className ="preferito";
-        container.href = `../dekstop_giuseppe/album_g.html?ok=${AlbumId[RandomSeed]}`;
+        container.href = `album.html?ok=${AlbumId[RandomSeed]}`;
         //creazione immagine;
         var image = document.createElement("img");
         image.src = cover;

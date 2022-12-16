@@ -23,7 +23,6 @@ footer {
 
         width: 33%;
         text-align: end;
-
     }
 
     #brano_esecuzione {
@@ -52,9 +51,7 @@ footer {
         }
 
         ion-icon {
-
             font-size: $font_size_1_2;
-
         }
 
     }
@@ -129,8 +126,7 @@ footer {
         display: flex;
         justify-content: flex-end;
         cursor: pointer;
-        
-
+        text-align: end;
         ion-icon {
 
             color: #8c8c8c;
@@ -142,14 +138,13 @@ footer {
     }
 
 }
+
 }
 
 @media screen and (max-width: 768px){
     
     footer {
-
         display: none;
-
     }
 
 }
