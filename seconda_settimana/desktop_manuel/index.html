@@ -287,20 +287,13 @@
                 <ion-icon class="icone_esecuzione verdi" name="repeat"></ion-icon>
                 <!-- questa diventa verde se selezionata -->
             </div>
-
-
-            
+   
             <div class="barra_esecuzione">
                 <div class="slider_container">
                     <div class="current-time">00:00</div>
-                    <input type="range" min="1" max="100" value="0" class="seek_slider">
+                    <input type="range" min="0" max="100" value="0" class="seek_slider">
                     <div class="total-duration">00:00</div>
-                  </div>
-                  <div class="slider_container">
-                    <i class="fa fa-volume-down"></i>
-                    <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-                    <i class="fa fa-volume-up"></i>
-                  </div>
+                  </div>                 
             </div>
 
         </div>
@@ -310,7 +303,11 @@
             <ion-icon name="mic"></ion-icon>
             <ion-icon name="menu"></ion-icon>
             <ion-icon name="people"></ion-icon>
-            <ion-icon name="volume-mute"></ion-icon>
+            <ion-icon name="volume-mute"><div class="slider_container">
+                    <i class="fa fa-volume-down"></i>
+                    <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                    <i class="fa fa-volume-up"></i>
+                  </div></ion-icon>
             <!-- barra volume da vedere in seguito -->
             <ion-icon name="expand"></ion-icon>
 
