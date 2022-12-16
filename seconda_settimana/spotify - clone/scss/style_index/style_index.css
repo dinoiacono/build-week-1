@@ -211,4 +211,9 @@ main #section_2 .altri_preferiti .altro_preferito .riga-sotto .riga-destra {
   main #section_2 .altri_preferiti .altro_preferito img {
     width: 20%;
   }
+}
+@media screen and (max-width: 519px) {
+  main #section_1 .preferiti .preferito {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style_index.css.map */
