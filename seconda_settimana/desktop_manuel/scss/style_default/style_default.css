@@ -226,7 +226,6 @@ footer #tastiera_esecuzione .barra_esecuzione .slider_container .seek_slider {
   margin: 20px;
   height: 15%;
   border-radius: 20px;
-  opacity: 0.5;
 }
 footer #tastiera_esecuzione .barra_esecuzione .slider_container .seek_slider::-webkit-slider-thumb {
   width: 15%;
@@ -239,35 +238,32 @@ footer #tastiera_esecuzione .barra_esecuzione .slider_container .seek_slider::-m
   background: white;
   cursor: pointer;
 }
-footer #tastiera_esecuzione .barra_esecuzione .slider_container .seek_slider:hover {
-  opacity: 1;
-}
-footer .icone_esecuzione {
+footer #tastiera_esecuzione .icone_esecuzione {
   font-size: 1.5rem;
   padding: 10px;
 }
-footer .play {
+footer #tastiera_esecuzione .play {
   font-size: 2.5rem;
 }
-footer .verdi {
+footer #tastiera_esecuzione .verdi {
   color: #1bb451;
 }
-footer #setting_esecuzione {
+footer #tastiera_esecuzione #setting_esecuzione {
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
 }
-footer #setting_esecuzione ion-icon {
+footer #tastiera_esecuzione #setting_esecuzione ion-icon {
   color: #8c8c8c;
   font-size: 1.2rem;
   padding-left: 10px;
 }
-
 @media screen and (max-width: 768px) {
-  footer {
+  footer footer {
     display: none;
   }
 }
+
 * {
   margin: 0;
   padding: 0;

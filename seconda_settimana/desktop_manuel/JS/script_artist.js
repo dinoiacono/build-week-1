@@ -1,5 +1,7 @@
+const URL_PARAMS = new URLSearchParams(window.location.search);
+const VALUE_ID = parseInt(URL_PARAMS.get("ok"));
 
-let sorgenteDati = fetch ('https:striveschool-api.herokuapp.com/api/deezer/album/379976067')
+let sorgenteDati = fetch (`https:striveschool-api.herokuapp.com/api/deezer/album/${VALUE_ID}`)
 .then((response) => response.json())
 .then((datavalue) => {
     console.log(datavalue); 

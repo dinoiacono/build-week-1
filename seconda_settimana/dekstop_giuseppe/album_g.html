@@ -6,26 +6,16 @@
     <title>Album</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="../dekstop_giuseppe/album_scss/album.css">
     <link rel="stylesheet" href="../desktop_manuel/scss/style_default/style_default.css">
     <link rel="stylesheet" href="../desktop_manuel/scss/style_index/style_index.css">
+    <link rel="stylesheet" href="../dekstop_giuseppe/album_scss/album.css">
 </head>
   <body>
-    <div id="contenitore-totale" class="d-flex ">
+    <div class="d-flex">
       <header>
-        <div id="contenitore-header" >
-          <div class="row align-items-center m-1 rounded py-1 mb-3 d-lg-none" id="riproduttore-mobile">
-            <img src="" alt="" class="col-2 " />
-            <div class="col-7">
-              <p class="mb-0 p-0">carcola</p>
-              <p class="mb-0 p-0">stocazzo</p>
-            </div>
-            <i class="bi bi-speaker col-1 p-0 fs-3"></i>
-            <i class="bi bi-heart col-1 p-0 fs-3"></i>
-            <i class="bi bi-play-fill col-1 p-0 fs-3"></i>
-          </div>
-          <nav class="border-0">
-            <ul class="ps-0">
+        <div class="position-fixed ">
+          <nav>
+            <ul>
                 <li>...</li>
                 <div class="primi_tre">
                     <li><ion-icon name="home"></ion-icon><a href="../desktop_manuel/index.html">Home</a></li>
@@ -42,7 +32,7 @@
 
           <div id="playlist_laterali">
               <!-- qui si deve fare con JS, compilazione automatica -->
-              <ul class="ps-0">
+              <ul>
                   <li>Lorem ipsum</li>
                   <li>Lorem ipsum</li>
                   <li>Lorem ipsum</li>
@@ -63,8 +53,8 @@
               </ul>
           </div>
       </div>
+
     </header>
-  
       <main class="p-0">
         <div>
           <div class="container-section-album">
@@ -73,7 +63,7 @@
                     <div class="ms-4 d-flex align-items-center">
                       <div>
                         <button class="style-button-page" ><i class="bi bi-chevron-left"></i></button>
-                        <button class="style-button-page" ><i class="bi bi-chevron-right d-none d-lg-block"></i></button>
+                        <button class="style-button-page" ><i class="bi bi-chevron-right"></i></button>
                       </div>
                       <div class="container-button-play-nav d-flex m-0 align-items-center d-none">
                         <div class="me-2" id="button-play-mini"><i class="bi bi-play-circle-fill"></i>
@@ -83,7 +73,7 @@
                         </div>
                       </div>
                     </div>
-                    <div id="tendina-profilo" class="box-profile me-4 ">
+                    <div class="box-profile me-4 ">
                         <div class="d-flex align-items-center m-0 p-0">
                             <div id="img-profile-size">
                                 <div id=""></div>
@@ -118,35 +108,29 @@
                     </div>
                 </div>
                 <div class="container-information-album">
-                    <div id="titolo-album" class="d-flex">
+                    <div class="d-flex">
                         <div class="image-box">
                           <img id="image-albun" src="" alt="">
                         </div>
-                        <div id="testi-titolo" class="container-max-width ms-lg-4 mt-lg-5">
+                        <div class="container-max-width ms-4 mt-5">
                             <div><h6 class="mb-0" id="category">ALBUM</h6></div>
                             <div class="mt-2 mb-2"><h1  class="mt-0 mb-3 big-h1 " id="title-album">Gioventù bruciata</h1></div>
-                            <div class="container-information-band d-flex m-0">
-                              <div id="img+nome-band" class="d-flex align-items-center m-0"> 
+                            <div class="container-information-band d-flex align-items-center m-0">
                                 <div class="image-artist">
                                   <img id="img-profile-artist" src="" alt="">
                                 </div>
-                                <div>
-                                  <p id="name-band" class="ms-2" >Pinguini Tattici nucleari</p>
-                                </div>
-                              </div>
-                                <div class="d-flex m-0"><span id="categoria" class="d-lg-none me-1">Album •</span><span id="data-publishig" class="ms-0">2017</span><span id="total-song">40</span><span id="total-Timer">53 min 20 sec</span></div>
+                                <div class="d-flex m-0 ms-2"><p id="name-band" >Pinguini Tattici nucleari</p><span id="data-publishig">2017</span><span id="total-song">40</span><span>Brani</span><span id="total-Timer">53 min 20 sec</span></div>
                             </div>
                         </div>
                     </div>
                     <div class="container-song mt-4">
-                        <div class="container-button-list-song d-flex align-items-center m-0 ps-4 pe-4 pt-4 w-100 justify-content-between box-s"><span class="d-flex flex-direction-row m-0 align-items-center"><div class="me-4" id="button-play-d-lg"><i class="bi bi-play-circle-fill"></i></div>
+                        <div class="container-button-list-song d-flex align-items-center m-0 ms-4 me-4 pt-4">
+                            <div class="me-4" id="button-play"><i class="bi bi-play-circle-fill"></i></div>
                             <div class="me-4" id="button-add-favorites"><i class="bi bi-heart"></i></div>
                             <div class="me-4" id="button-download-song"><i class="bi bi-download"></i></div>
-                            <div  class="me-4" id="button-menu"><i class="bi bi-three-dots"></i></div></span>
-                            
-                            <div class="d-flex m-0 justify-content-end d-lg-none" id="button-play-d-md"><i class="bi bi-play-circle-fill"></i></div>
+                            <div  class="me-4" id="button-menu"><i class="bi bi-three-dots"></i></div>
                         </div>
-                        <div id="intestazione-tabella" class="container-list-song container-max-width mt-2 border-button-list">
+                        <div class="container-list-song container-max-width mt-2 border-button-list">
                             <div class="sub-container-list-song m-0 p-0 ju m-auto">
                                 <div class="row d-flex align-items-center m-0">
                                   <div class="col text-start ps-0">
@@ -171,7 +155,6 @@
           </div>
         </div>
     </main>
-  
     <aside class="position-fixed postion-right">
 
       <div id="attivita">
@@ -222,17 +205,21 @@
 
   </aside>
 </div>
-<footer class="sticky-bottom">
+
+<footer>
+
   <div id="brano_esecuzione">
       <!-- qui si deve fare con JS, compilazione automatica -->
-      <img id="image-band-footer" src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
+      <img src="https://www.freeiconspng.com/uploads/spotify-icon-18.png" alt="#">
       <div id="brano_esecuzione--testi">
           <p id="name-song">Lorem ipsum</p>
-          <span id="name-artist">Lorem</span>
+          <span>Lorem</span>
       </div>
       <ion-icon name="heart-outline"></ion-icon>
   </div>
+
   <div id="tastiera_esecuzione">
+
       <div class="tasti_esecuzione">
 
           <ion-icon class="icone_esecuzione verdi" name="shuffle"></ion-icon>
@@ -242,20 +229,14 @@
           <ion-icon class="icone_esecuzione" name="play-skip-forward"></ion-icon>
           <ion-icon class="icone_esecuzione verdi" name="repeat"></ion-icon>
           <!-- questa diventa verde se selezionata -->
-
       </div>
 
       <div class="barra_esecuzione">
-        <div class="slider_container">
-          <div class="current-time">00:00</div>
-          <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-          <div class="total-duration">00:00</div>
-        </div>
-        <div class="slider_container">
-          <i class="fa fa-volume-down"></i>
-          <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-          <i class="fa fa-volume-up"></i>
-        </div>
+          <div class="slider_container">
+              <div class="current-time">00:00</div>
+              <input type="range" min="0" max="100" value="0" class="seek_slider">
+              <div class="total-duration">00:00</div>
+            </div>                 
       </div>
 
   </div>
@@ -265,11 +246,16 @@
       <ion-icon name="mic"></ion-icon>
       <ion-icon name="menu"></ion-icon>
       <ion-icon name="people"></ion-icon>
-      <ion-icon name="volume-mute"></ion-icon>
+      <ion-icon name="volume-mute"><div class="slider_container">
+              <i class="fa fa-volume-down"></i>
+              <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+              <i class="fa fa-volume-up"></i>
+            </div></ion-icon>
       <!-- barra volume da vedere in seguito -->
       <ion-icon name="expand"></ion-icon>
 
   </div>
+
 </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

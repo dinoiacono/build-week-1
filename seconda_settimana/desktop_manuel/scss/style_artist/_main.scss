@@ -197,11 +197,14 @@ main {
                     tbody {
 
                         tr {
-
+                            #image-song{
+                                text-align: left;
+                            }
                             td {
 
                                 text-align: center;
-
+                                margin-top: 15px;
+                                margin-bottom: 15px;
                                 &:nth-child(2) {
 
                                     text-align: unset;
@@ -218,7 +221,9 @@ main {
                                     }
 
                                 }
-
+                                #image-song{
+                                    border: 1px solid red;
+                                }
                             }
 
                         }
