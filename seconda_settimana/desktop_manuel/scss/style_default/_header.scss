@@ -9,6 +9,9 @@ header {
     width: 20%;
     background-color: $color_black;
     padding: $size_5;
+    .primi_tre a{
+        text-decoration: none;
+    }
 
     nav,
     p {
@@ -21,7 +24,7 @@ header {
 
     nav {
 
-        border-bottom: 1px solid #fff;
+        
         line-height: 2.2rem;
 
         ul {
@@ -118,8 +121,34 @@ header {
     }
 
 }
+#riproduttore-mobile{
+    display: none;
+}
 
 @media screen and (max-width: 768px){
+    #riproduttore-mobile{
+        display: flex;
+        align-items: center;
+        margin: 0.25rem 0.25rem 1rem 0.25rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        background-color: rgb(40, 40, 40);
+        border-radius: 9px;
+        img{
+            width: 16.66666667%;
+        }
+        #testi-player-mobile{
+            width: 58.33333333%;
+            p{
+                padding: 0;
+            }
+        }
+        i{
+            width: 8.33333333%;
+            padding: 0;
+            font-size: calc(1.3rem + .6vw);
+        }
+    }
 
     #contenitore_contenuti {
 

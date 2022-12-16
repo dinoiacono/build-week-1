@@ -9,7 +9,8 @@ main {
   width: 65%;
 }
 main #section_1 {
-  background-image: url(https://www.cattolicanews.it/Concerto_CattNews.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 main #section_1 .contenitore_arrow_album {
   height: 45vh;

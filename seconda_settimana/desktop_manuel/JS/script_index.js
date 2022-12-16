@@ -92,9 +92,10 @@ let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/albu
         text.className = "titolo_playlist";
         text.innerHTML =title;
         // subtitle
-        var _subtitle = document.createElement("span");
+        var _subtitle = document.createElement("a");
         _subtitle.className = "sub-titolo-playlist";
         _subtitle.innerHTML =subtitle;
+        _subtitle.href = `artist.html?ok=${AlbumId[RandomSeed]}`;
         // icon
         var iconHeart = document.createElement("ion-icon");
         iconHeart.name = 'heart-outline';
@@ -145,8 +146,9 @@ let sorgenteDati = fetch(`https://striveschool-api.herokuapp.com/api/deezer/albu
 
     function CreationBoxPlayListSmall(cover, title){
         //creazione container
-        var container = document.createElement("div");
+        var container = document.createElement("a");
         container.className ="preferito";
+        container.href = `../dekstop_giuseppe/album_g.html?ok=${AlbumId[RandomSeed]}`;
         //creazione immagine;
         var image = document.createElement("img");
         image.src = cover;

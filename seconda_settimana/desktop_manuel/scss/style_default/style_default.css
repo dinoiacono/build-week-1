@@ -12,6 +12,9 @@ header {
   background-color: #000;
   padding: 5px;
 }
+header .primi_tre a {
+  text-decoration: none;
+}
 header nav,
 header p {
   font-size: 0.8rem;
@@ -19,7 +22,6 @@ header p {
   padding: 10px;
 }
 header nav {
-  border-bottom: 1px solid #fff;
   line-height: 2.2rem;
 }
 header nav ul .primi_tre {
@@ -74,7 +76,34 @@ header #playlist_laterali ul li:hover {
   transform: scale(1.1) translateX(3px);
 }
 
+#riproduttore-mobile {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
+  #riproduttore-mobile {
+    display: flex;
+    align-items: center;
+    margin: 0.25rem 0.25rem 1rem 0.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background-color: rgb(40, 40, 40);
+    border-radius: 9px;
+  }
+  #riproduttore-mobile img {
+    width: 16.66666667%;
+  }
+  #riproduttore-mobile #testi-player-mobile {
+    width: 58.33333333%;
+  }
+  #riproduttore-mobile #testi-player-mobile p {
+    padding: 0;
+  }
+  #riproduttore-mobile i {
+    width: 8.33333333%;
+    padding: 0;
+    font-size: calc(1.3rem + 0.6vw);
+  }
   #contenitore_contenuti {
     display: flex;
     flex-direction: column-reverse;
@@ -176,6 +205,7 @@ footer #brano_esecuzione,
 footer #tastiera_esecuzione,
 footer #setting_esecuzione {
   width: 33%;
+  text-align: end;
 }
 footer #brano_esecuzione {
   display: flex;
@@ -258,12 +288,12 @@ footer #tastiera_esecuzione #setting_esecuzione ion-icon {
   font-size: 1.2rem;
   padding-left: 10px;
 }
+
 @media screen and (max-width: 768px) {
-  footer footer {
+  footer {
     display: none;
   }
 }
-
 * {
   margin: 0;
   padding: 0;

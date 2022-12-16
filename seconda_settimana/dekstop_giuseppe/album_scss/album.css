@@ -317,7 +317,6 @@ main {
 
 .slider_container {
   width: 75%;
-  max-width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -428,87 +427,4 @@ i.fa-step-backward {
   #contenitore-totale #intestazione-tabella {
     display: none;
   }
-}
-footer {
-  width: 100%;
-  background-color: #181818;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.8rem;
-  padding: 5px 10px;
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  z-index: 10;
-}
-footer img {
-  width: 50px;
-}
-footer #brano_esecuzione,
-footer #tastiera_esecuzione,
-footer #setting_esecuzione {
-  width: 33%;
-}
-footer #brano_esecuzione {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  cursor: pointer;
-}
-footer #brano_esecuzione #brano_esecuzione--testi {
-  padding: 10px;
-}
-footer #brano_esecuzione #brano_esecuzione--testi span {
-  color: #686868;
-}
-footer #brano_esecuzione #brano_esecuzione--testi p {
-  color: white;
-}
-footer #tastiera_esecuzione {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-footer #tastiera_esecuzione .tasti_esecuzione {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-footer #tastiera_esecuzione .barra_esecuzione {
-  display: flex;
-  width: 150%;
-}
-footer #tastiera_esecuzione .barra_esecuzione .slider_container {
-  width: 150%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-footer #tastiera_esecuzione .barra_esecuzione .slider_container .seek_slider {
-  -webkit-appearance: auto;
-     -moz-appearance: auto;
-          appearance: auto;
-  background: rgb(82, 81, 81);
-  outline: none;
-  width: 100%;
-  margin: 20px;
-  height: 15%;
-  border-radius: 20px;
-}
-footer #tastiera_esecuzione .barra_esecuzione .slider_container .seek_slider::-webkit-slider-thumb {
-  width: 15%;
-  height: 15%;
-  cursor: pointer;
-}
-footer #tastiera_esecuzione .barra_esecuzione .slider_container .seek_slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: white;
-  cursor: pointer;
-}
-footer #tastiera_esecuzione #setting_esecuzione {
-  display: flex;
-  justify-content: flex-end;
-  cursor: pointer;
 }/*# sourceMappingURL=album.css.map */

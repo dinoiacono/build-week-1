@@ -22,6 +22,7 @@ footer {
     #setting_esecuzione {
 
         width: 33%;
+        text-align: end;
 
     }
 
@@ -128,6 +129,7 @@ footer {
         display: flex;
         justify-content: flex-end;
         cursor: pointer;
+        
 
         ion-icon {
 
@@ -140,6 +142,7 @@ footer {
     }
 
 }
+}
 
 @media screen and (max-width: 768px){
     
@@ -149,5 +152,4 @@ footer {
 
     }
 
-}
 }
