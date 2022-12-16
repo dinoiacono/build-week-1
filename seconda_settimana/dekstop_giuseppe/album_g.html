@@ -14,8 +14,18 @@
     <div id="contenitore-totale" class="d-flex ">
       <header>
         <div id="contenitore-header" >
+          <div class="row align-items-center m-1 rounded py-1 mb-3 d-lg-none" id="riproduttore-mobile">
+            <img src="" alt="" class="col-2 " />
+            <div class="col-7">
+              <p class="mb-0 p-0">carcola</p>
+              <p class="mb-0 p-0">stocazzo</p>
+            </div>
+            <i class="bi bi-speaker col-1 p-0 fs-3"></i>
+            <i class="bi bi-heart col-1 p-0 fs-3"></i>
+            <i class="bi bi-play-fill col-1 p-0 fs-3"></i>
+          </div>
           <nav class="border-0">
-            <ul>
+            <ul class="ps-0">
                 <li>...</li>
                 <div class="primi_tre">
                     <li><ion-icon name="home"></ion-icon><a href="../desktop_manuel/index.html">Home</a></li>
@@ -32,7 +42,7 @@
 
           <div id="playlist_laterali">
               <!-- qui si deve fare con JS, compilazione automatica -->
-              <ul>
+              <ul class="ps-0">
                   <li>Lorem ipsum</li>
                   <li>Lorem ipsum</li>
                   <li>Lorem ipsum</li>
@@ -53,8 +63,8 @@
               </ul>
           </div>
       </div>
-
     </header>
+  
       <main class="p-0">
         <div>
           <div class="container-section-album">
@@ -129,7 +139,7 @@
                         </div>
                     </div>
                     <div class="container-song mt-4">
-                        <div class="container-button-list-song d-flex align-items-center m-0 ps-4 pe-4 pt-4 w-100 justify-content-between box-s"><span class="d-flex flex-direction-row m-0"><div class="me-4" id="button-play-d-lg"><i class="bi bi-play-circle-fill"></i></div>
+                        <div class="container-button-list-song d-flex align-items-center m-0 ps-4 pe-4 pt-4 w-100 justify-content-between box-s"><span class="d-flex flex-direction-row m-0 align-items-center"><div class="me-4" id="button-play-d-lg"><i class="bi bi-play-circle-fill"></i></div>
                             <div class="me-4" id="button-add-favorites"><i class="bi bi-heart"></i></div>
                             <div class="me-4" id="button-download-song"><i class="bi bi-download"></i></div>
                             <div  class="me-4" id="button-menu"><i class="bi bi-three-dots"></i></div></span>
@@ -161,6 +171,7 @@
           </div>
         </div>
     </main>
+  
     <aside class="position-fixed postion-right">
 
       <div id="attivita">

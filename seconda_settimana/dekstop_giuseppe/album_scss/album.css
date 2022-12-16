@@ -383,9 +383,17 @@ i.fa-step-backward {
   position: fixed;
 }
 
+.primi_tre li a {
+  text-decoration: none;
+  color: white;
+}
+
 @media screen and (max-width: 768px) {
   #contenitore-totale {
     flex-direction: column-reverse;
+  }
+  #contenitore-totale #riproduttore-mobile {
+    background-color: rgb(40, 40, 40);
   }
   #contenitore-totale #contenitore-header {
     position: unset;

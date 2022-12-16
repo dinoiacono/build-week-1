@@ -397,11 +397,19 @@ main{
   #contenitore-header{
     position: fixed; 
 }
+.primi_tre  li  a{
+            text-decoration: none;
+            color: white;
+        }
 
   @media screen and(max-width: 768px) {
 
     #contenitore-totale{
         flex-direction: column-reverse;
+        #riproduttore-mobile{
+            background-color: rgb(40, 40, 40);
+        }
+    
         #contenitore-header{
             position: unset;
         }
