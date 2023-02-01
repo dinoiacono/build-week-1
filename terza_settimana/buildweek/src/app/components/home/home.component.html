@@ -1,0 +1,10 @@
+<app-hero></app-hero>
+
+<h2 class="text-center">Ultimi Articoli</h2>
+<div class="container">
+	<div class="row">
+		<div *ngFor="let p of posts.slice(-4);" class="col-3" >
+			<app-post [post]="p"></app-post>
+		</div>
+	</div>
+</div>

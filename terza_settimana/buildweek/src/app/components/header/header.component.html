@@ -1,0 +1,102 @@
+<header>
+	<div class="px-3 py-2 text-bg-dark">
+		<div class="container">
+			<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+				<a routerLink="/"
+					class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none fs-2">
+					<img src="../../../assets/img/logo.png" alt="Logo" height="50">
+				</a>
+
+				<ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+					<li>
+						<a routerLink="/" class="nav-link text-white">Home</a>
+					</li>
+					<li>
+						<a routerLink="archivio" class="nav-link text-white">
+							Archivio
+						</a>
+          </li>
+          <li *ngIf="logged">
+            <div class="dropdown">
+              <a class="btn btn-light dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Admin
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="admin">Pannello</a></li>
+                <li><a class="dropdown-item" href="https://63d27ce006556a0fdd3d77e7.mockapi.io/posts" target="_blank">API Post</a></li>
+                <li><a class="dropdown-item" href="http://localhost:4201/users" target="_blank">API Utente</a></li>
+              </ul>
+            </div>
+          </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="px-3 py-2 border-bottom mb-3 bg-light" *ngIf="!logged">
+		<div class="container d-flex flex-wrap justify-content-end">
+
+			<div class="text-end">
+				<button type="button" class="btn btn-light text-dark me-2" data-bs-toggle="modal"
+					data-bs-target="#modaleAccesso">Login</button>
+				<button type="button" class="btn btn-primary disabled">Sign-up</button>
+			</div>
+
+
+			<div class="modal fade" id="modaleAccesso" tabindex="-1" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="exampleModalLabel">Profilo</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body d-flex flex-column align-items-center my-5">
+							<h3>Accedi</h3>
+							<form (ngSubmit)="submit(login)" #login="ngForm">
+								<div class="mb-3">
+									<label for="inputUser" class="form-label">Email => admin</label>
+									<input type="email" class="form-control" id="inputUser" name="email" placeholder="Inserisci email" ngModel required>
+								</div>
+								<div class="mb-3">
+									<label for="inputPassword" class="form-label">Password => admin</label>
+									<input type="password" class="form-control" id="inputPassword" name="password"
+										placeholder="Inserisci Password..." ngModel required>
+								</div>
+								<button type="submit" class="btn btn-primary" [ngClass]="{'disabled': login.invalid}" data-bs-dismiss="modal">Accedi</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="logged" class=" border-bottom my-2">
+		<div  class="container">
+			<div class="text-end align-middle">
+        <h5 class="d-inline me-3">Bentornato Admin!</h5>
+				<button type="button" class="btn btn-danger mb-2"  data-bs-toggle="modal"
+				data-bs-target="#modaleLogout" >Logout</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modaleLogout" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Logout</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body d-flex flex-column align-items-center my-5">
+					<h3>Sei Sicuro di voler effettuare il logout?</h3>
+					<div class="d-flex justify-content-center">
+						<button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="logout()">Logout</button>
+						<button type="button" class="btn btn-primary ms-2" data-bs-dismiss="modal">Annulla</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</header>
+<router-outlet></router-outlet>
