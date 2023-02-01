@@ -1,0 +1,17 @@
+<h1 class="text-center">Archivio</h1>
+<div class="container">
+  <select class="form-select form-select-lg my-3 w-25" aria-label=".form-select-lg example" #selectorPost (change)="cambiaNumero(selectorPost.value)">
+    <option value="12" selected>12</option>
+    <option value="24">24</option>
+  </select>
+  <div class="row">
+    <div *ngFor="let p of posts.slice(offset, numeroPost);" class="col-3" >
+      <app-post [post]="p"></app-post>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mb-3">
+    <button *ngIf="offset > 0 " class="btn btn-primary" (click)="cambiaOffset(false)"><i class="bi bi-arrow-left-circle-fill"></i></button>
+    <button *ngIf="numeroPost < idUltimoPost-offset" class="btn btn-primary" (click)="cambiaOffset(true)"><i class="bi bi-arrow-right-circle-fill"></i></button>
+  </div>
+</div>
+

@@ -1,0 +1,107 @@
+<div class="w-100 text-end container">
+	<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#aggiungiPost"><i
+			class="bi bi-pencil-square"></i> Aggiungi Post</button>
+	<div class="modal fade" id="aggiungiPost" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="aggiungiPostLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="aggiungiPostLabel">Aggiungi Articolo</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+
+					<form (ngSubmit)="nuovoArticolo(formNuovo)" #formNuovo="ngForm">
+						<div class="container box-size">
+							<div class="input-group input-group-lg">
+								<span class="input-group-text" id="inputGroup-sizing-lg">Titolo</span>
+								<input type="text" class="form-control" ngModel name="title">
+							</div>
+							<div class="input-group input-group-lg mt-3">
+								<span class="input-group-text" id="inputGroup-sizing-lg">Url Immagine</span>
+								<input type="text" class="form-control" ngModel name="url">
+							</div>
+							<div class="mb-3 mt-3">
+								<textarea class="form-control" rows="8" ngModel name="body"></textarea>
+							</div>
+							<button type="submit" class="btn btn-success" data-bs-dismiss="modal">Aggiungi</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="d-flex justify-content-between py-5">
+		<div class="card" style="width: 50rem;">
+			<div class="card-header">
+				Articoli Pubblicati
+			</div>
+			<ol class="list-group list-group-flush">
+				<li class="list-group-item d-flex justify-content-between" *ngFor="let p of posts">
+					{{p.title}}
+					<span>
+						<button type="button" class="btn btn-primary mx-1" (click)="modifica(p.id)"><i
+								class="bi bi-pencil-square"></i></button>
+						<button type="button" class="btn btn-danger mx-1" data-bs-toggle="modal" data-bs-target="#modaleElimina" (click)="elimina(p.id)"><i
+								class="bi bi-trash"></i></button>
+						<div class="modal fade" id="modaleElimina" tabindex="-1" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1 class="modal-title fs-5" id="exampleModalLabel">Conferma Eliminazione</h1>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body d-flex flex-column align-items-center my-5">
+										<h3>Sei Sicuro di voler Eliminare il Post?</h3>
+										<div class="d-flex justify-content-center">
+											<button type="button" class="btn btn-danger me-2" data-bs-dismiss="modal" (click)="inviaElimina(postDelete)">Elimina</button>
+											<button type="button" class="btn btn-primary ms-2" data-bs-dismiss="modal">Annulla</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</span>
+				</li>
+			</ol>
+		</div>
+		<div>
+
+			<form *ngIf="editMode" (ngSubmit)="inviaModifica(formModifica,postEdit.id)" #formModifica="ngForm">
+				<div class="container box-size w-100 mx-5">
+					<div class="input-group input-group-lg">
+						<span class="input-group-text" id="inputGroup-sizing-lg">Titolo</span>
+						<input type="text" class="form-control" [ngModel]="postEdit.title" name="title">
+					</div>
+					<div class="mb-3 mt-3">
+						<textarea class="form-control" rows="8" name="body" [ngModel]="postEdit.body"></textarea>
+					</div>
+					<button type="button" data-bs-toggle="modal" data-bs-target="#modaleModifica"
+						class="btn btn-success mx-1">Modifica</button>
+					<button type="button" class="btn btn-danger mx-1" (click)="annullaModifica()">Annulla</button>
+				</div>
+				<div class="modal fade" id="modaleModifica" tabindex="-1" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5" id="exampleModalLabel">Conferma Modifica</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body d-flex flex-column align-items-center my-5">
+								<h3>Sei Sicuro di voler effettuare la modifica?</h3>
+								<div class="d-flex justify-content-center">
+									<button type="submit" class="btn btn-success me-2" data-bs-dismiss="modal">Effettua Modifica</button>
+									<button type="button" class="btn btn-primary ms-2" data-bs-dismiss="modal">Annulla</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>
