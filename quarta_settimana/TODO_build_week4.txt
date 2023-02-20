@@ -1,0 +1,16 @@
+
+-Sistema di emissione biglietti / abbonamenti
+-Creazione utente
+-Metodo per tenere conto dei biglietti / abboanmenti in un determinato periodo
+- verificare la validità dell'abbonamento ( in base al numero tessera utente)
+
+
+-il sistema deve gestire il parco mezzi
+-tenere traccia del periodo servizio / manutenzione
+-implementiamo nel biglietto lo status di valido o non valido in base al fatto se è stato timbrato o no
+- metodo di contare i biglietti timbrati su un mezzo in un determinato periodo
+
+
+-asseganre ogni mezzo ad una tratta ( caraterizzata da un pèunto di partenza ed uno di arrivo)
+- tenere traccia del numero di volte che un mezzo passa per la stessa tappa 
+- contare il tempo impiegato ad un veicolo di completare la tratta
