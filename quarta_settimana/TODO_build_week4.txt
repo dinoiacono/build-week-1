@@ -14,3 +14,39 @@
 -asseganre ogni mezzo ad una tratta ( caraterizzata da un pèunto di partenza ed uno di arrivo)
 - tenere traccia del numero di volte che un mezzo passa per la stessa tappa 
 - contare il tempo impiegato ad un veicolo di completare la tratta
+
+
+DAO
+
+-interfacce DAO
+-classi DAO
+
+-definiamo le interfacce dao ( scriviamo i metodi senza definirli)
+- definiamo le classi Dao dove implementiamo le interfacce (dentro le classi definiamo i metodi)
+-le classi Dao in fine 
+
+
+
+
+-chiediamo all'utente se vuole fare un viglietto o un abbonamento:
+-chiediamo all'utente da quale punto parte
+-chiediamo all'utente dove vuole arrivare
+-SE Biglietto: stampiamo l'importo da pagare, e il tipo di veicolo che userà per fare quelle tratte
+
+
+
+	static EntityManagerFactory emf = Persistence.createEntityManagerFactory("db_week3");
+	static EntityManager em = emf.createEntityManager();	//
+
+
+public static void aggiungiElem(Inventario l) {
+		try {
+		em.getTransaction().begin();
+		em.persist(l);
+		em.getTransaction().commit();
+		}
+		finally {
+			
+		}
+		System.out.println("Libro aggiunto al Database");
+	}
