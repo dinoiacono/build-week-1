@@ -5,6 +5,8 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,6 +23,9 @@ public class biglietto implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="Id")
 	private Integer id;
+	@Enumerated(EnumType.STRING)
+	@Column(name="luogoEmissione")
+	private luogoemissione luogoemissione;
 	@Column(name="data_rilascio")
 	private Date data_rilascio;
 

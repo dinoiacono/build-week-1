@@ -35,18 +35,3 @@ DAO
 
 
 
-	static EntityManagerFactory emf = Persistence.createEntityManagerFactory("db_week3");
-	static EntityManager em = emf.createEntityManager();	//
-
-
-public static void aggiungiElem(Inventario l) {
-		try {
-		em.getTransaction().begin();
-		em.persist(l);
-		em.getTransaction().commit();
-		}
-		finally {
-			
-		}
-		System.out.println("Libro aggiunto al Database");
-	}
