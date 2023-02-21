@@ -1,70 +1,96 @@
 package Biglietteria;
 
-import java.io.Serializable;
+
 import java.sql.Date;
+import java.util.Random;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="abbonamenti")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public class abbonamenti implements Serializable {
+public class abbonamenti {
 
 	@Id
+	@Column(name="num_abbonamento", unique=true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="Id")
-	private Integer id;
-	@Column(name="nomeUtente")
-	private String nome_utente;
+	private int numero_abbonamento;
+	
 	@Column(name="data_rilascio")
 	private Date data_rilascio;
-	@Column(name="NumTessera")
-	private int numero_tessera;
+	
 	@Enumerated(EnumType.STRING)
-	@Column(name="luogoEmissione")
-	private luogoemissione luogoemissione;
-	@Enumerated(EnumType.STRING)
-	@Column(name="durata")
+	@Column(name="validita")
 	private vale_abbonamento durata;
+	
+	@OneToOne(mappedBy = "abbonamento")
+	private utente utente;
+	
+	@ManyToOne
+	@JoinColumn(name="id_distributore")
+	private DistributoreAutomatico macchinetta;
+	
+	@ManyToOne
+	@JoinColumn(name="id_rivenditore")
+	private RivenditoreAutorizzato rivenditore;
+	
+	
 	public abbonamenti() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public Integer getId() {
-		return id;
+
+
+	public int getNumero_abbonamento() {
+		return numero_abbonamento;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+
+
+	public void setNumero_abbonamento(int numero_abbonamento) {
+		this.numero_abbonamento = numero_abbonamento;
 	}
-	public String getNome_utente() {
-		return nome_utente;
-	}
-	public void setNome_utente(String nome_utente) {
-		this.nome_utente = nome_utente;
-	}
+
 	public Date getData_rilascio() {
 		return data_rilascio;
 	}
+
+
 	public void setData_rilascio(Date data_rilascio) {
 		this.data_rilascio = data_rilascio;
 	}
-	public int getNumero_tessera() {
-		return numero_tessera;
-	}
-	public void setNumero_tessera(int numero_tessera) {
-		this.numero_tessera = numero_tessera;
-	}
-	public luogoemissione getLuogoemissione() {
-		return luogoemissione;
-	}
-	public void setLuogoemissione(luogoemissione luogoemissione) {
-		this.luogoemissione = luogoemissione;
-	}
+
 	public vale_abbonamento getDurata() {
 		return durata;
 	}
+
+
 	public void setDurata(vale_abbonamento durata) {
 		this.durata = durata;
 	}
+
+
+	public utente getUtente() {
+		return utente;
+	}
+
+
+	public void setUtente(utente utente) {
+		this.utente = utente;
+	}
+
+
+	public DistributoreAutomatico getMacchinetta() {
+		return macchinetta;
+	}
+
+
+	public void setMacchinetta(DistributoreAutomatico macchinetta) {
+		this.macchinetta = macchinetta;
+	}
+	
+    public static int numGenerator() {
+        Random rand = new Random(); 
+        return rand.nextInt(999999-100000) + 100000;
+    }
 	
 	
 }
