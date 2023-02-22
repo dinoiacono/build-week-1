@@ -24,13 +24,5 @@ public class trattaDAO {
 		
 		System.out.println("Abbonamento aggiunto al DB");
 		}
-	
-	public void calcolMediaTratta(int tempo_tratta) {
-		int punto_partenza = 0;
-		int punto_destinazione = 0;
-		int media = (punto_partenza + punto_destinazione) / 2;
-		
-		System.out.println("il tempio medio tra le tratte è di: " + media);
-	}
 }
 
