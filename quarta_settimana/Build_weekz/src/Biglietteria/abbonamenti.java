@@ -45,8 +45,8 @@ public class abbonamenti {
 	}
 
 
-	public void setNumero_abbonamento(int numero_abbonamento) {
-		this.numero_abbonamento = numero_abbonamento;
+	public void setNumero_abbonamento() {
+		this.numero_abbonamento = numGenerator();
 	}
 
 	public Date getData_rilascio() {
