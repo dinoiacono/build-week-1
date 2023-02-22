@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 
 import Biglietteria.biglietto;
 import Util.util;
+import Veicoli.tratta;
 import Veicoli.veicolo;
 
 public class veicoloDAO {
@@ -37,8 +38,13 @@ public class veicoloDAO {
 		return lista.size();
 	}
 	
-	public void getTempoTratta(veicolo v ) {
+	public void getTempoTratta(veicolo v, tratta t, int orarioPartenza, int orarioArrivo) {
+		t.setOrarioPartenza(orarioPartenza);
+		t.setOrarioArrivo(orarioArrivo);
+		int orarioComplessivo = orarioArrivo - orarioPartenza;
+		t.setTempo_tratta(orarioComplessivo);
+		v.setTratta(t);
 		
+		System.out.println("il tempo percordo dal veicolo è: " + orarioComplessivo);
 	}
-	
 }

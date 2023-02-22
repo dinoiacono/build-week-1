@@ -21,6 +21,12 @@ public class tratta {
 	@Column(name="tempoMedioTratta")
 	private int tempoMedioTratta;
 	
+	@Column(name="orarioPartenza")
+	private int orarioPartenza;
+	
+	@Column(name="orarioArrivo")
+	private int orarioArrivo;
+	
 	@OneToMany(mappedBy = "tratta", cascade = CascadeType.ALL)
 	private Set<veicolo> mezzi;
 	
@@ -45,6 +51,18 @@ public class tratta {
 	}
 	public void setTempo_tratta(int tempo_tratta) {
 		this.tempoMedioTratta = tempo_tratta;
+	}
+	public int getOrarioPartenza() {
+		return orarioPartenza;
+	}
+	public void setOrarioPartenza(int orarioPartenza) {
+		this.orarioPartenza = orarioPartenza;
+	}
+	public int getOrarioArrivo() {
+		return orarioArrivo;
+	}
+	public void setOrarioArrivo(int orarioArrivo) {
+		this.orarioArrivo = orarioArrivo;
 	}
 	
 }

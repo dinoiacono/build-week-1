@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 
 import Util.util;
 import Veicoli.tratta;
+import Veicoli.veicolo;
 
 public class trattaDAO {
 
