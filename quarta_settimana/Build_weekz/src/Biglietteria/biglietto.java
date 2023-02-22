@@ -24,8 +24,18 @@ public class biglietto{
 	@Id
 	@Column(name="num_biglietto", unique=true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD
 	private int num_biglietto;
 
+=======
+	@Column(name="Id")
+	private Integer id;
+	@Column(name="DataEmission")
+	private Date data_emissione;
+	@Enumerated(EnumType.STRING)
+	@Column(name="luogoEmissione")
+	private luogoemissione luogoemissione;
+>>>>>>> e2642a66 (pushata)
 	@Column(name="data_rilascio")
 	private Date data_rilascio;
 	
@@ -56,6 +66,7 @@ public class biglietto{
 		this.num_biglietto = numGenerator();
 	}
 
+<<<<<<< HEAD
 	public utente getUtente() {
 		return utente;
 	}
@@ -80,6 +91,24 @@ public class biglietto{
 
 
 
+=======
+	public Date getData_emissione() {
+		return data_emissione;
+	}
+
+	public void setData_emissione(Date data_emissione) {
+		this.data_emissione = data_emissione;
+	}
+
+	public luogoemissione getLuogoemissione() {
+		return luogoemissione;
+	}
+
+	public void setLuogoemissione(luogoemissione luogoemissione) {
+		this.luogoemissione = luogoemissione;
+	}
+
+>>>>>>> e2642a66 (pushata)
 	public Date getData_rilascio() {
 		return data_rilascio;
 	}
@@ -89,6 +118,7 @@ public class biglietto{
 	public void setData_rilascio(Date data_rilascio) {
 		this.data_rilascio = data_rilascio;
 	}
+
 	
     public static int numGenerator() {
         Random rand = new Random(); 

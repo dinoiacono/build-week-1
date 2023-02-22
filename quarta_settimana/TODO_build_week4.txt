@@ -1,6 +1,6 @@
 
 -Sistema di emissione biglietti / abbonamenti
--Creazione utente
+-Creazione utente V
 -Metodo per tenere conto dei biglietti / abboanmenti in un determinato periodo
 - verificare la validità dell'abbonamento ( in base al numero tessera utente)
 

@@ -18,7 +18,14 @@ public class abbonamenti {
 	
 	@Column(name="data_rilascio")
 	private Date data_rilascio;
+<<<<<<< HEAD
 	
+=======
+	@Column(name="NumTessera")
+	private int numero_tessera;
+	@Column(name="DataEmission")
+	private Date data_emissione;
+>>>>>>> e2642a66 (pushata)
 	@Enumerated(EnumType.STRING)
 	@Column(name="validita")
 	private vale_abbonamento durata;
