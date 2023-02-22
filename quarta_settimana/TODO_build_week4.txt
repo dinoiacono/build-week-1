@@ -1,9 +1,11 @@
 
 -Sistema di emissione biglietti / abbonamenti --fatto
 -Creazione utente --fatto
--Metodo per tenere conto dei biglietti / abboanmenti in un determinato periodo --fatto
+-Metodo per tenere conto dei biglietti / abboanmenti in un determinato periodo  --fatto
+- verificare la validità dell'abbonamento ( in base al numero tessera utente)  --fatto
 
-- verificare la validità dell'abbonamento ( in base al numero tessera utente)
+
+
 
 
 -il sistema deve gestire il parco mezzi
@@ -12,27 +14,19 @@
 - metodo di contare i biglietti timbrati su un mezzo in un determinato periodo
 
 
+
+
 -asseganre ogni mezzo ad una tratta ( caraterizzata da un pèunto di partenza ed uno di arrivo)
 - tenere traccia del numero di volte che un mezzo passa per la stessa tappa 
 - contare il tempo impiegato ad un veicolo di completare la tratta
 
 
-DAO
-
--interfacce DAO
--classi DAO
-
--definiamo le interfacce dao ( scriviamo i metodi senza definirli)
-- definiamo le classi Dao dove implementiamo le interfacce (dentro le classi definiamo i metodi)
--le classi Dao in fine 
 
 
 
 
--chiediamo all'utente se vuole fare un viglietto o un abbonamento:
--chiediamo all'utente da quale punto parte
--chiediamo all'utente dove vuole arrivare
--SE Biglietto: stampiamo l'importo da pagare, e il tipo di veicolo che userà per fare quelle tratte
+
+
 
 
 
