@@ -1,7 +1,8 @@
 package Biglietteria;
 
 
-import java.sql.Date;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Random;
 
 import javax.persistence.Column;
@@ -23,7 +24,6 @@ public class biglietto{
 
 	@Id
 	@Column(name="num_biglietto", unique=true)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int num_biglietto;
 
 	@Column(name="data_rilascio")
@@ -33,11 +33,11 @@ public class biglietto{
 	private utente utente;
 	
 	@ManyToOne
-	@JoinColumn(name="id_distributore", nullable=false)
+	@JoinColumn(name="id_distributore", nullable=true)
 	private DistributoreAutomatico macchinetta;
 	
 	@ManyToOne
-	@JoinColumn(name="id_rivenditore", nullable=false)
+	@JoinColumn(name="id_rivenditore", nullable=true)
 	private RivenditoreAutorizzato rivenditore;
 
 	public biglietto() {
@@ -86,8 +86,8 @@ public class biglietto{
 
 
 
-	public void setData_rilascio(Date data_rilascio) {
-		this.data_rilascio = data_rilascio;
+	public void setData_rilascio(GregorianCalendar data_rilascio) {
+		this.data_rilascio = data_rilascio.getTime();
 	}
 	
     public static int numGenerator() {

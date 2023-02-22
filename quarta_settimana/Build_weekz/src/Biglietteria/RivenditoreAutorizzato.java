@@ -11,16 +11,17 @@ import javax.persistence.*;
 public class RivenditoreAutorizzato {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id", unique=true)
 	private int id;
 	
 	@Column(name ="nome_rivenditore")
 	private String nome;
 	
-	@OneToMany(mappedBy = "macchinetta")
+	@OneToMany(mappedBy = "rivenditore",  cascade = CascadeType.ALL)
 	private Set<biglietto> biglietti;
 	
-	@OneToMany(mappedBy = "macchinetta", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "rivenditore", cascade = CascadeType.ALL)
 	private Set<abbonamenti> abbonamenti;
 
 	public Set<biglietto> getBiglietti() {

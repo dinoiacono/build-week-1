@@ -1,7 +1,6 @@
 package DaoClass;
 
 import javax.persistence.EntityManager;
-
 import Biglietteria.biglietto;
 import Util.util;
 

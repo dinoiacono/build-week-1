@@ -1,7 +1,8 @@
 
--Sistema di emissione biglietti / abbonamenti
--Creazione utente
--Metodo per tenere conto dei biglietti / abboanmenti in un determinato periodo
+-Sistema di emissione biglietti / abbonamenti --fatto
+-Creazione utente --fatto
+-Metodo per tenere conto dei biglietti / abboanmenti in un determinato periodo --fatto
+
 - verificare la validità dell'abbonamento ( in base al numero tessera utente)
 
 

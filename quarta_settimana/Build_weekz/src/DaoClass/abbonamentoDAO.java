@@ -30,6 +30,5 @@ public class abbonamentoDAO {
 
 	public void verificaValidita(utente u, Date periodo) {
 		if(u.getAbbonamento().getData_rilascio().compareTo(periodo) < 0) System.out.println("Abbonamento ancora valido");	
-	}
-	
+	}	
 }
