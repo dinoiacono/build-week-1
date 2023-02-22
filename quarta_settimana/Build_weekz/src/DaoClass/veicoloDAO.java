@@ -44,7 +44,7 @@ public class veicoloDAO {
 		int orarioComplessivo = orarioArrivo - orarioPartenza;
 		t.setTempo_tratta(orarioComplessivo);
 		v.setTratta(t);
-		
 		System.out.println("il tempo percordo dal veicolo è: " + orarioComplessivo);
-	}
+	}	
+	
 }

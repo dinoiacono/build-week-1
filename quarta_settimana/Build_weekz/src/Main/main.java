@@ -19,24 +19,24 @@ public class main {
 
 	public static void main(String[] args) {
 		
-//		utente utente1 = new utente();
-//		utente1.setNome("Dino");
-//		utente1.setCognome("Plutonuo");
+		utente utente1 = new utente();
+		utente1.setNome("Dino");
+		utente1.setCognome("Plutonuo");
 //		
-//		DistributoreAutomatico macchinetta1 = new DistributoreAutomatico();
-//		macchinetta1.setStato(Status.ATTIVO);
+		DistributoreAutomatico macchinetta1 = new DistributoreAutomatico();
+		macchinetta1.setStato(Status.ATTIVO);
 //		
-//		DistributoreAutomaticoDAO macchinetta1DAO = new DistributoreAutomaticoDAO();
+		DistributoreAutomaticoDAO macchinetta1DAO = new DistributoreAutomaticoDAO();
 //		//macchinetta1DAO.saveMacchinetta(macchinetta1);
 //		
-//		biglietto ticket1 = new biglietto();
+		biglietto ticket1 = new biglietto();
 //
-//		ticket1.setNum_biglietto();
-//		ticket1.setData_rilascio(new GregorianCalendar (2023, 02, 12));		
+		ticket1.setNum_biglietto();
+		ticket1.setData_rilascio(new GregorianCalendar (2023, 02, 12));		
 //		ticket1.setMacchinetta(macchinetta(1));
 //				
-//		//utenteDAO utente1DAO = new utenteDAO();
-//		//utente1DAO.CreaUtenteDB(utente1);
+		utenteDAO utente1DAO = new utenteDAO();
+		utente1DAO.CreaUtenteDB(utente1);
 //		
 //		//bigliettoDAO ticket1DAO = new bigliettoDAO();
 //		//ticket1DAO.saveBiglietto(ticket1);

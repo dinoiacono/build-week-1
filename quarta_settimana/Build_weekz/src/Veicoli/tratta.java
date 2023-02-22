@@ -18,6 +18,9 @@ public class tratta {
 	@Column(name="punto_destinazione")
 	private String punto_destinazione;
 	
+	@Column(name="tratta_completata")
+	private int tratta_completata;
+	
 	@Column(name="tempoMedioTratta")
 	private int tempoMedioTratta;
 	
