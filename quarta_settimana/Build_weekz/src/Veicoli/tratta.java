@@ -1,6 +1,9 @@
 package Veicoli;
 
+import java.util.Set;
+
 import javax.persistence.*;
+
 
 @Entity
 @Table(name="tratta")
@@ -11,10 +14,16 @@ public class tratta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="punto_partenza")
 	private String punto_partenza;
+	
 	@Column(name="punto_destinazione")
 	private String punto_destinazione;
+	
 	@Column(name="tempoMedioTratta")
 	private int tempoMedioTratta;
+	
+	@OneToMany(mappedBy = "tratta", cascade = CascadeType.ALL)
+	private Set<veicolo> mezzi;
+	
 	public tratta() {
 		super();
 		// TODO Auto-generated constructor stub

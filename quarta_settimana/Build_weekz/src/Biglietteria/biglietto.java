@@ -17,6 +17,9 @@ public class biglietto{
 	@Column(name="data_rilascio")
 	private Date data_rilascio;
 	
+	@Column(name="data_vidimazione")
+	private Date data_vidimazione;
+	
 	@Enumerated(EnumType.STRING)
 	@Column(name="statoBiglietto")
 	private statusbiglietto statusbiglietto;
@@ -40,6 +43,13 @@ public class biglietto{
 		super();
 	}
 
+	public Date getData_vidimazione() {
+		return data_vidimazione;
+	}
+	
+	public void setData_vidimazione(Date data_vidimazione) {
+		this.data_vidimazione = data_vidimazione;
+	}
 
 
 	public statusbiglietto getStatusbiglietto() {

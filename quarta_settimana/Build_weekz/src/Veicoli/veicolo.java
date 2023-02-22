@@ -19,8 +19,10 @@ public class veicolo implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
+	
 	@Column(name="n_posti")
-	private int n_posti;	
+	private int n_posti;
+	
 	@Enumerated(EnumType.STRING)
 	@Column(name="stato")
 	private stato stato;
@@ -31,8 +33,13 @@ public class veicolo implements Serializable {
 	
 	@OneToMany(mappedBy = "veicolo", cascade = CascadeType.ALL)
 	private Set<utente> utenti;
+	
 	@OneToMany(mappedBy = "veicolo", cascade = CascadeType.ALL)
 	private Set<biglietto> biglietti;
+	
+	@ManyToOne
+	@JoinColumn(name="tratta", nullable=true)
+	private tratta tratta;
 	
 	public veicolo() {
 		super();
@@ -47,8 +54,12 @@ public class veicolo implements Serializable {
 	public int getN_posti() {
 		return n_posti;
 	}
-	public void setN_posti(int n_posti) {
-		this.n_posti = n_posti;
+	public void setN_posti() {
+		if(this.getTipoveicolo() == tipoveicolo.TRAM) {
+			this.n_posti = 50;
+		}else {
+			this.n_posti = 30;
+		}
 	}	
 	public stato getStato() {
 		return stato;
@@ -73,6 +84,12 @@ public class veicolo implements Serializable {
 	}
 	public void setUtenti(Set<utente> utenti) {
 		this.utenti = utenti;
+	}
+	public tratta getTratta() {
+		return tratta;
+	}
+	public void setTratta(tratta tratta) {
+		this.tratta = tratta;
 	}
 	
 }

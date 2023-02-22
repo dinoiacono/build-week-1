@@ -1,5 +1,6 @@
 package DaoClass;
 
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.EntityManager;
@@ -29,13 +30,16 @@ public class bigliettoDAO {
 		
 		System.out.println("Biglietto aggiunto al DB");
 }
-	public void timbraBiglietto(veicolo veic, biglietto bigl) {
+	public void timbraBiglietto(veicolo veic, biglietto bigl, Date data_vidimazione) {
 		if(bigl.getStatusbiglietto() == statusbiglietto.NON_TIMBRATO) {
 			bigl.setStatusbiglietto(statusbiglietto.TIMBRATO);
+			bigl.setData_vidimazione(data_vidimazione);
 			Set<biglietto> lista = veic.getBiglietti();
 			lista.add(bigl);
 			veic.setBiglietti(lista);
-		}
+ 		}else {
+ 			System.out.println("Biglietto già timbrato, ricompralo poveraccio!!!");
+ 		}
 		
 	}
 }
