@@ -1,21 +1,9 @@
 package Biglietteria;
 
 
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Random;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import java.util.*;
+import Veicoli.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name="biglietto")
@@ -29,8 +17,16 @@ public class biglietto{
 	@Column(name="data_rilascio")
 	private Date data_rilascio;
 	
+	@Enumerated(EnumType.STRING)
+	@Column(name="statoBiglietto")
+	private statusbiglietto statusbiglietto;
+	
 	@OneToOne(mappedBy = "biglietto")
 	private utente utente;
+	
+	@ManyToOne
+	@JoinColumn(name="id_veicolo", nullable=true)
+	private veicolo veicolo;
 	
 	@ManyToOne
 	@JoinColumn(name="id_distributore", nullable=true)
@@ -42,6 +38,18 @@ public class biglietto{
 
 	public biglietto() {
 		super();
+	}
+
+
+
+	public statusbiglietto getStatusbiglietto() {
+		return statusbiglietto;
+	}
+
+
+
+	public void setStatusbiglietto(statusbiglietto statusbiglietto) {
+		this.statusbiglietto = statusbiglietto;
 	}
 
 

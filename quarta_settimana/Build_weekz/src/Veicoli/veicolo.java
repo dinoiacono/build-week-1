@@ -1,8 +1,14 @@
 package Veicoli;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Set;
+
 import javax.persistence.*;
+
+import Biglietteria.biglietto;
+import Biglietteria.utente;
+
+
 
 @Entity
 @Table(name="veicoli")
@@ -14,12 +20,20 @@ public class veicolo implements Serializable {
 	@Column(name="id")
 	private Integer id;
 	@Column(name="n_posti")
-	private int n_posti;
-	@Column(name="data_servizio")
-	private Date data_servizio;
+	private int n_posti;	
 	@Enumerated(EnumType.STRING)
 	@Column(name="stato")
 	private stato stato;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name="tipoveicolo")
+	private tipoveicolo tipoveicolo;
+	
+	@OneToMany(mappedBy = "veicolo", cascade = CascadeType.ALL)
+	private Set<utente> utenti;
+	@OneToMany(mappedBy = "veicolo", cascade = CascadeType.ALL)
+	private Set<biglietto> biglietti;
+	
 	public veicolo() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -35,17 +49,30 @@ public class veicolo implements Serializable {
 	}
 	public void setN_posti(int n_posti) {
 		this.n_posti = n_posti;
-	}
-	public Date getData_servizio() {
-		return data_servizio;
-	}
-	public void setData_servizio(Date data_servizio) {
-		this.data_servizio = data_servizio;
-	}
+	}	
 	public stato getStato() {
 		return stato;
 	}
 	public void setStato(stato stato) {
 		this.stato = stato;
 	}
+	public Set<biglietto> getBiglietti() {
+		return biglietti;
+	}
+	public void setBiglietti(Set<biglietto> biglietti) {
+		this.biglietti = biglietti;
+	}
+	public tipoveicolo getTipoveicolo() {
+		return tipoveicolo;
+	}
+	public void setTipoveicolo(tipoveicolo tipoveicolo) {
+		this.tipoveicolo = tipoveicolo;
+	}
+	public Set<utente> getUtenti() {
+		return utenti;
+	}
+	public void setUtenti(Set<utente> utenti) {
+		this.utenti = utenti;
+	}
+	
 }

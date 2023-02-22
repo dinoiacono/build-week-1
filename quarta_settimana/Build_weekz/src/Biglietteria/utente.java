@@ -1,5 +1,6 @@
 package Biglietteria;
 
+import Veicoli.*;
 import javax.persistence.*;
 
 
@@ -18,6 +19,10 @@ public class utente {
 	
 	@Column(name="cognome" , nullable = false)
 	private String cognome;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_veicolo")
+	private veicolo veicolo;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "tessera", referencedColumnName = "num_tessera")
