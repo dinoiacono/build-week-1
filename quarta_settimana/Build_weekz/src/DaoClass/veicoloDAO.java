@@ -12,7 +12,7 @@ import Veicoli.veicolo;
 
 public class veicoloDAO {
 
-	public void creaVeicolo(veicolo v) {
+	public void addVehicle(veicolo v) {
 		
 		EntityManager em = util.getEntityManagerFactory().createEntityManager();
 		try {
@@ -30,7 +30,7 @@ public class veicoloDAO {
 		System.out.println("Veicolo creato nel DB");
 	}
 	
-	public int calolcoBigliettiTimbrati(veicolo v, Date date) {
+	public int getTicketNumberValidatedByDate(veicolo v, Date date) {
 		Set<biglietto> lista = null;
 		for(biglietto b : v.getBiglietti()) {
 			if(b.getData_vidimazione().compareTo(date)<0)lista.add(b);
@@ -38,14 +38,5 @@ public class veicoloDAO {
 		return lista.size();
 	}
 	
-	public void getTempoTratta(veicolo v, tratta t, int orarioPartenza, int orarioArrivo) {
-		t.setOrarioPartenza(orarioPartenza);
-		t.setOrarioArrivo(orarioArrivo);
-		int orarioComplessivo = orarioArrivo - orarioPartenza;
-		t.setTempo_tratta(orarioComplessivo);
-		v.setTratta(t);
-		System.out.println("il tempo percorso dal veicolo è: " + orarioComplessivo); 
-		t.setTratta_completata(t.getTratta_completata() + 1);
-	}	
 	
 }

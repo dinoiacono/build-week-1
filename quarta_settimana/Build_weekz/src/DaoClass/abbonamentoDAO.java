@@ -9,7 +9,13 @@ import Util.util;
 
 public class abbonamentoDAO {
 	
-	public void saveAbbonamento(abbonamenti a) {
+	
+	/*
+	 * <h1>AGGIUNGI ABBONAMENTO AL DB!</h1>
+	 * 
+	 * @param abbonamenti Abbonamento da aggiungere 
+	 */
+	public void addSubscription(abbonamenti a) {
 		
 		EntityManager em = util.getEntityManagerFactory().createEntityManager();
 		try {
@@ -27,8 +33,14 @@ public class abbonamentoDAO {
 		
 		System.out.println("Abbonamento aggiunto al DB");
 }
-
-	public void verificaValidita(utente u, Date periodo) {
+	/*
+	 * <h1>STAMPA VALIDITA' ABBONAMENTO!</h1>
+	 * 
+	 * @param utente Utente da controllare 
+	 * @param Date Data da controllare 
+	 */
+	public void checkSub(utente u, Date periodo) {
 		if(u.getAbbonamento().getData_rilascio().compareTo(periodo) < 0) System.out.println("Abbonamento ancora valido");	
+		else System.out.println("Abbonamento Scaduto! Beccate sta multa!");
 	}	
 }

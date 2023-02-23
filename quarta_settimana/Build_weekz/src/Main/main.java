@@ -1,18 +1,13 @@
 package Main;
 
+// Custom Import
 import DaoClass.*;
-import Util.util;
+import Util.*;
 import Veicoli.veicolo;
 import Biglietteria.*;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Set;
-
+import java.util.*;
 import javax.persistence.*;
-
-
 
 
 public class main {
@@ -47,27 +42,7 @@ public class main {
 //		RivenditoreAutorizzatoDAO rivenditore1DAO = new RivenditoreAutorizzatoDAO(); 
 //		rivenditore1DAO.saveRivenditore(rivenditore1);
 		
-	}	
-	public static DistributoreAutomatico macchinetta(int id) {
-		
-		EntityManager em = util.getEntityManagerFactory().createEntityManager();
-		Query q = em.createQuery("SELECT x FROM DistributoreAutomatico x WHERE id = " + id);
-		return (DistributoreAutomatico) q.getSingleResult();
 	}
 	
 	
-	public static int conteggioTotaleBiglietti(Date data) {
-		int contatore = 0;
-		EntityManager em = util.getEntityManagerFactory().createEntityManager();
-		Query q = em.createQuery("SELECT * FROM veicoli");
-		List<veicolo> mezzi = q.getResultList();
-		for(veicolo v : mezzi) {
-			for(biglietto b : v.getBiglietti()) {
-				if(b.getData_vidimazione().compareTo(data)<0) {
-					contatore++;
-				}
-			}
-		}
-		return contatore;
-	}
 }

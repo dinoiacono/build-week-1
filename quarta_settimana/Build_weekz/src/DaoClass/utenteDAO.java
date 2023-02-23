@@ -6,7 +6,7 @@ import Util.util;
 
 public class utenteDAO {
 	
-	public void CreaUtenteDB(utente u) {
+	public void addUser(utente u) {
 		
 		EntityManager em = util.getEntityManagerFactory().createEntityManager();
 		try {

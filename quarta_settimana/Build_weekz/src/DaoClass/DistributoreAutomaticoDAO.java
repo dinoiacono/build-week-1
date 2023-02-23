@@ -4,18 +4,21 @@ import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import Biglietteria.DistributoreAutomatico;
 import Biglietteria.abbonamenti;
 import Biglietteria.biglietto;
 import Util.util;
 
-public class DistributoreAutomaticoDAO {
 
+
+public class DistributoreAutomaticoDAO {
 	
-	public void saveMacchinetta(DistributoreAutomatico d) {
+	static EntityManager em = util.getEntityManagerFactory().createEntityManager();
+	
+	public void addTicketDispenser(DistributoreAutomatico d) {
 			
-			EntityManager em = util.getEntityManagerFactory().createEntityManager();
 			try {
 				em.getTransaction().begin();
 				em.persist(d);
@@ -29,11 +32,11 @@ public class DistributoreAutomaticoDAO {
 				em.close();
 			}
 			
-			System.out.println("Macchinetta aggiunta al DB");
+			System.out.println("Distributore aggiunto al DB");
 	}
 	
 	
-	public int contaBiglietti(Date periodo, DistributoreAutomatico d) {
+	public int getTicketNumberByDate(Date periodo, DistributoreAutomatico d) {
 		
 		Set<biglietto> lista = d.getBiglietti();
 		int contatore = 0;
@@ -42,7 +45,7 @@ public class DistributoreAutomaticoDAO {
 		return contatore;
 	}
 	
-	public int contaAbbonamenti(Date periodo, DistributoreAutomatico d) {
+	public int getSubNumberByDate(Date periodo, DistributoreAutomatico d) {
 		
 		Set<abbonamenti> lista = d.getAbbonamenti();
 		int contatore = 0;
@@ -50,5 +53,14 @@ public class DistributoreAutomaticoDAO {
 			if(a.getData_rilascio().compareTo(periodo) < 0) contatore++;
 		return contatore;
 	}
+	
+	
+	public DistributoreAutomatico getDistributoreByID(int id) {
+		
+		EntityManager em = util.getEntityManagerFactory().createEntityManager();
+		Query q = em.createQuery("SELECT x FROM DistributoreAutomatico x WHERE id = " + id);
+		return (DistributoreAutomatico) q.getSingleResult();
+	}
+	
 }
 
