@@ -67,5 +67,11 @@ public class tratta {
 	public void setOrarioArrivo(int orarioArrivo) {
 		this.orarioArrivo = orarioArrivo;
 	}
+	public int getTratta_completata() {
+		return tratta_completata;
+	}
+	public void setTratta_completata(int tratta_completata) {
+		this.tratta_completata = tratta_completata;
+	}
 	
 }
