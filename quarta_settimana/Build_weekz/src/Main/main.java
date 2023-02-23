@@ -43,11 +43,10 @@ public class main {
 		biglietto t1 = new biglietto();
 		t1.generateTicket(new GregorianCalendar (2023, 02, 12), d1);
 		
-		
 
 
 		tessera tessera2 = new tessera();
-		tessera2.generaTessera(new GregorianCalendar (2023, 02, 12), u2);
+		tessera2.generaTessera();
 		
 		abbonamenti a1 = new abbonamenti();
 	
@@ -67,6 +66,9 @@ public class main {
 		t1DAO.addTicket(t1);
 		RivenditoreAutorizzatoDAO r1DAO = new RivenditoreAutorizzatoDAO(); 
 		r1DAO.addReseller(r1);
+		tesseraDAO tessera2DAO = new tesseraDAO();
+		tessera2DAO.checkCardByDate(new GregorianCalendar (2023, 02, 12));
+	// problemi con la data PD!!!!!
 		
 		
 		tratta tr1 = new tratta();

@@ -1,7 +1,7 @@
 package Biglietteria;
 
 
-import java.time.LocalDateTime;
+import java.time.*;
 import java.util.*;
 
 import javax.persistence.*;
@@ -17,10 +17,10 @@ public class tessera {
 	private int num_tessera;
 	
 	@Column(name="data_rilascio")
-	private Date data_rilascio;
+	private LocalDate data_rilascio;
 	
 	@Column(name="data_scadenza")
-	private Date data_scadenza ;
+	private LocalDate data_scadenza ;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name="validità")
