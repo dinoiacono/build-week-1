@@ -3,7 +3,7 @@ package Main;
 // Custom Import
 import DaoClass.*;
 import Util.*;
-import Veicoli.veicolo;
+import Veicoli.*;
 import Biglietteria.*;
 
 import java.util.*;
@@ -11,36 +11,92 @@ import javax.persistence.*;
 
 
 public class main {
+	
 
 	public static void main(String[] args) {
 		
-		utente utente1 = new utente();
-		utente1.setNome("Dino");
-		utente1.setCognome("Plutonuo");
+//		Scanner sc = new Scanner(System.in);
 //		
-		DistributoreAutomatico macchinetta1 = new DistributoreAutomatico();
-		macchinetta1.setStato(Status.ATTIVO);
+//		while(true) {
+//			
+//			System.out.println("Benvenuto nel pannello amministazione");
+//			
+//			
+//			
+//			
+//		}
+
+		
+		utente u1 = new utente();
+		u1.setNome("Mario");
+		u1.setCognome("Rossi");
+		
+		utente u2 = new utente();
+		u1.setNome("Luigi");
+		u1.setCognome("Verdi");
+
+		
+		DistributoreAutomatico d1 = new DistributoreAutomatico();
+		d1.setStato(Status.ATTIVO);
+
+		
+		biglietto t1 = new biglietto();
+		t1.generateTicket(new GregorianCalendar (2023, 02, 12), d1);
+		
+		
+
+
+		tessera tessera2 = new tessera();
+		tessera2.generaTessera(new GregorianCalendar (2023, 02, 12), u2);
+		
+		abbonamenti a1 = new abbonamenti();
+	
+		
+		
+		RivenditoreAutorizzato r1 = new RivenditoreAutorizzato();
+		r1.setNome("L'edicola di Gianni che batte i panni");
+	
+		
+		utenteDAO u1DAO = new utenteDAO();
+		u1DAO.addUser(u1);
+		utenteDAO u2DAO = new utenteDAO();
+		u2DAO.addUser(u2);
+		DistributoreAutomaticoDAO m1 = new DistributoreAutomaticoDAO();
+		m1.addTicketDispenser(d1);
+		bigliettoDAO t1DAO = new bigliettoDAO();
+		t1DAO.addTicket(t1);
+		RivenditoreAutorizzatoDAO r1DAO = new RivenditoreAutorizzatoDAO(); 
+		r1DAO.addReseller(r1);
+		
+		
+		tratta tr1 = new tratta();
+		tr1.creaTratta("Roma Termini", "Milano Centrale", 12, 18);
+		tr1.setTempoMedioTratta(6);
+		tr1.setTratta_completata(false);
+		
+
+		trattaDAO tr1DAO = new trattaDAO();
+		tr1DAO.addRoute(tr1);
+		
+		
+		
+		veicolo v1 = new veicolo();
+		v1.creaVeicolo(tipoveicolo.TRAM, stato.SERVIZIO);
+		
+		veicoloDAO v1DAO = new veicoloDAO();
+		v1DAO.addVehicle(v1);
+		
+		
+
+		
+//		tr1DAO.getTrattaByID(0);
 //		
-		DistributoreAutomaticoDAO macchinetta1DAO = new DistributoreAutomaticoDAO();
-//		//macchinetta1DAO.saveMacchinetta(macchinetta1);
+////		tr1DAO.getRouteTime(v1, tr1, 0, 0);
 //		
-		biglietto ticket1 = new biglietto();
-//
-		ticket1.setNum_biglietto();
-		ticket1.setData_rilascio(new GregorianCalendar (2023, 02, 12));		
-//		ticket1.setMacchinetta(macchinetta(1));
-//				
-		utenteDAO utente1DAO = new utenteDAO();
-		utente1DAO.CreaUtenteDB(utente1);
 //		
-//		//bigliettoDAO ticket1DAO = new bigliettoDAO();
-//		//ticket1DAO.saveBiglietto(ticket1);
-//		
-//		RivenditoreAutorizzato rivenditore1 = new RivenditoreAutorizzato();
-//		rivenditore1.setNome("L'edicola di Gianni che batte i panni");
-//		
-//		RivenditoreAutorizzatoDAO rivenditore1DAO = new RivenditoreAutorizzatoDAO(); 
-//		rivenditore1DAO.saveRivenditore(rivenditore1);
+		
+		
+
 		
 	}
 	

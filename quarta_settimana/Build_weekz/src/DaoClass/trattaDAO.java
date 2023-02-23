@@ -1,15 +1,20 @@
 package DaoClass;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import Util.util;
 import Veicoli.tratta;
 import Veicoli.veicolo;
 
 public class trattaDAO {
+	
+	static EntityManager em = util.getEntityManagerFactory().createEntityManager();
+
 
 	public void addRoute(tratta t) {
-		EntityManager em = util.getEntityManagerFactory().createEntityManager();
 		try {
 			em.getTransaction().begin();
 			em.persist(t);
@@ -27,14 +32,26 @@ public class trattaDAO {
 		}
 	
 	
-	public void getRouteTime(veicolo v, tratta t, int orarioPartenza, int orarioArrivo) {
-		t.setOrarioPartenza(orarioPartenza);
-		t.setOrarioArrivo(orarioArrivo);
-		int orarioComplessivo = orarioArrivo - orarioPartenza;
-		t.setTempo_tratta(orarioComplessivo);
-		v.setTratta(t);
-		System.out.println("il tempo percorso dal veicolo è: " + orarioComplessivo); 
-		t.setTratta_completata(t.getTratta_completata() + 1);
+	public tratta getTrattaByID(int id) {
+		try {
+            em.getTransaction().begin();
+            return em.find(tratta.class, id);
+        } finally {
+            em.close();
+        }
+
 	}
+	
+//	public void getRouteTime(int id) {
+//		EntityManager em = util.getEntityManagerFactory().createEntityManager();
+//		Query q = em.createQuery("SELECT * FROM veicoli WHERE id = " + id);
+//		veicolo v = (veicolo) q.getSingleResult();
+//		v.getTratta()
+//		int orarioComplessivo = orarioArrivo - orarioPartenza;
+//		t.setTempo_tratta(orarioComplessivo);
+//		v.setTratta(t);
+//		System.out.println("il tempo percorso dal veicolo è: " + orarioComplessivo); 
+//		t.setTratta_completata(t.getTratta_completata() + 1);
+//	}
 }
 

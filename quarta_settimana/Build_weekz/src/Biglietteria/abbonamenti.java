@@ -45,10 +45,6 @@ public class abbonamenti {
 	}
 
 
-	public void setNumero_abbonamento() {
-		this.numero_abbonamento = numGenerator();
-	}
-
 	public Date getData_rilascio() {
 		return data_rilascio;
 	}
@@ -87,10 +83,6 @@ public class abbonamenti {
 		this.macchinetta = macchinetta;
 	}
 	
-    public static int numGenerator() {
-        Random rand = new Random(); 
-        return rand.nextInt(999999-100000) + 100000;
-    }
 	
 	
 }

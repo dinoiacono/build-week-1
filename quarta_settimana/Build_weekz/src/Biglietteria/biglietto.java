@@ -112,4 +112,12 @@ public class biglietto{
         Random rand = new Random(); 
         return rand.nextInt(999999-100000) + 100000;
     }
+    
+    public void generateTicket(GregorianCalendar d, DistributoreAutomatico m) {
+    	setNum_biglietto();
+		setData_rilascio(d);
+		setMacchinetta(m);
+		
+
+    }
 }

@@ -45,51 +45,76 @@ public class veicolo implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Integer getId() {
 		return id;
 	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+
 	public int getN_posti() {
 		return n_posti;
 	}
+	
 	public void setN_posti() {
-		if(this.getTipoveicolo() == tipoveicolo.TRAM) {
-			this.n_posti = 50;
-		}else {
-			this.n_posti = 30;
+		switch (tipoveicolo) {
+		case TRAM:
+			n_posti = 50;
+			break;
+		case AUTOBUS:
+			n_posti = 30;
+			break;
+		default:
+			n_posti = 10;
+			break;
 		}
 	}	
+	
 	public stato getStato() {
 		return stato;
 	}
+	
 	public void setStato(stato stato) {
 		this.stato = stato;
 	}
+	
 	public Set<biglietto> getBiglietti() {
 		return biglietti;
 	}
+	
 	public void setBiglietti(Set<biglietto> biglietti) {
 		this.biglietti = biglietti;
 	}
+	
 	public tipoveicolo getTipoveicolo() {
 		return tipoveicolo;
 	}
+	
 	public void setTipoveicolo(tipoveicolo tipoveicolo) {
 		this.tipoveicolo = tipoveicolo;
 	}
+	
 	public Set<utente> getUtenti() {
 		return utenti;
 	}
+	
 	public void setUtenti(Set<utente> utenti) {
 		this.utenti = utenti;
 	}
+	
 	public tratta getTratta() {
 		return tratta;
 	}
+	
 	public void setTratta(tratta tratta) {
-		this.tratta = tratta;
+		if (this.getStato() == stato.SERVIZIO) {
+			this.tratta = tratta;
+		}
 	}
+	
+	public void creaVeicolo(tipoveicolo t, stato s) {
+		setTipoveicolo(t);
+		setStato(s);
+		setN_posti();
+	}
+
 	
 }

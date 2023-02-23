@@ -48,9 +48,6 @@ public class utente {
 
 
 
-	public void setId(int id) {
-		this.id = id;
-	}
 
 
 

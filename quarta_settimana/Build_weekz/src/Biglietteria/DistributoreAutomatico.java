@@ -34,10 +34,6 @@ public class DistributoreAutomatico  {
 	}
 
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
 
 	public Status getStato() {
 		return stato;
