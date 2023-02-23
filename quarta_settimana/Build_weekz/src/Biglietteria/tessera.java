@@ -22,9 +22,13 @@ public class tessera {
 	@Column(name="data_scadenza")
 	private Date data_scadenza ;
 	
+	@Enumerated(EnumType.STRING)
+	@Column(name="validità")
+	private String validitaTess;
+	
 	@OneToOne(mappedBy = "tessera")
 	private utente utente;
-
+	
 	public tessera() {
 		super();
 	}
