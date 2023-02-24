@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import Biglietteria.DistributoreAutomatico;
 import Biglietteria.biglietto;
 import Util.util;
 import Veicoli.tratta;
@@ -39,21 +40,20 @@ public class veicoloDAO {
 	
 	public int getTicketNumberValidatedByDate(veicolo v, Date date) {
 		List<biglietto> lista = getAllTicketByVehicle(v);
+		List<biglietto> listaValidati = null;
 		for(biglietto b : v.getBiglietti()) {
-			if(b.getData_vidimazione().compareTo(date)<0)lista.add(b);
+			if(b.getData_vidimazione().compareTo(date)<0)listaValidati.add(b);
 		}
-		return lista.size();
+		return listaValidati.size();
 	}
 	
-
-	
-	public void updateVehicleTickets(veicolo v) {
-		List<biglietto> lista = getAllTicketByVehicle(v);
-		for(biglietto b : lista) {
-			if(b.getData_vidimazione().compareTo(date)<0)lista.add(b);
-		}
-	 
+	public veicolo getVehicleByID(int id) {
+    	veicolo v = em.find(veicolo.class, id);
+        if (v == null) {
+            throw new EntityNotFoundException("Can't find Artist for ID "
+                    + id);
+        }
+        return v;
 	}
-	
 	
 }

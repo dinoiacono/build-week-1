@@ -30,9 +30,11 @@ public class main {
 		utenteDAO utenteDAO = new utenteDAO();
 		DistributoreAutomaticoDAO distributoreDAO = new DistributoreAutomaticoDAO();
 		bigliettoDAO bigliettoDAO = new bigliettoDAO();
+		bigliettoDAO bigliettoDAO2 = new bigliettoDAO();
 		RivenditoreAutorizzatoDAO rivenditoreDAO = new RivenditoreAutorizzatoDAO(); 
 		tesseraDAO tesseraDAO = new tesseraDAO();
 		abbonamentoDAO abbonamentoDAO = new abbonamentoDAO();
+		veicoloDAO veicoloDAO = new veicoloDAO();
 
 
 
@@ -57,9 +59,11 @@ public class main {
 
 //		biglietto biglietto1 = new biglietto();
 //		biglietto1.generateTicket(new GregorianCalendar (2023, 02, 12), distributoreDAO.getDispenserByID(1));
+		
 //
 //		bigliettoDAO.addTicket(biglietto1);
-	
+//		bigliettoDAO.validateTicket(bigliettoDAO2.getTicketByID(464675), new GregorianCalendar (2023, 02, 10), veicoloDAO.getVehicleByID(1));
+		System.out.println(bigliettoDAO.getAllTicketsByDate(new GregorianCalendar (2023, 02, 9)));
 		
 //		tessera tessera2 = new tessera();
 //		tessera2.generaTessera(new GregorianCalendar (2023, 02, 12), utenteDAO.getUtenteByID(2));
@@ -83,10 +87,10 @@ public class main {
 //		u1.setBiglietto(bigliettoDAO.getTicketByID(257303));
 //		utenteDAO.updateUser(u1);
 		
-		utente u2 = utenteDAO.getUtenteByID(2);
-
-		
-		abbonamentoDAO.checkSub(u2, LocalDate.of(2023,04,14));
+//		utente u2 = utenteDAO.getUtenteByID(2);
+//
+//		
+//		abbonamentoDAO.checkSub(u2, LocalDate.of(2023,04,14));
 		
 		
 		
@@ -108,8 +112,7 @@ public class main {
 //		veicolo v1 = new veicolo();
 //		v1.creaVeicolo(tipoveicolo.TRAM, stato.SERVIZIO);
 //		
-//		veicoloDAO v1DAO = new veicoloDAO();
-//		v1DAO.addVehicle(v1);
+//		veicoloDAO.addVehicle(v1);
 		
 		
 		
@@ -117,6 +120,6 @@ public class main {
 
 		
 	}
-	
+
 	
 }

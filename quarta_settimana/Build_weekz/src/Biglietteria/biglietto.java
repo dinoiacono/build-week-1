@@ -43,6 +43,14 @@ public class biglietto{
 		super();
 	}
 
+	public veicolo getVeicolo() {
+		return veicolo;
+	}
+
+	public void setVeicolo(veicolo veicolo) {
+		this.veicolo = veicolo;
+	}
+
 	public Date getData_vidimazione() {
 		return data_vidimazione;
 	}
