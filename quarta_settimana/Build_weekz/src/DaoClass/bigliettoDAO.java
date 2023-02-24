@@ -5,19 +5,22 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityNotFoundException;
 import javax.persistence.Query;
 
 import Biglietteria.biglietto;
 import Biglietteria.statusbiglietto;
+import Biglietteria.utente;
 import Util.util;
 import Veicoli.veicolo;
 
 public class bigliettoDAO {
 
+	static EntityManager em = util.getEntityManagerFactory().createEntityManager();
+
 	
 	public void addTicket(biglietto b) {
 		
-		EntityManager em = util.getEntityManagerFactory().createEntityManager();
 		try {
 			em.getTransaction().begin();
 			em.persist(b);
@@ -35,8 +38,8 @@ public class bigliettoDAO {
 }
 	public void validateTicket(veicolo veic, biglietto bigl, Date data_vidimazione) {
 		if(bigl.getStatusbiglietto() == statusbiglietto.NON_TIMBRATO) {
-			bigl.setStatusbiglietto(statusbiglietto.TIMBRATO);
 			bigl.setData_vidimazione(data_vidimazione);
+			bigl.setStatusbiglietto();
 			Set<biglietto> lista = veic.getBiglietti();
 			lista.add(bigl);
 			veic.setBiglietti(lista);
@@ -48,7 +51,6 @@ public class bigliettoDAO {
 	
 	public int getAllTicketsByDate(Date data) {
 		int contatore = 0;
-		EntityManager em = util.getEntityManagerFactory().createEntityManager();
 		Query q = em.createQuery("SELECT * FROM veicoli");
 		List<veicolo> mezzi = q.getResultList();
 		for(veicolo v : mezzi) {
@@ -60,4 +62,12 @@ public class bigliettoDAO {
 		}
 		return contatore;
 	}
+	
+    public biglietto getTicketByID(int id) {
+    	biglietto b = em.find(biglietto.class, id);
+        if (b == null) {
+            throw new EntityNotFoundException("Can't find Artist for ID " + id);
+        }
+        return b;
+    }
 }

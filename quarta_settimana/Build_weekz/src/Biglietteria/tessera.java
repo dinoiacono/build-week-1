@@ -17,17 +17,17 @@ public class tessera {
 	private int num_tessera;
 	
 	@Column(name="data_rilascio")
-	private LocalDate data_rilascio;
+	private Date data_rilascio;
 	
 	@Column(name="data_scadenza")
-	private LocalDate data_scadenza ;
-	
-	@Enumerated(EnumType.STRING)
-	@Column(name="validità")
-	private String validitaTess;
+	private Date data_scadenza ;
 	
 	@OneToOne(mappedBy = "tessera")
 	private utente utente;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "abbonamento", referencedColumnName = "num_abbonamento")
+	private abbonamenti abbonamento;
 	
 	public tessera() {
 		super();
@@ -63,7 +63,15 @@ public class tessera {
 	}
 	
     
-    public void generaTessera(GregorianCalendar d, utente u) {
+    public abbonamenti getAbbonamento() {
+		return abbonamento;
+	}
+
+	public void setAbbonamento(abbonamenti abbonamento) {
+		this.abbonamento = abbonamento;
+	}
+
+	public void generaTessera(GregorianCalendar d, utente u) {
     	setData_rilascio(d);
     	setData_scadenza(d);
     	setUtente(u);

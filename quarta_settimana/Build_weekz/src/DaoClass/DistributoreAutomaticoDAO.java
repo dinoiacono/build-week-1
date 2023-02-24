@@ -4,11 +4,13 @@ import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityNotFoundException;
 import javax.persistence.Query;
 
 import Biglietteria.DistributoreAutomatico;
 import Biglietteria.abbonamenti;
 import Biglietteria.biglietto;
+import Biglietteria.utente;
 import Util.util;
 
 
@@ -55,12 +57,14 @@ public class DistributoreAutomaticoDAO {
 	}
 	
 	
-	public DistributoreAutomatico getDistributoreByID(int id) {
-		
-		EntityManager em = util.getEntityManagerFactory().createEntityManager();
-		Query q = em.createQuery("SELECT x FROM DistributoreAutomatico x WHERE id = " + id);
-		return (DistributoreAutomatico) q.getSingleResult();
-	}
+    public DistributoreAutomatico getDispenserByID(int id) {
+    	DistributoreAutomatico d = em.find(DistributoreAutomatico.class, id);
+        if (d == null) {
+            throw new EntityNotFoundException("Can't find Artist for ID "
+                    + id);
+        }
+        return d;
+    }
 	
 }
 

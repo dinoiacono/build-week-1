@@ -21,7 +21,7 @@ public class biglietto{
 	private Date data_vidimazione;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="statoBiglietto")
+	@Column(name="statoBiglietto", nullable=false)
 	private statusbiglietto statusbiglietto;
 	
 	@OneToOne(mappedBy = "biglietto")
@@ -58,8 +58,13 @@ public class biglietto{
 
 
 
-	public void setStatusbiglietto(statusbiglietto statusbiglietto) {
-		this.statusbiglietto = statusbiglietto;
+	public void setStatusbiglietto() {
+		if ( data_vidimazione == null ) {
+			this.statusbiglietto = statusbiglietto.NON_TIMBRATO;
+		}
+		else {
+			this.statusbiglietto = statusbiglietto.TIMBRATO;
+		}
 	}
 
 
@@ -68,16 +73,13 @@ public class biglietto{
 		return num_biglietto;
 	}
 
-
-
-	public void setNum_biglietto() {
+	private void setNum_biglietto() {
 		this.num_biglietto = numGenerator();
 	}
 
 	public utente getUtente() {
 		return utente;
 	}
-
 
 
 	public void setUtente(utente utente) {
@@ -117,6 +119,8 @@ public class biglietto{
     	setNum_biglietto();
 		setData_rilascio(d);
 		setMacchinetta(m);
+		setStatusbiglietto();
+		
 		
 
     }

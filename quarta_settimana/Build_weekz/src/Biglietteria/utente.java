@@ -20,17 +20,9 @@ public class utente {
 	@Column(name="cognome" , nullable = false)
 	private String cognome;
 	
-	@ManyToOne
-	@JoinColumn(name = "id_veicolo")
-	private veicolo veicolo;
-	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "tessera", referencedColumnName = "num_tessera")
 	private tessera tessera;
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "abbonamento", referencedColumnName = "num_abbonamento")
-	private abbonamenti abbonamento;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "biglietto", referencedColumnName = "num_biglietto")
@@ -45,11 +37,6 @@ public class utente {
 	public int getId() {
 		return id;
 	}
-
-
-
-
-
 
 	public String getNome() {
 		return nome;
@@ -86,23 +73,6 @@ public class utente {
 	}
 
 
-
-	public abbonamenti getAbbonamento() {
-		return abbonamento;
-	}
-
-
-
-	public void setAbbonamento(abbonamenti abbonamento) {
-		if (this.tessera == null) {
-			System.out.println("Per avere un'abbonamento deve avere una tessera!");
-		}else {
-			this.abbonamento = abbonamento;
-		}
-	}
-
-
-
 	public biglietto getBiglietto() {
 		return biglietto;
 	}
@@ -118,7 +88,7 @@ public class utente {
 	@Override
 	public String toString() {
 		return "utente [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", tessera=" + tessera
-				+ ", abbonamento=" + abbonamento + ", biglietto=" + biglietto + "]";
+				+ ", biglietto=" + biglietto + "]";
 	}
 	
 

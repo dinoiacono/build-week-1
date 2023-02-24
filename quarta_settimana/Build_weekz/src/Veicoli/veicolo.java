@@ -32,9 +32,6 @@ public class veicolo implements Serializable {
 	private tipoveicolo tipoveicolo;
 	
 	@OneToMany(mappedBy = "veicolo", cascade = CascadeType.ALL)
-	private Set<utente> utenti;
-	
-	@OneToMany(mappedBy = "veicolo", cascade = CascadeType.ALL)
 	private Set<biglietto> biglietti;
 	
 	@ManyToOne
@@ -90,14 +87,6 @@ public class veicolo implements Serializable {
 	
 	public void setTipoveicolo(tipoveicolo tipoveicolo) {
 		this.tipoveicolo = tipoveicolo;
-	}
-	
-	public Set<utente> getUtenti() {
-		return utenti;
-	}
-	
-	public void setUtenti(Set<utente> utenti) {
-		this.utenti = utenti;
 	}
 	
 	public tratta getTratta() {

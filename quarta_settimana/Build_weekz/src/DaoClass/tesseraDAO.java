@@ -29,7 +29,7 @@ public class tesseraDAO {
 	finally {
 		em.close();
 	}
-	System.out.println("Veicolo creato nel DB");
+	System.out.println("Tessera creata nel DB");
 }
 	
 	public void checkCardByDate(utente u, Date validita) {

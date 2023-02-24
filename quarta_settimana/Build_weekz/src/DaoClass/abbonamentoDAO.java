@@ -1,6 +1,9 @@
 package DaoClass;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import javax.persistence.EntityManager;
 import Biglietteria.abbonamenti;
@@ -33,14 +36,27 @@ public class abbonamentoDAO {
 		
 		System.out.println("Abbonamento aggiunto al DB");
 }
+	
 	/*
 	 * <h1>STAMPA VALIDITA' ABBONAMENTO!</h1>
 	 * 
 	 * @param utente Utente da controllare 
 	 * @param Date Data da controllare 
 	 */
-	public void checkSub(utente u, Date periodo) {
-		if(u.getAbbonamento().getData_rilascio().compareTo(periodo) < 0) System.out.println("Abbonamento ancora valido");	
-		else System.out.println("Abbonamento Scaduto! Beccate sta multa!");
-	}	
+	public void checkSub(utente u, LocalDate d) {
+		Date d1 = u.getTessera().getAbbonamento().getData_scadenza();
+//		if(d.isBefore(d1)) {
+//			System.out.println("Abbonamento ancora valido");
+//		} else {
+//			System.out.println("Abbonamento Scaduto! Beccate sta multa!");
+//		}
+	}
+	
+	public static String format(GregorianCalendar calendar) {
+	    SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MMM-dd");
+	    fmt.setCalendar(calendar);
+	    String dateFormatted = fmt.format(calendar.getTime());
+
+	    return dateFormatted;
+	}
 }
