@@ -35,14 +35,32 @@ public class bigliettoDAO {
 		}
 		
 		System.out.println("Biglietto aggiunto al DB");
-}
-	public void validateTicket(veicolo veic, biglietto bigl, Date data_vidimazione) {
+	}
+	
+	public void updateTicket(biglietto b) {
+		
+		try {
+			em.getTransaction().begin();
+			em.merge(b);
+			em.getTransaction().commit();
+		}
+		catch (Exception ex) {
+            em.getTransaction().rollback(); 
+
+		}
+		finally {
+			em.close();
+		}
+		System.out.println("Biglietto aggiornato al DB");
+	
+	}
+	
+	public void validateTicket(biglietto bigl, Date data_vidimazione) {
 		if(bigl.getStatusbiglietto() == statusbiglietto.NON_TIMBRATO) {
 			bigl.setData_vidimazione(data_vidimazione);
 			bigl.setStatusbiglietto();
-			Set<biglietto> lista = veic.getBiglietti();
-			lista.add(bigl);
-			veic.setBiglietti(lista);
+			updateTicket(bigl);
+
  		}else {
  			System.out.println("Biglietto già timbrato, ricompralo poveraccio!!!");
  		}

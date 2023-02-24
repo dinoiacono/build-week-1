@@ -52,11 +52,5 @@ public class abbonamentoDAO {
 //		}
 	}
 	
-	public static String format(GregorianCalendar calendar) {
-	    SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MMM-dd");
-	    fmt.setCalendar(calendar);
-	    String dateFormatted = fmt.format(calendar.getTime());
 
-	    return dateFormatted;
-	}
 }

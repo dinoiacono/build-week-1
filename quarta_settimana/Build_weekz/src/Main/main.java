@@ -74,8 +74,7 @@ public class main {
 //	
 //		RivenditoreAutorizzato r1 = new RivenditoreAutorizzato();
 //		r1.setNome("L'edicola di Gianni che batte i panni");
-////	
-////		
+		
 //		tesseraDAO.addTessera(tessera2);
 //		
 		
@@ -88,6 +87,10 @@ public class main {
 
 		
 		abbonamentoDAO.checkSub(u2, LocalDate.of(2023,04,14));
+		
+		
+		
+		
 		
 		
 //		
