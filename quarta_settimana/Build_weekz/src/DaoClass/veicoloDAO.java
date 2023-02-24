@@ -32,18 +32,20 @@ public class veicoloDAO {
 		System.out.println("Veicolo creato nel DB");
 	}
 	
+	public List<biglietto> getAllTicketByVehicle(veicolo v){
+		Query q = em.createQuery("SELECT * FROM biglietti WHERE id_veicolo = " + v.getId() );
+		return q.getResultList();
+	}
+	
 	public int getTicketNumberValidatedByDate(veicolo v, Date date) {
-		Set<biglietto> lista = getAllTicketByVehicle(v);
+		List<biglietto> lista = getAllTicketByVehicle(v);
 		for(biglietto b : v.getBiglietti()) {
 			if(b.getData_vidimazione().compareTo(date)<0)lista.add(b);
 		}
 		return lista.size();
 	}
 	
-	public List<biglietto> getAllTicketByVehicle(veicolo v){
-		Query q = em.createQuery("SELECT * FROM biglietti WHERE id_veicolo = " + v.getId() );
-		return q.getResultList();
-	}
+
 	
 	public void updateVehicleTickets(veicolo v) {
 		List<biglietto> lista = getAllTicketByVehicle(v);
