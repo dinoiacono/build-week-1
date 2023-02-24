@@ -48,7 +48,7 @@ public class main {
 //		u2.setCognome("Verdi");
 
 		
-//		u1DAO.addUser(u1);
+//		utenteDAO.addUser(u1);
 //		u1DAO.addUser(u2);
 		
 
@@ -63,23 +63,26 @@ public class main {
 //
 //		bigliettoDAO.addTicket(biglietto1);
 //		bigliettoDAO.validateTicket(bigliettoDAO2.getTicketByID(464675), new GregorianCalendar (2023, 02, 10), veicoloDAO.getVehicleByID(1));
-		System.out.println(bigliettoDAO.getAllTicketsByDate(new GregorianCalendar (2023, 02, 9)));
+//		System.out.println(bigliettoDAO.getAllTicketsByDate(new GregorianCalendar (2023, 02, 9)));
+//		System.out.println(bigliettoDAO.getTicketNumberValidatedByDate(veicoloDAO.getVehicleByID(1),new GregorianCalendar (2023, 02, 20)));
+
 		
 //		tessera tessera2 = new tessera();
-//		tessera2.generaTessera(new GregorianCalendar (2023, 02, 12), utenteDAO.getUtenteByID(2));
+//		tessera2.generaTessera(new GregorianCalendar (2023, 02, 12), utenteDAO.getUtenteByID(1));
 //		
 //		abbonamenti a1 = new abbonamenti();
 //		a1.generaAbbonamento(new GregorianCalendar (2023, 02, 12), vale_abbonamento.MENSILE);
 //	
 //		tessera2.setAbbonamento(a1);
-//		utente u = utenteDAO.getUtenteByID(2);
+//		utente u = utenteDAO.getUtenteByID(1);
 //		u.setTessera(tessera2);
 //		utenteDAO.updateUser(u);
+//		
+//		tesseraDAO.addTessera(tessera2);
 //	
 //		RivenditoreAutorizzato r1 = new RivenditoreAutorizzato();
 //		r1.setNome("L'edicola di Gianni che batte i panni");
 		
-//		tesseraDAO.addTessera(tessera2);
 //		
 		
 		
@@ -116,7 +119,7 @@ public class main {
 		
 		
 		
-		
+//		abbonamentoDAO.checkSub(utenteDAO.getUtenteByID(1), new GregorianCalendar(2023,03,10));
 
 		
 	}

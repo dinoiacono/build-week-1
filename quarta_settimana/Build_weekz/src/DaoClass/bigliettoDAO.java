@@ -69,7 +69,6 @@ public class bigliettoDAO {
 		int contatore=0;
 		String d = formatoData.format(data.getTime());
 		Query q = em.createQuery("SELECT b FROM biglietto b");
-//		System.out.println(data); 
 		List<biglietto> biglietti = q.getResultList();
 		Date prova;
 		try {
@@ -92,4 +91,27 @@ public class bigliettoDAO {
         }
         return b;
     }
+    
+	public List<biglietto> getAllTicketByVehicle(veicolo v){
+		Query q = em.createQuery("SELECT b FROM biglietto b WHERE id_veicolo = " + v.getId() );
+		return q.getResultList();
+	}
+	
+	public int getTicketNumberValidatedByDate(veicolo v, GregorianCalendar data) {
+		List<biglietto> lista = getAllTicketByVehicle(v);
+		int contatore=0;
+		String d = formatoData.format(data.getTime());
+		Date prova;
+		try {
+			prova = formatoData.parse(d);
+			for (biglietto b : lista) {
+				if(b.getData_vidimazione().compareTo(prova) < 0) {
+					contatore ++;
+				}
+			}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return contatore;
+	}
 }

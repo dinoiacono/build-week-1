@@ -1,5 +1,6 @@
 package DaoClass;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -33,19 +34,6 @@ public class veicoloDAO {
 		System.out.println("Veicolo creato nel DB");
 	}
 	
-	public List<biglietto> getAllTicketByVehicle(veicolo v){
-		Query q = em.createQuery("SELECT * FROM biglietti WHERE id_veicolo = " + v.getId() );
-		return q.getResultList();
-	}
-	
-	public int getTicketNumberValidatedByDate(veicolo v, Date date) {
-		List<biglietto> lista = getAllTicketByVehicle(v);
-		List<biglietto> listaValidati = null;
-		for(biglietto b : v.getBiglietti()) {
-			if(b.getData_vidimazione().compareTo(date)<0)listaValidati.add(b);
-		}
-		return listaValidati.size();
-	}
 	
 	public veicolo getVehicleByID(int id) {
     	veicolo v = em.find(veicolo.class, id);
