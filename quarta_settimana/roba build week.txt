@@ -1,0 +1,46 @@
+	@OneToOne(cascade = CascadeType.ALL)
+
+	@JoinColumn(name = "tessera", referencedColumnName = "num_tessera")
+
+	private tessera tessera;
+
+
+
+@Enumerated(EnumType.STRING)
+	@Column(name="stato")
+	private stato stato;
+
+
+
+public List<biglietto> getAllTicketByVehicle(veicolo v){
+		Query q = em.createQuery("SELECT b FROM biglietto b WHERE id_veicolo = " + v.getId() );
+		return q.getResultList();
+	}
+	
+	public int getTicketNumberValidatedByDate(veicolo v, GregorianCalendar data) {
+		List<biglietto> lista = getAllTicketByVehicle(v);
+		int contatore=0;
+		String d = formatoData.format(data.getTime());
+		Date prova;
+		try {
+			prova = formatoData.parse(d);
+			for (biglietto b : lista) {
+				if(b.getData_vidimazione().compareTo(prova) < 0) {
+					contatore ++;
+				}
+			}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return contatore;
+	}
+
+
+public void setData_scadenza(GregorianCalendar d) {
+		d.add((GregorianCalendar.YEAR), 1);
+		this.data_scadenza = d.getTime();
+	}
+
+
+@OneToMany(mappedBy = "tratta", cascade = CascadeType.ALL)
+	private Set<veicolo> mezzi;
