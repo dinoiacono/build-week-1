@@ -13,25 +13,25 @@ public class FatturaService {
 
 	@Autowired FatturaRepo fatturaRepo;
 	
-	public Fattura createDevice(Fattura fattura) {
+	public Fattura createFattura(Fattura fattura) {
 		fatturaRepo.save(fattura);
 		return fattura;
 	}
 	
-	public Fattura getDeviceid(Long id) {
+	public Fattura getFatturaId(Long id) {
 		return fatturaRepo.findById(id).get();
 	}
 	
-	public List<Fattura> getAllDevices(){
+	public List<Fattura> getAllFatture(){
 		return (List<Fattura>) fatturaRepo.findAll();
 	}
 	
-	public Fattura updateDevice(Fattura fattura) {
+	public Fattura updateFattura(Fattura fattura) {
 		fatturaRepo.save(fattura);
 		return fattura;
 	}
 	
-	public String removeDevice(Long id) {
+	public String removeFattura(Long id) {
 		fatturaRepo.deleteById(id);
 		return "Fattura deleted";
 	}
