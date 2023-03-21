@@ -34,7 +34,7 @@ public class FatturaController {
 		return new ResponseEntity<List<Fattura>>(fatturaService.getAllFatture(),HttpStatus.OK);
 	}
 	
-	@GetMapping("/Id")
+	@GetMapping("/{id}")
 	public ResponseEntity<Fattura> getFatturaId(@PathVariable Long id) {
 		return new ResponseEntity<Fattura>(fatturaService.getFatturaId(id),HttpStatus.OK);
 	}
@@ -46,7 +46,7 @@ public class FatturaController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Fattura> updateFattura(@PathVariable Fattura fattura) {
+	public ResponseEntity<Fattura> updateFattura(@PathVariable Long id, @RequestBody Fattura fattura) {
 		return new ResponseEntity<Fattura>(fatturaService.updateFattura(fattura),HttpStatus.OK);
 	}
 	

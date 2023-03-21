@@ -35,15 +35,15 @@ public class UserRunner implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		Role admin = new Role();
 		admin.setRoleName(ERole.ROLE_ADMIN);
-		roleRepository.save(admin);
+		//roleRepository.save(admin);
 		
 		Role user = new Role();
 		user.setRoleName(ERole.ROLE_USER);
-		roleRepository.save(user);
+		//roleRepository.save(user);
 		
 		Role moderator = new Role();
 		moderator.setRoleName(ERole.ROLE_MODERATOR);
-		roleRepository.save(moderator);
+		//roleRepository.save(moderator);
 		
 		Set<Role> adminRole = new HashSet<Role>();
 		adminRole.add(admin);
@@ -64,7 +64,7 @@ public class UserRunner implements ApplicationRunner {
 		userAdmin.setEmail("admin@example.com");
 		userAdmin.setPassword(encoder.encode("admin"));
 		userAdmin.setRoles(adminRole);
-		userRepository.save(userAdmin);
+		//userRepository.save(userAdmin);
 		
 		User simpleUser = new User();
 		simpleUser.setNome("Mario");
@@ -73,7 +73,7 @@ public class UserRunner implements ApplicationRunner {
 		simpleUser.setEmail("m.rossi@example.com");
 		simpleUser.setPassword(encoder.encode("12345"));
 		simpleUser.setRoles(userRole);
-		userRepository.save(simpleUser);
+		//userRepository.save(simpleUser);
 		
 		User userModerator = new User();
 		userModerator.setNome("Giuseppe");
@@ -82,7 +82,7 @@ public class UserRunner implements ApplicationRunner {
 		userModerator.setEmail("g.verdi@example.com");
 		userModerator.setPassword(encoder.encode("qwerty"));
 		userModerator.setRoles(moderatorRole);
-		userRepository.save(userModerator);
+		//userRepository.save(userModerator);
 		
 		Address address1 = new Address();
 		address1.setVia("le mani dal culo");
@@ -90,13 +90,13 @@ public class UserRunner implements ApplicationRunner {
 		address1.setLocalita("Bologna");
 		address1.setCap(20444L);
 		address1.setComune("Bologna");
-		addressRepo.save(address1);
+		//addressRepo.save(address1);
 		
 		Fattura fattura1 = new Fattura();
 		fattura1.setAnno(2023);
 		fattura1.setData(new GregorianCalendar(2022,07,30).getTime());
 		fattura1.setImporto(new BigDecimal(10000.0));
-		fatturaRepo.save(fattura1);
+		//fatturaRepo.save(fattura1);
 	}
 
 }
