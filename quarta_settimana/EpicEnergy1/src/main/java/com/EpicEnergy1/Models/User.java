@@ -6,13 +6,13 @@ import javax.persistence.*;
 
 import lombok.*;
 
-@Entity
+/*@Entity
 @Table(name="utente")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Data
-@NoArgsConstructor
+@NoArgsConstructor*/
 public class User {
-	
+	/*
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -43,5 +43,5 @@ public class User {
 	private String cognomeContatto;
 	
 	private Long telefonoContatto;
-	
+	*/
 }

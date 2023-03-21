@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.EpicEnergy1.Models.User;
-import com.EpicEnergy1.Repositories.UserRepo;
 
 
-@Service
+
+//@Service
 public class UserService{
 	
-	@Autowired UserRepo userRepo;
+	/*@Autowired UserRepo userRepo;
 
 	public User createUser(User user) {
 		userRepo.save(user);
@@ -35,6 +35,6 @@ public class UserService{
 	public String removeUser(Long id) {
 		userRepo.deleteById(id);
 		return "User deleted";
-	}
+	}*/
 }
 
